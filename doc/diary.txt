@@ -1,1 +1,17 @@
-24.09.15 - Teammeeting: Task1, Task2 Details in PP
+
+24.09.15 - Team meeting:Task1: 	Wir haben im Team Lösungen zum Task1 erarbeitet und 
+								dazu eine Powerpointpräsentation für die Präsentation 
+								am Montag den 28.09.2015 erstellt. Die Folien befinden
+								sich im task01-Ordner.
+						
+						Task2:	Auch zum Task2 haben wir Lösungen zum ersten Teil 
+								des Tasks erarbeitet und in einer 
+								Powerpointpräsentation festgehalten. Auch hier haben 
+								wir einen Ordner mit dem Namen task02 erstellt in dem 
+								sich die Powerpointpräsentation vom 28.09.2015 
+								befindet. Die Lösungen zum zweiten Teil des Tasks, 
+								also die voraussichtliche Gesamtplanung des Projekts,
+								werden wir am 25.09.2015 ausserhalb der 
+								Unterrichtszeiten erarbeiten und der Powerpoint-
+								präsentation hinzufügen.
+								
