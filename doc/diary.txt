@@ -19,3 +19,5 @@
 								planung definiert, wie wir vorgehen wollen. Details
 								sind in der Powerpointpräsentation zum Task2.
 								
+26.09.15- commit Test								
+								
