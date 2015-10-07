@@ -21,5 +21,28 @@
 								
 05.10.15 - Team meeting: Task3: Interview-Fragen vorbereitet
 06.10.15 - Interview Task 3		Interview mit dem Leiter einer Psychiatrischen Klinik geführt. 
-								Genaue Informationen darüber folgen.						
+								Genaue Informationen darüber folgen.
+								
+07.10.15 - Team meeting: Task3:	Ein Interview wurde am 06.10.15 an der SILEA (Stiftung für Integriertes Leben und 
+								Arbeiten) in Thun durchgeführt. Die Stiftung betreut geistig, physisch und teilweise 
+								psychisch beeinträchtigte Menschen. Das Interview wurde mit einem Mitglied vom 
+								Management durchgeführt. Das Resultat des Interviews ist leider nicht passend zu unserer
+								Aufgabenstellung. Ein Verwaltungssystem wird schon angewendet welche keine speziellen
+								Features zu Erleichterung der Behandlung beinhaltet -> Software heisst Abacus.
+								Was in seinen Augen sehr wichtig wäre ist, dass die Leistungserfassung mit IT-
+								Hilfe erleichtert werden soll, da man für einen Pflegeaufwand die doppelte Zeit braucht,
+								weil es eben auch schriftrich auf Papier dokumentiert werden muss. Auch die Unterstütz-
+								ung zum Piquettdienst wäre interessant. Die Erkenntnis aus diesem Interview	ist dass 
+								wir bestehende Verwaltungsfeatures in unsere Applikation aufnehmen können. Aber wir 
+								brauchen weiterhin zusätzliche Features welche die Behandlung eines psychisch kranken
+								Patienten erleichtern.
+								
+								In der heutigen Unterrichtszeit haben wir zu dem mit dem Task3 (Design Thiinking)
+								angefangen. Für die Aufgaben 1-3  wurden Notizen in ein Worddokument aufgenommen.
+								Auch mit der Aufgabe 4 haben wir angefangen Storyboards zu zeichnen. Jedes Gruppen-
+								mitglied hat begonnen mehrere Storyboards zu zeichnen. Am 08.10.15 werden wir damit 
+								weiterfahren und dann die 3 besten auswählen.
+								
+								
+								
 								
