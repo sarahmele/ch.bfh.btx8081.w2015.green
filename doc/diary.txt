@@ -68,6 +68,23 @@
 								
 								bubbl.us - Username: bfhteamgreen   Password: teamgreen963 
 								
-								
+12.10.15 - Team meeting: Task3	anwesend im meating: Shpend Vladi, Sarah Mele, Luca Ramos, Manuel Pfister
+								Prototyping
+									- 3 Storyboards ausgewählt
+										-> aus den 3 Storynoards sollen 3 Prototypen entstehen (Luca Ramos, Portmann)
+								Brainstorming
+									- weitere Features aus dem meeting ins bubbl.us eingefügt (Shpend Vladi)
+								Dokumentation
+									- Weiterführung der Dokumentation (Sarah Mele)
+								Interviewtermin
+									- Heute um 14.30 im 305 mit Herr Lehmann (Sarah Mele, Luca Ramos)
+								Präsentation
+									- Vorbereitung (alle)
+									- Ausführung (Manuel Pfister, Sarah Mele)
+								Ziele
+									- Prototypen bis Dienstag Abend fertig
+									- Dokumentation bis Dienstag Abend fertig
+									- Powerpoint Präsentation bis Dienstag Abend fertig
+									- Damit am Mittwoch besprochen werden kann wie die Präsentation ablaufen soll
 								
 								
