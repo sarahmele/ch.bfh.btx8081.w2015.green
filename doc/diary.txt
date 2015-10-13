@@ -86,5 +86,11 @@
 									- Dokumentation bis Dienstag Abend fertig
 									- Powerpoint Präsentation bis Dienstag Abend fertig
 									- Damit am Mittwoch besprochen werden kann wie die Präsentation ablaufen soll
-								
+
+12.10.15 - Interview zum Task3:	Von 14:30 bis 15:15 haben 2 Teammitglieder (Luca Ramos und Sarah Mele) ein Interview
+								mit Dr. Prof. Michael Lehmann (Bfh) durchgeführt. Er kennt sich in diesem Bereich aus
+								da er im Psychiatrie Zentrum in Münsingen gearbeitet hatte.
+								- Das Interview war sehr hilfreich -> viele Insiderinformationen
+								- konnten neue Features davon ableiten
+								- welche wir in unsere Dokumentation und Prototypen eingebaut haben
 								
