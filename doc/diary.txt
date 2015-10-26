@@ -119,7 +119,7 @@
 								
 								Ziel: Spätestens am 28.10.15 sind alle Diagramme erstellt. 		   
 												   
-23.10.15 - Team meeting: Task7: anwesend im meating: Shpend Vladi, Sarah Mele, Luca Ramos und Yannis Portmann
+23.10.15 - Team meeting: Task7: anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos und Yannis Portmann
 								Aufteilung der Teilaufgaben in Zweiergruppen:
 								- Sarah Mele und Yannis Portmann -> UML Domain Model
 								- Shpend Vladi und Luca Ramos -> UML sequence Diagram (based on UML Domain Model)
@@ -128,7 +128,7 @@
 								sollten Sarah Mele und Yannis Portmann die Domain Models bis spätestens am 04.11.15
 								fertigstellen.
 								
-26.10.15 - Team meeting: Task7: anwesend im meeting: "Shpend Vladi", die anderen arbeiten zu Hause am Task da Herr 
+26.10.15 - Team meeting: Task7: anwesend im Unterricht: "Shpend Vladi", die anderen arbeiten zu Hause am Task da Herr 
 								Vogel heute ausfällt.
 								
 								
