@@ -68,7 +68,7 @@
 								
 								bubbl.us - Username: bfhteamgreen   Password: teamgreen963 
 								
-12.10.15 - Team meeting: Task3	anwesend im meating: Shpend Vladi, Sarah Mele, Luca Ramos, Manuel Pfister
+12.10.15 - Team meeting: Task3	anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos, Manuel Pfister
 								Prototyping
 									- 3 Storyboards ausgewählt
 										-> aus den 3 Storynoards sollen 3 Prototypen entstehen (Luca Ramos, Portmann)
@@ -97,18 +97,18 @@
 13.10.15 - Fertigstellung Task3: Die Prototypen, die Dokumentation, und die Presentation zum Task 3 wurden 
 								 fertig gestellt. Präsentieren werden Manuel Pfister, Sarah Mele und Luca Ramos.
 
-14.10.15 - Team meeting: Task3:	Anwesend im meating: Shpend Vladi, Sarah Mele, Luca Ramos
+14.10.15 - Team meeting: Task3:	Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos
 								Herr Vogel ist krankheitsbedingt ausgefallen, so haben wir letzte Änderungen an der
 								Präsentation vorgenommen und werden nun am 16.10.15 präsentieren.
 								
-16.10.15 - Team meeting: Task3: Anwesend im meating: Shpend Vladi, Sarah Mele, Luca Ramos, Yanis Portmann, 
+16.10.15 - Team meeting: Task3: Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos, Yanis Portmann, 
 								Manuel Pfister. Präsentation von Task 3
 
-19.10.15 - Team meeting: Task6: Anwesend im meating: Shpend Vladi, Sarah Mele, Luca Ramos
+19.10.15 - Team meeting: Task6: Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos
 								Wir haben das Context Model  von Hand aufgezeichnet. Wir werden es mit es noch mit
 								Yanis Portmann besprechen und dann elektronisch aufzeichnen.
 										
-21.10.15 - Team meeting: Task6: Anwesend im meating: Shpend Vladi, Sarah Mele, Luca Ramos
+21.10.15 - Team meeting: Task6: Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos
 								Aufteilung der Aufgaben:
 								- Shpend Vladi -> 1. Von Hand gezeichnetes Context Model elektronisch übernehmen.
 												  2. Activity diagram zur Kommunikation mit dem Terminverwaltungssystem
