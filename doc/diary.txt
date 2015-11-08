@@ -134,5 +134,8 @@
 26.10.15 - Team meeting: Task7: Sarah und Yannis arbeiten das UML Klassendiagramm aus (Domain Model)
 
 29.10.15 - Team meeting: Task6: Anwesend im meeting: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann. Finale Besprechung
-								vom Task6 und vervollständigung des Dokumentes.
+								vom Task6 und Vervollständigung des Dokumentes.
+								
+29.10.15 - Team meeting: Task7: Anwesend im meeting: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
+								Finale Besprechung vom Task7.
 								
