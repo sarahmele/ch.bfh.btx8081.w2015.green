@@ -138,4 +138,15 @@
 								
 29.10.15 - Team meeting: Task7: Anwesend im meeting: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
 								Finale Besprechung vom Task7.
+
+09.11.15 - Präsentation: Task7: Anwesend an der Präsentation: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
+								Präsentiert von: Yannis Portmann und Shpend Vladi
+
+18.11.15 - Team meeting: Task_IDE_Setup: 
+								Anwesend im meeting: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
+								Installation von Maven, Vaadin und weitere Updates von Java und Eclipse.
+								
+19.11.15 - Team meeting: Task9 und Task10:
+								Task9: Darstellung unserer Softwarearchitektur anhand unseres Klassendiagramms.
+								Task10:Scrum Setup
 								
