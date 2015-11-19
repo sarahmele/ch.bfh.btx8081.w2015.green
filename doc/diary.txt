@@ -147,6 +147,7 @@
 								Installation von Maven, Vaadin und weitere Updates von Java und Eclipse.
 								
 19.11.15 - Team meeting: Task9 und Task10:
+								Anwesend im meeting: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
 								Task9: Darstellung unserer Softwarearchitektur anhand unseres Klassendiagramms.
 								Task10:Scrum Setup
 								
