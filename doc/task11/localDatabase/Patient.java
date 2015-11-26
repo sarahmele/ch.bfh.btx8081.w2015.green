@@ -13,6 +13,9 @@ public class Patient extends Person {
 	@OneToMany(mappedBy = "patient")
 	private final List<PatientCase> cases = new ArrayList<PatientCase>();
 
+	@OneToMany(mappedBy = "patient")
+	private final List<Treatment> treatments = new ArrayList<Treatment>();
+	
 	public Insurance getInsurance() {
 		return insurance;
 	}
@@ -31,5 +34,17 @@ public class Patient extends Person {
 
 	public void addPatientCase(PatientCase p) {
 		cases.add(p);
+	}
+	
+	public List<Treatment> getTreatment() {
+		return treatments;
+	}
+
+	public void removeTreatment(Treatment p) {
+		treatments.remove(p);
+	}
+
+	public void addTreatment(Treatment p) {
+		treatments.add(p);
 	}
 }
