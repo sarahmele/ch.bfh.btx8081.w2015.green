@@ -14,7 +14,7 @@ public class Treatment {
 	
 	private String treatmentPlan;
 	private String medication;
-	private boolean invoiced = false;
+
 
 	public Date getTreatmentDate() {
 		return treatmentDate;
@@ -56,11 +56,4 @@ public class Treatment {
 		this.medication = medication;
 	}
 	
-	public boolean isInvoiced() {
-		return invoiced;
-	}
-
-	public void setInvoiced(boolean invoiced) {
-		this.invoiced = invoiced;
-	}
 }
