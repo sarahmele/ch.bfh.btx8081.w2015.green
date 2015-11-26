@@ -1,7 +1,4 @@
 
-
-
-
 @Entity
 @Inheritance(strateg=InheritanceType.JOINED)
 @DiscriminatorColumn(name="Person_Type")
