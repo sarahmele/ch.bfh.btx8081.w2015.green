@@ -22,6 +22,15 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
-public class CaseView {
+@Theme("mytheme")
+@Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
+public class CaseView extends UI {
+
+	@Override
+	protected void init(VaadinRequest request) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 }
