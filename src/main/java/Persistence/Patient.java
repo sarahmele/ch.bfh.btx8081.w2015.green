@@ -27,13 +27,6 @@ public class Patient extends Person {
 	@OneToMany(mappedBy = "patient")
 	private final List<Treatment> treatments = new ArrayList<Treatment>();
 	
-	public Insurance getInsurance() {
-		return insurance;
-	}
-
-	public void setInsurance(Insurance insurance) {
-		this.insurance = insurance;
-	}
 
 	public List<PatientCase> getPatientCases() {
 		return cases;
