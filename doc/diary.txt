@@ -147,7 +147,18 @@
 								Installation von Maven, Vaadin und weitere Updates von Java und Eclipse.
 								
 19.11.15 - Team meeting: Task9 und Task10:
-								Anwesend im meeting: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
+								Anwesend im meeting: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann.
 								Task9: Darstellung unserer Softwarearchitektur anhand unseres Klassendiagramms.
 								Task10:Scrum Setup
 								
+23.11.15 - Team meeting: Task10:Anwesend im meeting: Luca Ramos, Shpend Vladi, Sarah Mele
+								Präsentation unserer Softwarearchitekture und SCRUM-Planung.
+								Erstes Daily SCRUM: Wegen der dieser Woche eingeschränkten Personalrecoursen-> Vladi und Ramos erstellen
+								ein Datenbankmodel und sind für die Implementierung verantwortlich. Sahrah Mele arbeitet sich in die Views
+								und Pfister macht das Login.
+
+25.11.15 - Team meeting: Task11:Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele, Manuel Pfister
+								Arbeiten an der Implementation: Views-> Sarah Mele und Login-> Manuel Pfister
+								Erstellung des Datenbankmodeels: Shpend Vladi parallel Vorbereitung JPA Luca Ramos
+
+26.11.15 - Team meeting:
