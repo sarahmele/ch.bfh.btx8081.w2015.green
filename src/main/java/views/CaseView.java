@@ -28,7 +28,10 @@ public class CaseView extends UI {
 
 	@Override
 	protected void init(VaadinRequest request) {
-		// TODO Auto-generated method stub
+		getPage().setTitle("Hello Window");
+		VerticalLayout content = new VerticalLayout();
+		setContent(content);
+		content.addComponent(new Label("Hello World!"));
 		
 	}
 	
