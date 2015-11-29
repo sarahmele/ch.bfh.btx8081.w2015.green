@@ -1,10 +1,15 @@
 package views;
 
+import java.io.File;
+
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Image;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
@@ -23,7 +28,14 @@ public class HomeView extends VerticalLayout implements View {
 		setSpacing(true);
 		
 		Label label = new Label("Home");
+		// Find the application directory
+		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+		// Image as a file resource
+		FileResource resource = new FileResource(new File(basepath + "/VAADIN/images/doctor_green_small.png"));
+		// Show the image in the application
+		Image image = new Image("",resource);
 		addComponent(label);
+		addComponent(image);
 		
 	}
 
