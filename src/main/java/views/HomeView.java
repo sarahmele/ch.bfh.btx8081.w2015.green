@@ -1,6 +1,7 @@
 package views;
 
 import java.io.File;
+import java.util.Date;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
@@ -8,11 +9,18 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Button.ClickEvent;
+
+import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
+
+import com.vaadin.ui.Calendar;
+import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 
 /**
@@ -27,15 +35,31 @@ public class HomeView extends VerticalLayout implements View {
 		setSizeFull();
 		setSpacing(true);
 		
-		Label label = new Label("Home");
+		// Have a panel to put stuff in
+		Panel panel = new Panel();
+
+		// Have a horizontal split panel as its content
+		HorizontalSplitPanel hsplit = new HorizontalSplitPanel();
+		panel.setContent(hsplit);
+		
+		Calendar cal = new Calendar("Patient-Calendar");
+		cal.setStartDate(new Date());
+		cal.setEndDate(new Date());
+		
 		// Find the application directory
 		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 		// Image as a file resource
 		FileResource resource = new FileResource(new File(basepath + "/VAADIN/images/doctor_green_small.png"));
 		// Show the image in the application
 		Image image = new Image("",resource);
-		addComponent(label);
-		addComponent(image);
+		Button backButton = backButton();
+		
+		hsplit.setFirstComponent(backButton);
+		hsplit.setSecondComponent(image);
+		
+		addComponent(hsplit);
+		addComponent(cal);
+		setComponentAlignment(cal,Alignment.MIDDLE_CENTER);
 		
 	}
 
@@ -44,11 +68,11 @@ public class HomeView extends VerticalLayout implements View {
 		Notification.show("Welcome! This is Home.");
 	}
 	
-	private Button homeButton() {
-		Button button = new Button("Log In", new Button.ClickListener() {
+	private Button backButton() {
+		Button button = new Button("Back", new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
-			//	getUI().getNavigator().navigateTo(NavigationExampleUI.MAINVIEW);
+				getUI().getNavigator().navigateTo(MyUI.LOGINVIEW);
 			}
 		});
 		return button;

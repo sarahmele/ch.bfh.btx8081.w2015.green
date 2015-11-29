@@ -9,6 +9,7 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.shared.ui.label.ContentMode;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Image;
@@ -41,13 +42,19 @@ public class LoginView extends VerticalLayout implements View {
 		// Put some initial content in it
 		password.setValue("Doctor Green");
 		
+		Button loginButton = loginButton();
+		
 		addComponent(image);
+		setComponentAlignment(image,Alignment.TOP_CENTER);
 		addComponent(new Label("&nbsp;", ContentMode.HTML));
 		addComponent(username);
+		setComponentAlignment(username,Alignment.MIDDLE_CENTER);
 		addComponent(new Label("&nbsp;", ContentMode.HTML));
 		addComponent(password);
+		setComponentAlignment(password,Alignment.MIDDLE_CENTER);
 		addComponent(new Label("&nbsp;", ContentMode.HTML));
-		addComponent(loginButton());
+		addComponent(loginButton);
+		setComponentAlignment(loginButton,Alignment.BOTTOM_CENTER);
 	}
 	
 	
