@@ -40,6 +40,7 @@ public class MyUI extends UI {
 	ComponentContainerViewDisplay viewDisplay = new ComponentContainerViewDisplay(layout);
 	navigator = new Navigator(UI.getCurrent(), viewDisplay);
 	navigator.addView("", new LoginView());
+	navigator.addView(LOGINVIEW, new LoginView());
 	navigator.addView(HOMEVIEW, new HomeView());
 
     }
