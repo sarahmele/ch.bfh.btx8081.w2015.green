@@ -48,9 +48,9 @@ public class CaseView extends VerticalLayout implements View {
 		// Create the treatmentTab
 		VerticalLayout treatmentTab = new VerticalLayout();
 		treatmentTab.addComponent(new Embedded(null,
-		        new ThemeResource("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")));
+		        new ThemeResource("/VAADIN/images/doctor_green.png")));
 		tabsheet.addTab(treatmentTab, "Treatment",
-		        new ThemeResource("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset"));
+		        new ThemeResource("/VAADIN/images/doctor_green.png"));
 		
 		
 		
@@ -68,7 +68,7 @@ public class CaseView extends VerticalLayout implements View {
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		Notification.show("Welcome! This is Home.");
+		Notification.show("PatientCase");
 	}
 	
 	private Button backButton() {
