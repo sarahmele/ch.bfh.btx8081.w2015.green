@@ -1,164 +1,174 @@
 
-24.09.15 - Team meeting:Task1: 	Wir haben im Team Lösungen zum Task1 erarbeitet und 
-								dazu eine Powerpointpräsentation für die Präsentation 
-								am Montag den 28.09.2015 erstellt. Die Folien befinden
-								sich im task01-Ordner.
+24.09.15 - Team meeting:Task1: 	 Wir haben im Team Lösungen zum Task1 erarbeitet und 
+								 dazu eine Powerpointpräsentation für die Präsentation 
+								 am Montag den 28.09.2015 erstellt. Die Folien befinden
+								 sich im task01-Ordner.
 						
-						Task2:	Auch zum Task2 haben wir Lösungen zum ersten Teil 
-								des Tasks erarbeitet und in einer 
-								Powerpointpräsentation festgehalten. Auch hier haben 
-								wir einen Ordner mit dem Namen task02 erstellt in dem 
-								sich die Powerpointpräsentation vom 28.09.2015 
-								befindet. Die Lösungen zum zweiten Teil des Tasks, 
-								also die voraussichtliche Gesamtplanung des Projekts,
-								werden wir am 25.09.2015 ausserhalb der 
-								Unterrichtszeiten erarbeiten und der Powerpoint-
-								präsentation hinzufügen.
+						Task2:	 Auch zum Task2 haben wir Lösungen zum ersten Teil 
+								 des Tasks erarbeitet und in einer 
+								 Powerpointpräsentation festgehalten. Auch hier haben 
+								 wir einen Ordner mit dem Namen task02 erstellt in dem 
+								 sich die Powerpointpräsentation vom 28.09.2015 
+								 befindet. Die Lösungen zum zweiten Teil des Tasks, 
+								 also die voraussichtliche Gesamtplanung des Projekts,
+								 werden wir am 25.09.2015 ausserhalb der 
+								 Unterrichtszeiten erarbeiten und der Powerpoint-
+								 präsentation hinzufügen.
 								
-25.09.15- Team meeting:	Task2:	Im heutigen team meeting haben wir unsere Projekt-
-								planung definiert, wie wir vorgehen wollen. Details
-								sind in der Powerpointpräsentation zum Task2.	
+25.09.15- Team meeting:	Task2:	 Im heutigen team meeting haben wir unsere Projekt-
+								 planung definiert, wie wir vorgehen wollen. Details
+								 sind in der Powerpointpräsentation zum Task2.	
 								
-28.09.15 - Präsentation Task2:	Heute haben wir im Rahmen des Unterrichts den Task2 präsentiert.
+28.09.15 - Präsentation Task2:	 Heute haben wir im Rahmen des Unterrichts den Task2 präsentiert.
 								
-05.10.15 - Team meeting: Task3: Interview-Fragen vorbereitet
-06.10.15 - Interview Task 3		Interview mit dem Leiter einer Psychiatrischen Klinik geführt. 
-								Genaue Informationen darüber folgen.
+05.10.15 - Team meeting: Task3:  Interview-Fragen vorbereitet
+06.10.15 - Interview Task 3		 Interview mit dem Leiter einer Psychiatrischen Klinik geführt. 
+								 Genaue Informationen darüber folgen.
 								
-07.10.15 - Team meeting: Task3:	Ein Interview wurde am 06.10.15 an der SILEA (Stiftung für Integriertes Leben und 
-								Arbeiten) in Thun durchgeführt. Die Stiftung betreut geistig, physisch und teilweise 
-								psychisch beeinträchtigte Menschen. Das Interview wurde mit einem Mitglied vom 
-								Management durchgeführt. Das Resultat des Interviews ist leider nicht passend zu unserer
-								Aufgabenstellung. Ein Verwaltungssystem wird schon angewendet welche keine speziellen
-								Features zu Erleichterung der Behandlung beinhaltet -> Software heisst Abacus.
-								Was in seinen Augen sehr wichtig wäre ist, dass die Leistungserfassung mit IT-
-								Hilfe erleichtert werden soll, da man für einen Pflegeaufwand die doppelte Zeit braucht,
-								weil es eben auch schriftrich auf Papier dokumentiert werden muss. Auch die Unterstütz-
-								ung zum Piquettdienst wäre interessant. Die Erkenntnis aus diesem Interview	ist dass 
-								wir bestehende Verwaltungsfeatures in unsere Applikation aufnehmen können. Aber wir 
-								brauchen weiterhin zusätzliche Features welche die Behandlung eines psychisch kranken
-								Patienten erleichtern.
+07.10.15 - Team meeting: Task3:	 Ein Interview wurde am 06.10.15 an der SILEA (Stiftung für Integriertes Leben und 
+								 Arbeiten) in Thun durchgeführt. Die Stiftung betreut geistig, physisch und teilweise 
+								 psychisch beeinträchtigte Menschen. Das Interview wurde mit einem Mitglied vom 
+								 Management durchgeführt. Das Resultat des Interviews ist leider nicht passend zu unserer
+								 Aufgabenstellung. Ein Verwaltungssystem wird schon angewendet welche keine speziellen
+								 Features zu Erleichterung der Behandlung beinhaltet -> Software heisst Abacus.
+								 Was in seinen Augen sehr wichtig wäre ist, dass die Leistungserfassung mit IT-
+								 Hilfe erleichtert werden soll, da man für einen Pflegeaufwand die doppelte Zeit braucht,
+								 weil es eben auch schriftrich auf Papier dokumentiert werden muss. Auch die Unterstütz-
+								 ung zum Piquettdienst wäre interessant. Die Erkenntnis aus diesem Interview	ist dass 
+								 wir bestehende Verwaltungsfeatures in unsere Applikation aufnehmen können. Aber wir 
+								 brauchen weiterhin zusätzliche Features welche die Behandlung eines psychisch kranken
+								 Patienten erleichtern.
 								
-								In der heutigen Unterrichtszeit haben wir zu dem mit dem Task3 (Design Thiinking)
-								angefangen. Für die Aufgaben 1-3  wurden Notizen in ein Worddokument aufgenommen.
-								Auch mit der Aufgabe 4 haben wir angefangen Storyboards zu zeichnen. Jedes Gruppen-
-								mitglied hat begonnen mehrere Storyboards zu zeichnen. Am 08.10.15 werden wir damit 
-								weiterfahren und dann die 3 besten auswählen.
+								 In der heutigen Unterrichtszeit haben wir zu dem mit dem Task3 (Design Thiinking)
+								 angefangen. Für die Aufgaben 1-3  wurden Notizen in ein Worddokument aufgenommen.
+								 Auch mit der Aufgabe 4 haben wir angefangen Storyboards zu zeichnen. Jedes Gruppen-
+								 mitglied hat begonnen mehrere Storyboards zu zeichnen. Am 08.10.15 werden wir damit 
+								 weiterfahren und dann die 3 besten auswählen.
 
-08.10.15 - Team meeting: Task3  Verteilung der Aufgaben
-								Research
+08.10.15 - Team meeting: Task3   Verteilung der Aufgaben
+								 Research
 									- Ähnliche Seiten/Software suchen - Alle
 									- Field study evtl. 
 									- Interview - Pfister 
-								Synthesize 
+								 Synthesize 
 									- collect - Alle
 									- Main features!
 										- Brainstorming auf bubbl.us 
 										-> Sarah sendet Link -> alle eintragen -> bis Freitag Abend 00:00
-								Design
+								 Design
 									- Storyboards
 										-> jeder 2 bis Freitag Abend 00:00
 										-> Samstag im Chat besprechen welche 3
-								Prototyping
+								 Prototyping
 									- bis Sonntag abend!
 								
-								Montag: Teammeeting - Vorbereitung Präsentation, Dokumentation abschliessen
+								 Montag: Teammeeting - Vorbereitung Präsentation, Dokumentation abschliessen
 								
-								=> Ergebnisse laufend in Dokumentation_Task3 schreiben/posten.
+								 => Ergebnisse laufend in Dokumentation_Task3 schreiben/posten.
 								
-								bubbl.us - Username: bfhteamgreen   Password: teamgreen963 
+								 bubbl.us - Username: bfhteamgreen   Password: teamgreen963 
 								
-12.10.15 - Team meeting: Task3	anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos, Manuel Pfister
-								Prototyping
+12.10.15 - Team meeting: Task3	 anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos, Manuel Pfister
+								 Prototyping
 									- 3 Storyboards ausgewählt
 										-> aus den 3 Storynoards sollen 3 Prototypen entstehen (Luca Ramos, Portmann)
-								Brainstorming
+								 Brainstorming
 									- weitere Features aus dem meeting ins bubbl.us eingefügt (Shpend Vladi)
-								Dokumentation
+								 Dokumentation
 									- Weiterführung der Dokumentation (Sarah Mele)
-								Interviewtermin
+								 Interviewtermin
 									- Heute um 14.30 im 305 mit Herr Lehmann (Sarah Mele, Luca Ramos)
-								Präsentation
+								 Präsentation
 									- Vorbereitung (alle)
 									- Ausführung (Manuel Pfister, Sarah Mele)
-								Ziele
+								 Ziele
 									- Prototypen bis Dienstag Abend fertig
 									- Dokumentation bis Dienstag Abend fertig
 									- Powerpoint Präsentation bis Dienstag Abend fertig
 									- Damit am Mittwoch besprochen werden kann wie die Präsentation ablaufen soll
 
-12.10.15 - Interview zum Task3:	Von 14:30 bis 15:15 haben 2 Teammitglieder (Luca Ramos und Sarah Mele) ein Interview
-								mit Dr. Prof. Michael Lehmann (Bfh) durchgeführt. Er kennt sich in diesem Bereich aus
-								da er im Psychiatrie Zentrum in Münsingen gearbeitet hatte.
-								- Das Interview war sehr hilfreich -> viele Insiderinformationen
-								- konnten neue Features davon ableiten
-								- welche wir in unsere Dokumentation und Prototypen eingebaut haben
+12.10.15 - Interview zum Task3:	 Von 14:30 bis 15:15 haben 2 Teammitglieder (Luca Ramos und Sarah Mele) ein Interview
+								 mit Dr. Prof. Michael Lehmann (Bfh) durchgeführt. Er kennt sich in diesem Bereich aus
+								 da er im Psychiatrie Zentrum in Münsingen gearbeitet hatte.
+								 - Das Interview war sehr hilfreich -> viele Insiderinformationen
+								 - konnten neue Features davon ableiten
+								 - welche wir in unsere Dokumentation und Prototypen eingebaut haben
 
 13.10.15 - Fertigstellung Task3: Die Prototypen, die Dokumentation, und die Presentation zum Task 3 wurden 
 								 fertig gestellt. Präsentieren werden Manuel Pfister, Sarah Mele und Luca Ramos.
 
-14.10.15 - Team meeting: Task3:	Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos
-								Herr Vogel ist krankheitsbedingt ausgefallen, so haben wir letzte Änderungen an der
-								Präsentation vorgenommen und werden nun am 16.10.15 präsentieren.
+14.10.15 - Team meeting: Task3:	 Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos
+								 Herr Vogel ist krankheitsbedingt ausgefallen, so haben wir letzte Änderungen an der
+								 Präsentation vorgenommen und werden nun am 16.10.15 präsentieren.
 								
-16.10.15 - Team meeting: Task3: Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos, Yanis Portmann, 
-								Manuel Pfister. Präsentation von Task 3
+16.10.15 - Team meeting: Task3:  Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos, Yanis Portmann, 
+								 Manuel Pfister. Präsentation von Task 3
 
-19.10.15 - Team meeting: Task6: Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos
-								Wir haben das Context Model  von Hand aufgezeichnet. Wir werden es mit es noch mit
-								Yanis Portmann besprechen und dann elektronisch aufzeichnen.
+19.10.15 - Team meeting: Task6:  Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos
+								 Wir haben das Context Model  von Hand aufgezeichnet. Wir werden es mit es noch mit
+								 Yanis Portmann besprechen und dann elektronisch aufzeichnen.
 										
-21.10.15 - Team meeting: Task6: Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos
-								Aufteilung der Aufgaben:
-								- Shpend Vladi -> 1. Von Hand gezeichnetes Context Model elektronisch übernehmen.
+21.10.15 - Team meeting: Task6:  Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos
+								 Aufteilung der Aufgaben:
+								 - Shpend Vladi -> 1. Von Hand gezeichnetes Context Model elektronisch übernehmen.
 												  2. Activity diagram zur Kommunikation mit dem Terminverwaltungssystem
-								- Sarah Mele -> Activity diagram zur Kommunikation mit dem Patientenüberweisungssystem
-								- Luca Ramos -> Activity diagram zur Kommunikation mit dem Abrechnungssystem
-								- Yannis Portmann->1.Activity diagram zur Kommunikation mit der Medikamenten Datenbank
+								 - Sarah Mele -> Activity diagram zur Kommunikation mit dem Patientenüberweisungssystem
+								 - Luca Ramos -> Activity diagram zur Kommunikation mit dem Abrechnungssystem
+								 - Yannis Portmann->1.Activity diagram zur Kommunikation mit der Medikamenten Datenbank
 												   2.Activity diagram zur Kommunikation mit dem Patientenverwaltungssystem
 								
-								Ziel: Spätestens am 28.10.15 sind alle Diagramme erstellt. 		   
+								 Ziel: Spätestens am 28.10.15 sind alle Diagramme erstellt. 		   
 												   
-23.10.15 - Team meeting: Task7: Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos und Yannis Portmann
-								Aufteilung der Teilaufgaben in Zweiergruppen:
-								- Sarah Mele und Yannis Portmann -> UML Domain Model
-								- Shpend Vladi und Luca Ramos -> UML sequence Diagram (based on UML Domain Model)
+23.10.15 - Team meeting: Task7:  Anwesend im meeting: Shpend Vladi, Sarah Mele, Luca Ramos und Yannis Portmann
+								 Aufteilung der Teilaufgaben in Zweiergruppen:
+								 - Sarah Mele und Yannis Portmann -> UML Domain Model
+								 - Shpend Vladi und Luca Ramos -> UML sequence Diagram (based on UML Domain Model)
 								
-								Ziel: Damit Luca Ramos und Shpend Vladi die UML sequence Diagramme erstellen können
-								sollten Sarah Mele und Yannis Portmann die Domain Models bis spätestens am 02.11.15
-								fertigstellen.
+								 Ziel: Damit Luca Ramos und Shpend Vladi die UML sequence Diagramme erstellen können
+								 sollten Sarah Mele und Yannis Portmann die Domain Models bis spätestens am 02.11.15
+								 fertigstellen.
 								
-26.10.15 - Team meeting: Task7: Anwesend im Unterricht: "Shpend Vladi", die anderen arbeiten zu Hause am Task da Herr 
-								Vogel heute physisch nicht präsent ist.
+26.10.15 - Team meeting: Task7:  Anwesend im Unterricht: "Shpend Vladi", die anderen arbeiten zu Hause am Task da Herr 
+								 Vogel heute physisch nicht präsent ist.
 								
-26.10.15 - Team meeting: Task7: Sarah und Yannis arbeiten das UML Klassendiagramm aus (Domain Model)
+26.10.15 - Team meeting: Task7:  Sarah und Yannis arbeiten das UML Klassendiagramm aus (Domain Model)
 
-29.10.15 - Team meeting: Task6: Anwesend im meeting: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann. Finale Besprechung
-								vom Task6 und Vervollständigung des Dokumentes.
+29.10.15 - Team meeting: Task6:  Anwesend im meeting: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann. Finale Besprechung
+								 vom Task6 und Vervollständigung des Dokumentes.
 								
-29.10.15 - Team meeting: Task7: Anwesend im meeting: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
-								Finale Besprechung vom Task7.
+29.10.15 - Team meeting: Task7:  Anwesend im meeting: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
+								 Finale Besprechung vom Task7.
 
-09.11.15 - Präsentation: Task7: Anwesend an der Präsentation: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
-								Präsentiert von: Yannis Portmann und Shpend Vladi
+09.11.15 - Präsentation: Task7:  Anwesend an der Präsentation: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
+								 Präsentiert von: Yannis Portmann und Shpend Vladi
 
 18.11.15 - Team meeting: Task_IDE_Setup: 
-								Anwesend im meeting: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
-								Installation von Maven, Vaadin und weitere Updates von Java und Eclipse.
+								 Anwesend im meeting: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann.
+								 Installation von Maven, Vaadin und weitere Updates von Java und Eclipse.
 								
 19.11.15 - Team meeting: Task9 und Task10:
-								Anwesend im meeting: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann.
-								Task9: Darstellung unserer Softwarearchitektur anhand unseres Klassendiagramms.
-								Task10:Scrum Setup
+								 Anwesend im meeting: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann.
+								 Task9: Darstellung unserer Softwarearchitektur anhand unseres Klassendiagramms.
+								 Task10:Scrum Setup
 								
-23.11.15 - Team meeting: Task10:Anwesend im meeting: Luca Ramos, Shpend Vladi, Sarah Mele
-								Präsentation unserer Softwarearchitekture und SCRUM-Planung.
-								Erstes Daily SCRUM: Wegen der dieser Woche eingeschränkten Personalrecoursen-> Vladi und Ramos erstellen
-								ein Datenbankmodel und sind für die Implementierung verantwortlich. Sahrah Mele arbeitet sich in die Views
-								und Pfister macht das Login.
+23.11.15 - Team meeting: Task10: Anwesend im meeting: Luca Ramos, Shpend Vladi, Sarah Mele
+								 Präsentation unserer Softwarearchitekture und SCRUM-Planung.
+								 Erstes Daily SCRUM: Wegen der dieser Woche eingeschränkten Personalrecoursen-> Vladi und Ramos erstellen
+								 ein Datenbankmodel und sind für die Implementierung verantwortlich. Sahrah Mele arbeitet sich in die Views
+								 und Pfister macht das Login.
 
-25.11.15 - Team meeting: Task11:Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele, Manuel Pfister
-								Arbeiten an der Implementation: Views-> Sarah Mele und Login-> Manuel Pfister
-								Erstellung des Datenbankmodeels: Shpend Vladi parallel Vorbereitung JPA Luca Ramos
+25.11.15 - Team meeting: Task11: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele, Manuel Pfister
+								 Arbeiten an der Implementation: Views-> Sarah Mele und Login-> Manuel Pfister
+								 Erstellung des Datenbankmodels: Shpend Vladi parallel Vorbereitung JPA Luca Ramos
 
-26.11.15 - Team meeting:
+26.11.15 - Team meeting: Task11: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
+								 Fertigstellung Datenbankenmodels: Shpend Vladi
+								 Erstellung der Klassen für JPA: Luca Ramos, Shpend Vladi
+								 Erstellung CaseView: Luca Ramos
+								 Arbeiten an dem UI: Sarah Mele
+								 
+30.11.15 - Team meeting: Task11: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele, Manuel Pfister
+								 Fertigstellung LoginView & HomeView: Sarah Mele
+								 Fertigstellung LoginView Logik: Manuel Pfister
+								 Fertigstellung Klassenmodell JPA: Luca Ramos, Shpend Vladi	
+								 Besprechung weiteres Vorgehen in der Gruppe. Wie Implementierung vom CaseView und TreatmentView						 
