@@ -47,10 +47,8 @@ public class CaseView extends VerticalLayout implements View {
 
 		// Create the treatmentTab
 		VerticalLayout treatmentTab = new VerticalLayout();
-		treatmentTab.addComponent(new Embedded(null,
-		        new ThemeResource("http://www.windmillhealthcentre.nhs.uk/website/B86007/files/Green%20Doc%20TM.jpg")));
-		tabsheet.addTab(treatmentTab, "Treatment",
-		        new ThemeResource("http://www.windmillhealthcentre.nhs.uk/website/B86007/files/Green%20Doc%20TM.jpg"));
+		treatmentTab.addComponent(new Embedded(null));
+		tabsheet.addTab(treatmentTab, "Treatment");
 		
 		
 		
