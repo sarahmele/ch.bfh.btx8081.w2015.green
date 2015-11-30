@@ -40,30 +40,28 @@ public class CaseView extends VerticalLayout implements View {
 		
 		// Have a horizontal split panel as its content
 		HorizontalSplitPanel hsplit = new HorizontalSplitPanel();
+		HorizontalSplitPanel hsplit2 = new HorizontalSplitPanel();
 		panel.setContent(hsplit);
+		panel.setContent(hsplit2);
 		
 
 		// Create the treatmentTab
 		VerticalLayout treatmentTab = new VerticalLayout();
 		treatmentTab.addComponent(new Embedded(null,
-		        new ThemeResource("img/planets/Mercury.jpg")));
+		        new ThemeResource("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")));
 		tabsheet.addTab(treatmentTab, "Treatment",
-		        new ThemeResource("img/planets/Mercury_symbol.png"));
+		        new ThemeResource("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset"));
 		
 		
 		
-		// Find the application directory
-		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
-		// Image as a file resource
-		FileResource resource = new FileResource(new File(basepath + "/VAADIN/images/doctor_green_small.png"));
 		// Show the image in the application
-		Image image = new Image("",resource);
 		Button backButton = backButton();
 		
 		hsplit.setFirstComponent(backButton);
-		hsplit.setSecondComponent(image);
+		hsplit2.setFirstComponent(treatmentTab);
 		
 		addComponent(hsplit);
+		addComponent(hsplit2);
 
 		
 	}
