@@ -56,7 +56,7 @@ public class HomeView extends VerticalLayout implements View {
 		Button caseView_Button = caseView_Button();
 		
 		hsplit.setFirstComponent(backButton);
-		hsplit.addComponent(caseView_Button);
+		hsplit.setFirstComponent(caseView_Button);
 		hsplit.setSecondComponent(image);
 		
 		addComponent(hsplit);
