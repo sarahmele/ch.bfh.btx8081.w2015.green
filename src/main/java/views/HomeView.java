@@ -40,7 +40,9 @@ public class HomeView extends VerticalLayout implements View {
 
 		// Have a horizontal split panel as its content
 		HorizontalSplitPanel hsplit = new HorizontalSplitPanel();
+		HorizontalSplitPanel hsplit2 = new HorizontalSplitPanel();
 		panel.setContent(hsplit);
+		panel.setContent(hsplit2);
 		
 		Calendar cal = new Calendar("Patient-Calendar");
 		cal.setStartDate(new Date());
@@ -56,10 +58,12 @@ public class HomeView extends VerticalLayout implements View {
 		Button caseView_Button = caseView_Button();
 		
 		hsplit.setFirstComponent(backButton);
-		hsplit.setFirstComponent(caseView_Button);
 		hsplit.setSecondComponent(image);
 		
+		hsplit2.setFirstComponent(caseView_Button);
+		
 		addComponent(hsplit);
+		addComponent(hsplit2);
 		addComponent(cal);
 		setComponentAlignment(cal,Alignment.MIDDLE_CENTER);
 		
