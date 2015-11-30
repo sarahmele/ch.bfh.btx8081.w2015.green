@@ -11,6 +11,8 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+
+import views.CaseView;
 import views.HomeView;
 import views.LoginView;
 
@@ -42,6 +44,7 @@ public class MyUI extends UI {
 	navigator.addView("", new LoginView());
 	navigator.addView(LOGINVIEW, new LoginView());
 	navigator.addView(HOMEVIEW, new HomeView());
+	navigator.addView(CASEVIEW, new CaseView());
 
     }
 
