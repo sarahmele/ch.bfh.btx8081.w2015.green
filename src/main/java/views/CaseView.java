@@ -37,6 +37,7 @@ public class CaseView extends VerticalLayout implements View {
 		// Have a panel to put stuff in
 		Panel panel = new Panel();
 		TabSheet tabsheet = new TabSheet();
+
 		
 		// Have a horizontal split panel as its content
 		HorizontalSplitPanel hsplit = new HorizontalSplitPanel();
