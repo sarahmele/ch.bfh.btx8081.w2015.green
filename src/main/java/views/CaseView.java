@@ -40,9 +40,7 @@ public class CaseView extends VerticalLayout implements View {
 		
 		// Have a horizontal split panel as its content
 		HorizontalSplitPanel hsplit = new HorizontalSplitPanel();
-		HorizontalSplitPanel hsplit2 = new HorizontalSplitPanel();
 		panel.setContent(hsplit);
-		panel.setContent(hsplit2);
 		
 
 		// Create the treatmentTab
@@ -56,10 +54,9 @@ public class CaseView extends VerticalLayout implements View {
 		Button backButton = backButton();
 		
 		hsplit.setFirstComponent(backButton);
-		hsplit2.setFirstComponent(treatmentTab);
 		
 		addComponent(hsplit);
-		addComponent(hsplit2);
+		addComponent(treatmentTab);
 
 		
 	}
