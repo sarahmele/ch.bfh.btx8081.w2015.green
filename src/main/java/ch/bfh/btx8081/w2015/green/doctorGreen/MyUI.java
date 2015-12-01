@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2015.green.doctorGreen;
 
 
 import javax.servlet.annotation.WebServlet;
+
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
@@ -15,6 +16,7 @@ import com.vaadin.ui.VerticalLayout;
 import views.CaseView;
 import views.HomeView;
 import views.LoginView;
+import views.TreatmentView;
 
 /**
  *
@@ -45,6 +47,7 @@ public class MyUI extends UI {
 	navigator.addView(LOGINVIEW, new LoginView());
 	navigator.addView(HOMEVIEW, new HomeView());
 	navigator.addView(CASEVIEW, new CaseView());
+	navigator.addView(TREATMENTVIEW, new TreatmentView());
 
     }
 
