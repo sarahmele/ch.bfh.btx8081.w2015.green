@@ -20,11 +20,17 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
+import controller.LogAuthor;
 
 @SuppressWarnings("serial")
 @Theme("mytheme")
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
 public class LoginView extends VerticalLayout implements View {
+	
+	private TextField username;
+	private PasswordField password;
+	private String MyResult = null;
+
 	
 	public LoginView() {
 		setSizeFull();
@@ -37,10 +43,11 @@ public class LoginView extends VerticalLayout implements View {
         // Show the image in the application
         Image image = new Image("",resource);
         
-        TextField username = new TextField("Username");
-		PasswordField password = new PasswordField("Password");
+        // Username and Password
+        username = new TextField("Username");
+		password = new PasswordField("Password");
 		// Put some initial content in it
-		password.setValue("Doctor Green");
+		// password.setValue("Doctor Green");
 		
 		Button loginButton = loginButton();
 		
@@ -62,9 +69,23 @@ public class LoginView extends VerticalLayout implements View {
 		Button button = new Button("Log In", new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
+				System.out.println("value:"+username.getValue());
+				
+				/*final String MyLog = username.getValue();
+				final String MyPass = password.getValue();
+				LogAuthor logAuthor = new LogAuthor();
+				logAuthor.CheckAcces(MyLog, MyPass);
+
+				MyResult = logAuthor.getResult();
+
+				if (MyResult == "true"){ 
+				*/
+				
 				getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
-			}
-		});
+				/*}
+				else { Notification.show("Login is not correct.");
+			}*/
+		}});
 		return button;
 	}	
 
