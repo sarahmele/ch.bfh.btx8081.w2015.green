@@ -28,7 +28,7 @@ public class MyUI extends UI {
 	// Defining all views
 	public static final String LOGINVIEW = "login";
 	public static final String HOMEVIEW = "home";
-	public static final String SEARCHVIEW = "search";
+	public static final String PATIENTSEARCHVIEW = "patientSearch";
 	public static final String CASEVIEW = "case";
 	public static final String PATIENTVIEW = "patient";
 	public static final String MESSAGEVIEW = "message";
@@ -46,7 +46,8 @@ public class MyUI extends UI {
 	navigator.addView(LOGINVIEW, new LoginView());
 	navigator.addView(HOMEVIEW, new HomeView());
 	navigator.addView(CASEVIEW, new CaseView());
-	//navigator.addView(PATIENTVIEW, new PatientView());
+	navigator.addView(PATIENTSEARCHVIEW, new PatientSearchView());
+	navigator.addView(PATIENTVIEW, new PatientView());
 
     }
 
