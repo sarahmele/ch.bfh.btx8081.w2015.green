@@ -12,11 +12,8 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import ch.bfh.btx8081.w2015.green.doctorGreen.views.*;
 
-import views.CaseView;
-import views.HomeView;
-import views.LoginView;
-import views.TreatmentView;
 
 /**
  *
