@@ -13,10 +13,10 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx8081.w2015.green.views.CaseView;
-import ch.bfh.btx8081.w2015.green.views.HomeView;
-import ch.bfh.btx8081.w2015.green.views.LoginView;
-import ch.bfh.btx8081.w2015.green.views.TreatmentView;
+import views.CaseView;
+import views.HomeView;
+import views.LoginView;
+import views.TreatmentView;
 
 /**
  *
