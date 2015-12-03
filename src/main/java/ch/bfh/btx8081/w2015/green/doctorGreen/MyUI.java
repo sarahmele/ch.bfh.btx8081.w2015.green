@@ -13,10 +13,10 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
-import views.CaseView;
-import views.HomeView;
-import views.LoginView;
-import views.TreatmentView;
+import ch.bfh.btx8081.w2015.green.views.CaseView;
+import ch.bfh.btx8081.w2015.green.views.HomeView;
+import ch.bfh.btx8081.w2015.green.views.LoginView;
+import ch.bfh.btx8081.w2015.green.views.TreatmentView;
 
 /**
  *
@@ -28,11 +28,13 @@ public class MyUI extends UI {
 
 	public Navigator navigator;
 
-	public static final String HOMEVIEW = "home";
+	// Defining all views
 	public static final String LOGINVIEW = "login";
-	public static final String CASEVIEW = "caseview";
-	public static final String MESSAGEVIEW = "messageview";
-	public static final String TREATMENTVIEW = "treatmentview";
+	public static final String HOMEVIEW = "home";
+	public static final String SEARCHVIEW = "search";
+	public static final String CASEVIEW = "case";
+	public static final String PATIENTVIEW = "patient";
+	public static final String MESSAGEVIEW = "message";
 
 	@Override
 	protected void init(VaadinRequest request) {
@@ -47,7 +49,7 @@ public class MyUI extends UI {
 	navigator.addView(LOGINVIEW, new LoginView());
 	navigator.addView(HOMEVIEW, new HomeView());
 	navigator.addView(CASEVIEW, new CaseView());
-	navigator.addView(TREATMENTVIEW, new TreatmentView());
+	//navigator.addView(PATIENTVIEW, new PatientView());
 
     }
 
