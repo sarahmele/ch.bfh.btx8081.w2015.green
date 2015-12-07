@@ -33,7 +33,7 @@ public class Treatment {
 		return treatmentDate;
 	}
 
-	public void setTreatmentDate(Date id) {
+	public void setTreatmentDate(Date treatmentDate) {
 		this.treatmentDate = treatmentDate;
 	}
 
@@ -65,7 +65,7 @@ public class Treatment {
 		return medication;
 	}
 	
-	public void setTreatmentPlan(String medication) {
+	public void setMedication(String medication) {
 		this.medication = medication;
 	}
 	

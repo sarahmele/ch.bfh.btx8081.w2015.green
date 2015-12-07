@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name="Doctor")
 public class Doctor extends Person {
 	
-	protected Date 		emp_Date;
+	protected Date 		empDate;
 	protected String	title;
 	protected String	username;
 	protected String	password;
@@ -56,19 +56,19 @@ public class Doctor extends Person {
 		messages.add(m);
 	}
 	
-	public Date getEmp_Date() {
-		return emp_Date;
+	public Date getEmpDate() {
+		return empDate;
 	}
 	
-	public vopid setEmp_Date(String emp_Date) {
-		this.emp_Date = emp_Date;
+	public void setEmpDate(Date empDate) {
+		this.empDate = empDate;
 	}
 	
 	public String getTitle() {
 		return title;
 	}
 	
-	public vopid setTitle(String title) {
+	public void setTitle(String title) {
 		this.title = title;
 	}
 	
@@ -76,7 +76,7 @@ public class Doctor extends Person {
 		return username;
 	}
 	
-	public vopid setUsername(String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 	
@@ -84,7 +84,7 @@ public class Doctor extends Person {
 		return password;
 	}
 	
-	public vopid setPassword(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 }

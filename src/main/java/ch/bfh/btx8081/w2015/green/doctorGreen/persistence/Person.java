@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -17,18 +18,18 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 
 @Entity
-@Inheritance(strateg=InheritanceType.JOINED)
+@Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="Person_Type")
 @Table(name="PERSON")
 public class Person {
-	@pid
+	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private String pid;
 
 	protected String firstName;
 	protected String lastName;
 	protected String gender;
-	protected String birthDate;
+	protected Date birthDate;
 
 	@OneToOne
 	protected Address address;
@@ -37,7 +38,7 @@ public class Person {
 		return pid;
 	}
 
-	public vopid setPid(String pid) {
+	public void setPid(String pid) {
 		this.pid = pid;
 	}
 
@@ -45,7 +46,7 @@ public class Person {
 		return firstName;
 	}
 
-	public vopid setFirstName(String firstName) {
+	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
@@ -53,15 +54,15 @@ public class Person {
 		return lastName;
 	}
 
-	public vopid setLastName(String lastName) {
+	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
-	public String getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 
-	public vopid setBirthDate(String birthDate) {
+	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -69,7 +70,7 @@ public class Person {
 		return gender;
 	}
 
-	public vopid setGender(String gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
@@ -77,7 +78,7 @@ public class Person {
 		return address;
 	}
 
-	public vopid setAddress(Address address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 }

@@ -17,7 +17,7 @@ import javax.persistence.Id;
 @DiscriminatorValue("PC")
 @Table(name="PatientCase")
 public class PatientCase {
-	@CaseNb
+	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private	  String	caseNb;
 	
@@ -29,11 +29,13 @@ public class PatientCase {
 	@ManyToOne
 	private Patient patient;
 	
-	@ManyToOne
-	private Treatment treatment;
+	//@ManyToOne
+	//private Treatment treatment;
 	
-	@ManyToOne
-	private Status status;
+	//@ManyToOne
+	//private String status;
+	
+	private Date fromDate;
 	
 	@OneToMany(mappedBy = "PatientCase")
 	private final List<Treatment> treatments = new ArrayList<Treatment>();
@@ -41,7 +43,7 @@ public class PatientCase {
 	@OneToMany(mappedBy = "PatientCase")
 	private final List<Status> status = new ArrayList<Status>();
 	
-	public List<Status> getTreatments() {
+	public List<Treatment> getTreatment() {
 		return treatments;
 	}
 
@@ -50,7 +52,7 @@ public class PatientCase {
 	}
 
 	public void addTreatment(Treatment t) {
-		treatment.add(t);
+		treatments.add(t);
 	}
 	
 	public List<Status> getStatus() {
@@ -70,7 +72,7 @@ public class PatientCase {
 		return caseNb;
 	}
 	
-	public voCaseNb setCaseNb(String caseNb) {
+	public void setCaseNb(String caseNb) {
 		this.caseNb = caseNb;
 	}
 	
@@ -78,7 +80,7 @@ public class PatientCase {
 		return fromDate;
 	}
 	
-	public voCaseNb setFromDate(String fromDate) {
+	public void setFromDate(Date fromDate) {
 		this.fromDate = fromDate;
 	}
 	
@@ -86,7 +88,7 @@ public class PatientCase {
 		return anamnesis;
 	}
 	
-	public voCaseNb setAnamnesis(String anamnesis) {
+	public void setAnamnesis(String anamnesis) {
 		this.anamnesis = anamnesis;
 	}
 	
@@ -94,7 +96,7 @@ public class PatientCase {
 		return diagnosis;
 	}
 	
-	public voCaseNb setDiagnosis(String diagnosis) {
+	public void setDiagnosis(String diagnosis) {
 		this.diagnosis = diagnosis;
 	}
 }

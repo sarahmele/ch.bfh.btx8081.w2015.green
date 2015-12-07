@@ -17,7 +17,7 @@ import javax.persistence.Id;
 @DiscriminatorValue("S")
 @Table(name="Status")
 public class Status {
-	@statusDate
+	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private String statusDate;
 
@@ -31,7 +31,7 @@ public class Status {
 		return statusDate;
 	}
 
-	public vostatusDate setStatusDate(String statusDate) {
+	public void setStatusDate(String statusDate) {
 		this.statusDate = statusDate;
 	}
 
@@ -39,7 +39,7 @@ public class Status {
 		return statusText;
 	}
 
-	public vostatusDate setStatusText(String statusText) {
+	public void setStatusText(String statusText) {
 		this.statusText = statusText;
 	}
 

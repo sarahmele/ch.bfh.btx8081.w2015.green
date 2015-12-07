@@ -17,9 +17,9 @@ import javax.persistence.Id;
 @DiscriminatorValue("M")
 @Table(name="Message")
 public class Message {
-	@messageDate
+	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
-	private String messageDate;
+	private Date messageDate;
 
 	protected String messageText;
 	
@@ -31,11 +31,11 @@ public class Message {
 	@ManyToOne
 	protected Doctor doctor;
 
-	public String getMessageDate() {
+	public Date getMessageDate() {
 		return messageDate;
 	}
 
-	public vomessageDate setMessageDate(String messageDate) {
+	public void setMessageDate(Date messageDate) {
 		this.messageDate = messageDate;
 	}
 
@@ -43,15 +43,15 @@ public class Message {
 		return messageText;
 	}
 
-	public vomessageDate setMessageText(String messageText) {
+	public void setMessageText(String messageText) {
 		this.messageText = messageText;
 	}
 	
 	public String getMessageStatus() {
-		return messageDate;
+		return messageStatus;
 	}
 
-	public vomessageDate setMessageStatus(String messageStatus) {
+	public void setMessageStatus(String messageStatus) {
 		this.messageStatus = messageStatus;
 	}
 	
