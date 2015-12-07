@@ -171,4 +171,19 @@
 								 Fertigstellung LoginView & HomeView: Sarah Mele
 								 Fertigstellung LoginView Logik: Manuel Pfister
 								 Fertigstellung Klassenmodell JPA: Luca Ramos, Shpend Vladi	
-								 Besprechung weiteres Vorgehen in der Gruppe. Wie Implementierung vom CaseView und TreatmentView						 
+								 Besprechung weiteres Vorgehen in der Gruppe. Wie Implementierung vom CaseView und TreatmentView
+								 
+02.12.15 - Team meeting: Task11: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann, Manuel Pfister
+								 Abschluss Sprint 1 plus Besprechung mit Herr Vogel. Anpassung des nächsten Sprints anhand vom Feedback.
+								 
+03.12.15 - Team meeting: Task11: Anwesend im Daily SCRUM: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann
+								 Fehlerbehebung der Klassen für DB: Luca Ramos
+								 CaseView weiterarbeit: Shpend Vladi
+								 PatientView und SearchView: Yannis Portmann
+								 HomeView und generisches GUI: Sarah Mele
+							
+07.12.15 - Team meeting: Task11: Anwesend im Daily SCRUM: Luca Ramos, Sphend Vladi, Sarah Mele, Yannis Portmann
+								 Fertigstellung Fehlerbehebung DB Klassen: Luca Ramos -> Review durch Yannis Portmann
+								 CaseView weiterarbeit: Shpend Vladi und Luca Ramos
+								 PatientView und SearchView: Yannis Portmann
+								 HomeView und generisches GUI: Sarah Mele								 								 						 
