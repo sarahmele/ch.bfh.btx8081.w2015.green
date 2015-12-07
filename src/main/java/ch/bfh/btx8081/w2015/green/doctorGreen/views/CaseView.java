@@ -35,21 +35,17 @@ public class CaseView extends VerticalLayout implements View {
 		setSizeFull();
 		setSpacing(true);
 		
-		// Have a panel to put stuff in
-		Panel panel = new Panel();
 		TabSheet tabsheet = new TabSheet();
-		
-		Button backButton = backButton();
-
-		VerticalLayout verticalLayout = new VerticalLayout();
-		verticalLayout.setSizeFull();
-		tabsheet.addTab(verticalLayout, "Vertical Layout with inline components");
-		verticalLayout.addComponent(new Label("Example"));
-		verticalLayout.addComponent(backButton);
+		tabsheet.setSizeUndefined();
+		VerticalLayout tabs = new VerticalLayout();
 
 		
+		tabs.addComponent(new Label("Hello, I am a Tab!"));
 		
-
+		tabsheet.addTab(tabs);
+		
+		tabsheet.getTab(tabs).setCaption("My Tab");
+		
 		
 	}
 
@@ -58,14 +54,6 @@ public class CaseView extends VerticalLayout implements View {
 		Notification.show("PatientCase");
 	}
 	
-	private Button backButton() {
-		Button button = new Button("Back", new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
-			}
-		});
-		return button;
-	}
+
 }
 
