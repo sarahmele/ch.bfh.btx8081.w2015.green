@@ -11,6 +11,7 @@ import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Image;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
@@ -37,27 +38,17 @@ public class CaseView extends VerticalLayout implements View {
 		// Have a panel to put stuff in
 		Panel panel = new Panel();
 		TabSheet tabsheet = new TabSheet();
-
 		
-		// Have a horizontal split panel as its content
-		HorizontalSplitPanel hsplit = new HorizontalSplitPanel();
-		panel.setContent(hsplit);
-		
-
-		// Create the treatmentTab
-		VerticalLayout treatmentTab = new VerticalLayout();
-		treatmentTab.addComponent(new Embedded(null));
-		tabsheet.addTab(treatmentTab, "Treatment");
-		
-		
-		
-		// Show the image in the application
 		Button backButton = backButton();
+
+		VerticalLayout verticalLayout = new VerticalLayout();
+		verticalLayout.setSizeFull();
+		tabsheet.addTab(verticalLayout, "Vertical Layout with inline components");
+		verticalLayout.addComponent(new Label("Example"));
+		verticalLayout.addComponent(backButton);
+
 		
-		hsplit.setFirstComponent(backButton);
 		
-		addComponent(hsplit);
-		addComponent(treatmentTab);
 
 		
 	}
