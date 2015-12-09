@@ -17,9 +17,11 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
 
+import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Embedded;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
@@ -41,7 +43,15 @@ public class CaseView extends VerticalLayout implements View {
 		// Have a panel to put stuff in
 		Panel panel = new Panel();
 
-		
+		// Dummy test Button
+        Button sample = new Button("Click");
+        sample.addClickListener(new ClickListener() {
+            @Override
+            public void buttonClick(final ClickEvent event) {
+                Notification.show("The button was clicked",
+                        Type.TRAY_NOTIFICATION);
+            }
+        });
 		
 		TabSheet caseTab = new TabSheet();
 		caseTab.setHeight(100.0f, Unit.PERCENTAGE);
@@ -57,7 +67,7 @@ public class CaseView extends VerticalLayout implements View {
 		
 	}
 
-	// for testing purposes
+	// for testing purposes. Delete when test was successfull
 	private String getLoremContent() {
 		String testString = "potato potato potato potato";
 		return testString;
