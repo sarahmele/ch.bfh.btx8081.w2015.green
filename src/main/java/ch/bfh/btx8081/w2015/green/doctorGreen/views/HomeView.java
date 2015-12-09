@@ -96,7 +96,7 @@ public class HomeView extends VerticalLayout implements View {
 		return button;
 	}
 	private Button patientView_Button() {
-		Button button = new Button("patientView", new Button.ClickListener() {
+		Button button = new Button("PatientView", new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				getUI().getNavigator().navigateTo(MyUI.PATIENTVIEW);
