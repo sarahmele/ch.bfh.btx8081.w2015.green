@@ -21,23 +21,19 @@ public class PatientView extends VerticalLayout implements View {
 	public PatientView() {
 		setSizeFull();
 		setSpacing(true);
-	}
+		
 		// Have a panel to put stuff in
 		Panel panel = new Panel();
-		
 		HorizontalSplitPanel hsplit = new HorizontalSplitPanel();
-		
 		panel.setContent(hsplit);
 		
 		Button homeView_Button = homeView_Button();
 		
-		hsplit.setFirstComponent(backButton);
+		hsplit.setFirstComponent(homeView_Button);
 		
 		addComponent(hsplit);
-		addComponent(cal);
-		setComponentAlignment(cal,Alignment.MIDDLE_CENTER);
-		
-		
+	}		
+	
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
