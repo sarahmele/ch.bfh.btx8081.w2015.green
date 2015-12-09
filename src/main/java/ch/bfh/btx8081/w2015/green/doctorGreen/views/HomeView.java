@@ -56,11 +56,13 @@ public class HomeView extends VerticalLayout implements View {
 		Image image = new Image("",resource);
 		Button backButton = backButton();
 		Button caseView_Button = caseView_Button();
+		Button patientView_Button = patientView_Button();
 		
 		hsplit.setFirstComponent(backButton);
 		hsplit.setSecondComponent(image);
 		
 		hsplit2.setFirstComponent(caseView_Button);
+		hsplit2.setSecondComponent(patientView_Button);
 		
 		addComponent(hsplit);
 		addComponent(hsplit2);
@@ -89,6 +91,15 @@ public class HomeView extends VerticalLayout implements View {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				getUI().getNavigator().navigateTo(MyUI.CASEVIEW);
+			}
+		});
+		return button;
+	}
+	private Button patientView_Button() {
+		Button button = new Button("patientView", new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				getUI().getNavigator().navigateTo(MyUI.PATIENTVIEW);
 			}
 		});
 		return button;
