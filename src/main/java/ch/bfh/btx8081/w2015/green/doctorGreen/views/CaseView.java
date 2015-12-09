@@ -22,6 +22,7 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.VerticalSplitPanel;
 
 /**
  *
@@ -35,6 +36,14 @@ public class CaseView extends VerticalLayout implements View {
 		setSizeFull();
 		setSpacing(true);
 		
+		// Have a panel to put stuff in
+		Panel panel = new Panel();
+
+		// Have a horizontal split panel as its content
+		VerticalSplitPanel vsplit = new VerticalSplitPanel();
+		
+		panel.setContent(vsplit);
+		
 		TabSheet tabsheet = new TabSheet();
 		tabsheet.setSizeUndefined();
 		VerticalLayout tabs = new VerticalLayout();
@@ -46,6 +55,8 @@ public class CaseView extends VerticalLayout implements View {
 		
 		tabsheet.getTab(tabs).setCaption("My Tab");
 		
+		vsplit.setFirstComponent(tabs);
+		addComponent(tabsheet);
 		
 	}
 
