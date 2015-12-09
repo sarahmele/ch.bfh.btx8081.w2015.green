@@ -9,6 +9,7 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.FileResource;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinService;
+import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
@@ -23,6 +24,7 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.VerticalSplitPanel;
+import com.vaadin.ui.themes.ValoTheme;
 
 /**
  *
@@ -39,25 +41,26 @@ public class CaseView extends VerticalLayout implements View {
 		// Have a panel to put stuff in
 		Panel panel = new Panel();
 
-		// Have a horizontal split panel as its content
-		VerticalSplitPanel vsplit = new VerticalSplitPanel();
 		
-		panel.setContent(vsplit);
 		
-		TabSheet tabsheet = new TabSheet();
-		tabsheet.setSizeUndefined();
-		VerticalLayout tabs = new VerticalLayout();
+		TabSheet caseTab = new TabSheet();
+		caseTab.setHeight(100.0f, Unit.PERCENTAGE);
+		caseTab.addStyleName(ValoTheme.TABSHEET_FRAMED);
+		caseTab.addStyleName(ValoTheme.TABSHEET_PADDED_TABBAR);
+ 
 
+            final VerticalLayout layout = new VerticalLayout(new Label(
+            getLoremContent(), ContentMode.HTML));		
+            layout.setMargin(true);
+            caseTab.addTab(layout, "Case");
+            caseTab.addTab(layout, "Treatment");
 		
-		tabs.addComponent(new Label("Hello, I am a Tab!"));
-		
-		tabsheet.addTab(tabs);
-		
-		tabsheet.getTab(tabs).setCaption("My Tab");
-		
-		vsplit.setFirstComponent(tabs);
-		addComponent(tabsheet);
-		
+	}
+
+	// for testing purposes
+	private String getLoremContent() {
+		String testString = "potato potato potato potato";
+		return testString;
 	}
 
 	@Override
