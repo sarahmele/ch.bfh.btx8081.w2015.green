@@ -43,15 +43,7 @@ public class CaseView extends VerticalLayout implements View {
 		// Have a panel to put stuff in
 		Panel panel = new Panel();
 
-		// Dummy test Button
-        Button sample = new Button("Click");
-        sample.addClickListener(new ClickListener() {
-            @Override
-            public void buttonClick(final ClickEvent event) {
-                Notification.show("The button was clicked",
-                        Type.TRAY_NOTIFICATION);
-            }
-        });
+		
 		
 		TabSheet caseTab = new TabSheet();
 		caseTab.setHeight(100.0f, Unit.PERCENTAGE);
@@ -72,6 +64,17 @@ public class CaseView extends VerticalLayout implements View {
 		String testString = "potato potato potato potato";
 		return testString;
 	}
+	
+	// Dummy test Button
+			private Button testButton() {
+				Button button = new Button("CaseView", new Button.ClickListener() {
+					@Override
+					public void buttonClick(ClickEvent event) {
+						getUI().getNavigator().navigateTo(MyUI.LOGINVIEW);
+					}
+				});
+				return button;
+			}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
