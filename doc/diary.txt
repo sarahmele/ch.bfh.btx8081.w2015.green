@@ -186,4 +186,8 @@
 								 Fertigstellung Fehlerbehebung DB Klassen: Luca Ramos -> Review durch Yannis Portmann
 								 CaseView weiterarbeit: Shpend Vladi und Luca Ramos
 								 PatientView und SearchView: Yannis Portmann
-								 HomeView und generisches GUI: Sarah Mele								 								 						 
+								 HomeView und generisches GUI: Sarah Mele
+								 
+09.12.15 - Team meeting: Task11: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
+								 CaseView weiterarbeit: Shpend Vladi und Luca Ramos
+								 HomeView und generisches GUI: Sarah Mele							 								 						 
