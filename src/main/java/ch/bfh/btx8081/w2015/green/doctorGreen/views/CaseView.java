@@ -49,9 +49,6 @@ public class CaseView extends VerticalLayout implements View {
 		
 		
 		TabSheet caseTab = new TabSheet();
-		caseTab.setHeight(100.0f, Unit.PERCENTAGE);
-		caseTab.addStyleName(ValoTheme.TABSHEET_FRAMED);
-		caseTab.addStyleName(ValoTheme.TABSHEET_PADDED_TABBAR);
  
 
             final VerticalLayout layout = new VerticalLayout(new Label(
@@ -60,9 +57,9 @@ public class CaseView extends VerticalLayout implements View {
             caseTab.addTab(layout, "Case");
             caseTab.addTab(layout, "Treatment");
 		
-            panel.setContent(layout);
+            panel.setContent(caseTab);
 		
-    		addComponent(layout);
+    		addComponent(caseTab);
 
 	}
 
