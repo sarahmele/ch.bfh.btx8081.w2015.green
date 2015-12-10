@@ -1,46 +1,56 @@
 package ch.bfh.btx8081.w2015.green.doctorGreen.persistence;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import javax.persistence.DiscriminatorValue;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
-@DiscriminatorValue("S")
-@Table(name="Status")
 public class Status {
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
-	private String statusDate;
-
-	protected String statusText;
-
+	@GeneratedValue
+	private int statusId;
+	@Column
+	private String status;
+	@Column
+	private String risk;
 
 	@OneToMany
-	protected PatientCase patientCase;
+	private List<PatientCaseStatus> patientCaseStatusList;
 
-	public String getStatusDate() {
-		return statusDate;
+	public int getStatusId() {
+		return statusId;
 	}
 
-	public void setStatusDate(String statusDate) {
-		this.statusDate = statusDate;
+	public void setStatusId(int statusId) {
+		this.statusId = statusId;
 	}
 
-	public String getStatusText() {
-		return statusText;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setStatusText(String statusText) {
-		this.statusText = statusText;
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getRisk() {
+		return risk;
+	}
+
+	public void setRisk(String risk) {
+		this.risk = risk;
+	}
+
+	public List<PatientCaseStatus> getPatientCaseStatusList() {
+		return patientCaseStatusList;
+	}
+
+	public void setPatientCaseStatusList(List<PatientCaseStatus> patientCaseStatusList) {
+		this.patientCaseStatusList = patientCaseStatusList;
 	}
 
 }

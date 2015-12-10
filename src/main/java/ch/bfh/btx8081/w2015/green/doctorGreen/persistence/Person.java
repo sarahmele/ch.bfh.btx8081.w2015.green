@@ -1,38 +1,40 @@
 package ch.bfh.btx8081.w2015.green.doctorGreen.persistence;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.sql.Date;
 
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorValue;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.Id;
 
 @Entity
-@Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="Person_Type")
-@Table(name="PERSON")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Person {
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue
 	private String pid;
 
-	protected String firstName;
-	protected String lastName;
-	protected String gender;
-	protected Date birthDate;
+	@Column
+	private String firstName;
+	@Column
+	private String lastName;
+	@Column
+	private String gender;
+	@Column
+	private Date birthDate;
 
 	@OneToOne
-	protected Address address;
+	private Address address;
+
+	@Column
+	private Integer phoneNb;
+	@Column
+	private String username;
+	@Column
+	private String password;
 
 	public String getPid() {
 		return pid;
@@ -58,20 +60,20 @@ public class Person {
 		this.lastName = lastName;
 	}
 
-	public Date getBirthDate() {
-		return birthDate;
-	}
-
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
-
 	public String getGender() {
 		return gender;
 	}
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public Address getAddress() {
@@ -81,4 +83,29 @@ public class Person {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	public Integer getPhoneNb() {
+		return phoneNb;
+	}
+
+	public void setPhoneNb(Integer phoneNb) {
+		this.phoneNb = phoneNb;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 }

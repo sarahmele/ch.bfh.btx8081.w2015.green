@@ -1,102 +1,94 @@
 package ch.bfh.btx8081.w2015.green.doctorGreen.persistence;
 
-import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
-import javax.persistence.DiscriminatorValue;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
-@DiscriminatorValue("PC")
-@Table(name="PatientCase")
 public class PatientCase {
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
-	private	  String	caseNb;
-	
-	protected Date 		fromtDate;
-	protected Date		toDate;
-	protected String	anamnesis;
-	protected String	diagnosis;
+	@GeneratedValue
+	private int patientCaseId;
 
-	@ManyToOne
-	private Patient patient;
-	
-	//@ManyToOne
-	//private Treatment treatment;
-	
-	//@ManyToOne
-	//private String status;
-	
+	@Column
 	private Date fromDate;
-	
+	@Column
+	private Date toDate;
+	@Column
+	private String anamnesis;
+	@Column
+	private String diagnosis;
+
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "PATIENTCASE_TREATMENT", joinColumns = @JoinColumn(name = "PATIENTCASEID", referencedColumnName = "patientCaseId") , inverseJoinColumns = @JoinColumn(name = "TREATMENTID", referencedColumnName = "treatmentId") )
+	private List<Treatment> treatmentList;
+
 	@OneToMany(mappedBy = "PatientCase")
-	private final List<Treatment> treatments = new ArrayList<Treatment>();
-	
-	@OneToMany(mappedBy = "PatientCase")
-	private final List<Status> status = new ArrayList<Status>();
-	
-	public List<Treatment> getTreatment() {
-		return treatments;
+	private List<PatientCaseStatus> statusList;
+
+	public int getPatientCaseId() {
+		return patientCaseId;
 	}
 
-	public void removeTreatment(Treatment t) {
-		treatments.remove(t);
+	public void setPatientCaseId(int patientCaseId) {
+		this.patientCaseId = patientCaseId;
 	}
 
-	public void addTreatment(Treatment t) {
-		treatments.add(t);
-	}
-	
-	public List<Status> getStatus() {
-		return status;
-	}
-
-	public void removeStatus(Status s) {
-		status.remove(s);
-	}
-
-	public void addStatus(Status s) {
-		status.add(s);
-	}
-	
-	
-	public String getCaseNb() {
-		return caseNb;
-	}
-	
-	public void setCaseNb(String caseNb) {
-		this.caseNb = caseNb;
-	}
-	
 	public Date getFromDate() {
 		return fromDate;
 	}
-	
+
 	public void setFromDate(Date fromDate) {
 		this.fromDate = fromDate;
 	}
-	
+
+	public Date getToDate() {
+		return toDate;
+	}
+
+	public void setToDate(Date toDate) {
+		this.toDate = toDate;
+	}
+
 	public String getAnamnesis() {
 		return anamnesis;
 	}
-	
+
 	public void setAnamnesis(String anamnesis) {
 		this.anamnesis = anamnesis;
 	}
-	
+
 	public String getDiagnosis() {
 		return diagnosis;
 	}
-	
+
 	public void setDiagnosis(String diagnosis) {
 		this.diagnosis = diagnosis;
 	}
+
+	public List<Treatment> getTreatmentList() {
+		return treatmentList;
+	}
+
+	public void setTreatmentList(List<Treatment> treatmentList) {
+		this.treatmentList = treatmentList;
+	}
+
+	public List<PatientCaseStatus> getStatusList() {
+		return statusList;
+	}
+
+	public void setStatusList(List<PatientCaseStatus> statusList) {
+		this.statusList = statusList;
+	}
+
 }
