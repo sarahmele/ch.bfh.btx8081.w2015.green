@@ -17,6 +17,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
 
 import com.vaadin.ui.Calendar;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
@@ -35,15 +36,10 @@ public class HomeView extends VerticalLayout implements View {
 		setSizeFull();
 		setSpacing(true);
 		
-		// Have a panel to put stuff in
-		Panel panel = new Panel();
+		// layout for header and footer
+		HorizontalLayout layoutHeader = new HorizontalLayout();
+		HorizontalLayout layoutFooter = new HorizontalLayout();
 
-		// Have a horizontal split panel as its content
-		HorizontalSplitPanel hsplit = new HorizontalSplitPanel();
-		HorizontalSplitPanel hsplit2 = new HorizontalSplitPanel();
-		panel.setContent(hsplit);
-		panel.setContent(hsplit2);
-		
 		Calendar cal = new Calendar("Patient-Calendar");
 		cal.setStartDate(new Date());
 		cal.setEndDate(new Date());
@@ -54,19 +50,44 @@ public class HomeView extends VerticalLayout implements View {
 		FileResource resource = new FileResource(new File(basepath + "/VAADIN/images/doctor_green_small.png"));
 		// Show the image in the application
 		Image image = new Image("",resource);
-		Button backButton = backButton();
-		Button caseView_Button = caseView_Button();
-		Button patientView_Button = patientView_Button();
 		
-		hsplit.setFirstComponent(backButton);
-		hsplit.setSecondComponent(image);
+		Button backButton = new Button("Back", new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				getUI().getNavigator().navigateTo(MyUI.LOGINVIEW);
+			}
+		});
 		
-		hsplit2.setFirstComponent(caseView_Button);
-		hsplit2.setSecondComponent(patientView_Button);
+		Button homeButton = new Button("Home", new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
+			}
+		});
 		
-		addComponent(hsplit);
-		addComponent(hsplit2);
+		Button caseView_Button = new Button("Case", new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				getUI().getNavigator().navigateTo(MyUI.CASEVIEW);
+			}
+		});
+		
+		Button patientView_Button = new Button("Patient", new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				getUI().getNavigator().navigateTo(MyUI.PATIENTVIEW);
+			}
+		});
+		
+		layoutHeader.addComponent(backButton);
+		layoutHeader.addComponent(image);
+		layoutHeader.addComponent(homeButton);
+		layoutFooter.addComponent(caseView_Button);
+		layoutFooter.addComponent(patientView_Button);
+		
+		addComponent(layoutHeader);
 		addComponent(cal);
+		addComponent(layoutFooter);
 		setComponentAlignment(cal,Alignment.MIDDLE_CENTER);
 		
 	}
@@ -76,33 +97,6 @@ public class HomeView extends VerticalLayout implements View {
 		Notification.show("Welcome! This is Home.");
 	}
 	
-	private Button backButton() {
-		Button button = new Button("Back", new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				getUI().getNavigator().navigateTo(MyUI.LOGINVIEW);
-			}
-		});
-		return button;
-	}
-	
-	private Button caseView_Button() {
-		Button button = new Button("CaseView", new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				getUI().getNavigator().navigateTo(MyUI.CASEVIEW);
-			}
-		});
-		return button;
-	}
-	private Button patientView_Button() {
-		Button button = new Button("PatientView", new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				getUI().getNavigator().navigateTo(MyUI.PATIENTVIEW);
-			}
-		});
-		return button;
-	}
+
 }
 
