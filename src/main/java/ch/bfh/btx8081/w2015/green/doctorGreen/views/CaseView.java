@@ -10,6 +10,7 @@ import com.vaadin.server.FileResource;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.shared.ui.label.ContentMode;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
@@ -45,6 +46,8 @@ public class CaseView extends VerticalLayout implements View {
 
 		
 		
+		
+		
 		TabSheet caseTab = new TabSheet();
 		caseTab.setHeight(100.0f, Unit.PERCENTAGE);
 		caseTab.addStyleName(ValoTheme.TABSHEET_FRAMED);
@@ -57,6 +60,10 @@ public class CaseView extends VerticalLayout implements View {
             caseTab.addTab(layout, "Case");
             caseTab.addTab(layout, "Treatment");
 		
+            panel.setContent(layout);
+		
+    		addComponent(layout);
+
 	}
 
 	// for testing purposes. Delete when test was successfull
@@ -70,7 +77,7 @@ public class CaseView extends VerticalLayout implements View {
 				Button button = new Button("CaseView", new Button.ClickListener() {
 					@Override
 					public void buttonClick(ClickEvent event) {
-						getUI().getNavigator().navigateTo(MyUI.LOGINVIEW);
+						getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
 					}
 				});
 				return button;
