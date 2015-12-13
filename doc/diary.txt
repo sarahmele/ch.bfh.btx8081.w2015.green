@@ -190,4 +190,12 @@
 								 
 09.12.15 - Team meeting: Task11: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
 								 CaseView weiterarbeit: Shpend Vladi und Luca Ramos
-								 HomeView und generisches GUI: Sarah Mele							 								 						 
+								 HomeView und generisches GUI: Sarah Mele	
+								 
+10.12.15 - Team meeting: Task11: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann, Manuel Pfister
+								 Generierung persistence.xml: Luca Ramos
+								 Review Datenbank-Klassen: Yannis Portmann
+								 CaseView weiterarbeit: Shpend Vladi, Luca Ramos
+								 HomeView und generisches GUI weiterarbeit: Sarah Mele
+								 PatientView weiterarbeit: Yannis Portmann
+								 Login Logik: Manuel Pfister								 						 								 						 
