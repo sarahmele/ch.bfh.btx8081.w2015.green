@@ -10,6 +10,7 @@ import com.vaadin.server.FileResource;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinService;
 import com.vaadin.shared.ui.label.ContentMode;
+import com.vaadin.ui.AbstractSelect.NewItemHandler;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Image;
@@ -25,6 +26,8 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.TabSheet;
+import com.vaadin.ui.Table;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.VerticalSplitPanel;
 import com.vaadin.ui.themes.ValoTheme;
@@ -43,43 +46,64 @@ public class CaseView extends VerticalLayout implements View {
 		
 		// Have a panel to put stuff in
 		Panel panel = new Panel();
-
+		HorizontalSplitPanel hsplit = new HorizontalSplitPanel();
+		panel.setContent(hsplit);		
 		
+		Table caseViewTable = new Table("Case");
 		
+		// Define two columns for the built-in container
+		caseViewTable.addContainerProperty("Name", String.class, null);
+		caseViewTable.addContainerProperty("Albina Shabani",  String.class, null);
 		
+		// Add a few other rows using shorthand addItem()
+		caseViewTable.addItem(new Object[]{"CaseNb",         "1111"}, 2);
+		caseViewTable.addItem(new Object[]{"Anamnese",       "schmerzen"}, 3);
+		caseViewTable.addItem(new Object[]{"Psychostatus",   "Gefährlich"}, 4);
+		caseViewTable.addItem(new Object[]{"Diagnose",       "krank"}, 4);
 		
-		TabSheet caseTab = new TabSheet();
- 
-
-            final VerticalLayout layout = new VerticalLayout(new Label(
-            getLoremContent(), ContentMode.HTML));		
-            layout.setMargin(true);
-            caseTab.addTab(layout, "Case");
-            caseTab.addTab(layout, "Treatment");
+		// Show exactly the currently contained rows (items)
+		caseViewTable.setPageLength(caseViewTable.size());
 		
-            panel.setContent(caseTab);
+		Table treatmentTable = new Table("Treatment");
 		
-    		addComponent(caseTab);
+		// Define two columns for the built-in container
+		treatmentTable.addContainerProperty("Name", String.class, null);
+		treatmentTable.addContainerProperty("Ardit",  String.class, null);
+		
+		// Add a few other rows using shorthand addItem()
+		treatmentTable.addItem(new Object[]{"Date",         "1111"}, 2);
+		treatmentTable.addItem(new Object[]{"Medication",   "schmerzen"}, 3);
+		
+		// Show exactly the currently contained rows (items)
+		treatmentTable.setPageLength(treatmentTable.size());
+		
+		TabSheet caseViewTabs = new TabSheet();
+		final VerticalLayout layout = new VerticalLayout();		
+        layout.setMargin(true);       
+        
+        caseViewTabs.addComponent(caseViewTable);
+        caseViewTabs.addComponent(treatmentTable);
+        
+        Button homeView_Button = homeView_Button();
+		hsplit.setFirstComponent(homeView_Button);
+		
+		addComponent(hsplit);
+        panel.setContent(caseViewTabs);
+    	addComponent(caseViewTabs);
 
 	}
 
-	// for testing purposes. Delete when test was successfull
-	private String getLoremContent() {
-		String testString = "potato potato potato potato";
-		return testString;
+
+	private Button homeView_Button() {
+		Button button = new Button("HomeView", new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
+			}
+		});
+		return button;
 	}
 	
-	// Dummy test Button
-			private Button testButton() {
-				Button button = new Button("CaseView", new Button.ClickListener() {
-					@Override
-					public void buttonClick(ClickEvent event) {
-						getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
-					}
-				});
-				return button;
-			}
-
 	@Override
 	public void enter(ViewChangeEvent event) {
 		Notification.show("PatientCase");
