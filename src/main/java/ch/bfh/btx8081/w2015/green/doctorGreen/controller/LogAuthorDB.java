@@ -85,16 +85,17 @@ public class LogAuthorDB {
 					System.out.println(firstName);
 				}
 
-			// hier könnte man auf leere Abfrage prüfen(wäre einfacher),
-			// warte noch mit anpassen, bis DB fix steht
-			if ((lastName.compareTo(MyLog) == 0)
-					&& (firstName.compareTo(MyPassw) == 0)) {
+			// da bei SQL Datenbankabfrage auch "" zurück kommen kann, muss dies 
+			//hier in der if Schleife abgefangen werden
+			if (!(MyLog.equals(""))&&((lastName.compareTo(MyLog) == 0)
+					&& (firstName.compareTo(MyPassw) == 0))) {
 				AuthorResult = "true";
 				System.out.println("Erfolgreiches Login");
 				System.out.println("Dies wird aus der DB ausgelesen: " + lastName);
 				System.out.println("Dies wird aus der Tastatur ausgelesen: " + MyLog);
 				System.out.println("Dies wird aus der DB ausgelesen: " + firstName);
 				System.out.println("Dies wird aus der Tastatur ausgelesen: " + MyPassw);
+				
 			}
 
 			else {
