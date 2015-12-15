@@ -1,8 +1,8 @@
 package ch.bfh.btx8081.w2015.green.doctorGreen.views;
 
 import java.io.File;
-import com.vaadin.annotations.Theme;
 
+import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -20,7 +20,8 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
-//import controller.LogAuthor;
+import ch.bfh.btx8081.w2015.green.doctorGreen.controller.LogAuthorDB;
+
 
 @SuppressWarnings("serial")
 @Theme("mytheme")
@@ -71,20 +72,21 @@ public class LoginView extends VerticalLayout implements View {
 			public void buttonClick(ClickEvent event) {
 				System.out.println("value:"+username.getValue());
 				
-				/*final String MyLog = username.getValue();
+				final String MyLog = username.getValue();
 				final String MyPass = password.getValue();
-				LogAuthor logAuthor = new LogAuthor();
+				LogAuthorDB logAuthor = new LogAuthorDB();
 				logAuthor.CheckAcces(MyLog, MyPass);
 
 				MyResult = logAuthor.getResult();
 
 				if (MyResult == "true"){ 
-				*/
+				
 				
 				getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
-				/*}
+				}
 				else { Notification.show("Login is not correct.");
-			}*/
+				System.out.println(MyResult);
+			}
 		}});
 		return button;
 	}	
