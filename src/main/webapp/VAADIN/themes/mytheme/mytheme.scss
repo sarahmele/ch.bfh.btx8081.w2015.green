@@ -31,6 +31,13 @@
 
 @mixin mytheme {
   @include valo;
+//green button
+.green .v-button-caption {
+    font-size: 10pt;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+}
 
-  // Insert your own theme rules here
+ 
 }
