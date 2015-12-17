@@ -12,16 +12,6 @@ public class Status {
 	private int statusId;
 	@Column
 	private String status;
-	@Column
-	private int risk;
-
-	public int getRisk() {
-		return risk;
-	}
-
-	public void setRisk(int risk) {
-		this.risk = risk;
-	}
 
 	public int getStatusId() {
 		return statusId;
@@ -39,6 +29,14 @@ public class Status {
 		this.status = status;
 	}
 
-
+	public String getStatusbyId(int statusId) {
+		if (statusId == 3) {
+			return "sehr gefährlich";
+		} else if (statusId == 2) {
+			return "gefährlich";
+		} else {
+			return "ungefährlich";
+		}
+	}
 
 }
