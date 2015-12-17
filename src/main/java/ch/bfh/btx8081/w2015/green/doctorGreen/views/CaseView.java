@@ -4,12 +4,15 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
+
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.DateField;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
@@ -17,8 +20,6 @@ import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.VerticalLayout;
-
-import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
 
 /**
  *
@@ -43,8 +44,10 @@ public class CaseView extends VerticalLayout implements View {
 		caseViewTable.addContainerProperty("Max Muster", String.class, null);
 
 		editableCaseViewTable.addContainerProperty("Name", String.class, null);
-		editableCaseViewTable.addContainerProperty("Max Muster", TextArea.class, null);
-		editableCaseViewTable.addContainerProperty("Max Muster", Button.class, null);
+		editableCaseViewTable.addContainerProperty("Max Muster",
+				TextArea.class, null);
+		editableCaseViewTable.addContainerProperty("Max Muster", Button.class,
+				null);
 
 		TextArea diagnosisField = new TextArea();
 		diagnosisField.setRows(3);
@@ -61,8 +64,10 @@ public class CaseView extends VerticalLayout implements View {
 		caseViewTable.addItem(new Object[] { "PatientCaseId", "777" }, 1);
 		caseViewTable.addItem(new Object[] { "FromDate", getCurrentDate() }, 2);
 		caseViewTable.addItem(new Object[] { "ToDate", getCurrentDate() }, 3);
-		editableCaseViewTable.addItem(new Object[] { "Diagnosis", diagnosisField }, 4);
-		editableCaseViewTable.addItem(new Object[] { "Anamnesis", anamnesisField }, 5);
+		editableCaseViewTable.addItem(new Object[] { "Diagnosis",
+				diagnosisField }, 4);
+		editableCaseViewTable.addItem(new Object[] { "Anamnesis",
+				anamnesisField }, 5);
 
 		// Show exactly the currently contained rows (items)
 		editableCaseViewTable.setPageLength(caseViewTable.size());
@@ -76,6 +81,59 @@ public class CaseView extends VerticalLayout implements View {
 
 		GenericView header = new GenericView();
 		HorizontalLayout layoutHeader = header.getHeader();
+
+		/* Start of Treatment View Tab code segment */
+
+		Table treatmentTable = new Table("Treatment");
+
+		// Define two columns for the built-in container
+		treatmentTable.addContainerProperty("Date", DateField.class, null);
+		treatmentTable.addContainerProperty("Medication", TextArea.class, null);
+
+		/* Add a few items in the table. */
+
+		// Create the fields for the current table row
+		DateField medicationDate = new DateField();
+		medicationDate.setValue(new Date());
+
+		TextArea medicationField = new TextArea();
+		medicationField.setRows(3);
+
+		// The Table item identifier for the row.
+		Integer itemId = new Integer(1);
+
+		// Create the table row.
+		treatmentTable.addItem(
+				new Object[] { medicationDate, medicationField }, itemId);
+
+		// Show exactly the currently contained rows (items)
+		treatmentTable.setPageLength(treatmentTable.size());
+
+		caseViewTabs.addComponent(caseViewTable);
+		caseViewTabs.addComponent(treatmentTable);
+
+		// Treatment Plan button
+		// Button addTreatmentPlan = addTreatmentPlan();
+		// hsplit.setSecondComponent(addTreatmentPlan);
+
+		/* Method to add new Treatment rows */
+		/*
+		 * private void createNewTreatment() { //treatmentTable.addItem(); }
+		 */
+
+		/* Button to add new treatment plans */
+
+		/*
+		 * private Button addTreatmentPlan() { Button button = new
+		 * Button("Add Treatment");
+		 * 
+		 * button.addClickListener(new Button.ClickListener() { public void
+		 * buttonClick(ClickEvent event) { createNewTreatment(); }
+		 * 
+		 * }); return button; }
+		 */
+
+		/* End of Treatment View Tab code segment */
 
 		// Back Button is Logout Button in this View
 		header.getButton("back").addClickListener(new Button.ClickListener() {
