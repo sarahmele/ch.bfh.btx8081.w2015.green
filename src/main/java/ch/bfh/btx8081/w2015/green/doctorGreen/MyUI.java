@@ -34,13 +34,17 @@ public class MyUI extends UI {
 	public static final String MESSAGEVIEW = "message";
 
 	@Override
+	// Init Vaadin
 	protected void init(VaadinRequest request) {
+	// Set the main layout
 	final VerticalLayout layout = new VerticalLayout();
 	layout.setWidth("320");
 	layout.setMargin(false);
 	layout.setSpacing(false);
 	setContent(layout);
 	ComponentContainerViewDisplay viewDisplay = new ComponentContainerViewDisplay(layout);
+	
+	// Create the Navigator to switch between Views
 	navigator = new Navigator(UI.getCurrent(), viewDisplay);
 	navigator.addView("", new LoginView());
 	navigator.addView(LOGINVIEW, new LoginView());
