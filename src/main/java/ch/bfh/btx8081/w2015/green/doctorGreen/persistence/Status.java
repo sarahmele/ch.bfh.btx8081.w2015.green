@@ -13,7 +13,15 @@ public class Status {
 	@Column
 	private String status;
 	@Column
-	private String risk;
+	private int risk;
+
+	public int getRisk() {
+		return risk;
+	}
+
+	public void setRisk(int risk) {
+		this.risk = risk;
+	}
 
 	public int getStatusId() {
 		return statusId;
@@ -31,12 +39,6 @@ public class Status {
 		this.status = status;
 	}
 
-	public String getRisk() {
-		return risk;
-	}
 
-	public void setRisk(String risk) {
-		this.risk = risk;
-	}
 
 }
