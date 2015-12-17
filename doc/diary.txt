@@ -198,4 +198,20 @@
 								 CaseView weiterarbeit: Shpend Vladi, Luca Ramos
 								 HomeView und generisches GUI weiterarbeit: Sarah Mele
 								 PatientView weiterarbeit: Yannis Portmann
-								 Login Logik: Manuel Pfister								 						 								 						 
+								 Login Logik: Manuel Pfister
+								 
+14.12.15 - Team meeting: Task12: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann
+								 Review Datenbank: Yannis Portmann
+								 Erstellung Statepattern: Yannis Portmann
+								 CaseView weiterarbeit: Vladi Shpend
+								 TreatmentView-Tab für CaseView: Luca Ramos
+								 Generic View & HomeView: Sarah Mele
+								 SCRUM Update: Sarah Mele
+								 
+16.12.15 - Team meeting: Task12: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann
+								 PatientView: Yannis Portmann
+								 CaseView weiterarbeit: Vladi Shpend
+								 TreatmentView-Tab für CaseView: Luca Ramos
+								 Generic View & HomeView: Sarah Mele
+								 SCRUM Update: Sarah Mele
+								 						 						 								 						 
