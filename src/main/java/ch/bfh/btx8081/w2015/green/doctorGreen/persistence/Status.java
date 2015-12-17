@@ -1,12 +1,9 @@
 package ch.bfh.btx8081.w2015.green.doctorGreen.persistence;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Status {
@@ -17,9 +14,6 @@ public class Status {
 	private String status;
 	@Column
 	private String risk;
-
-	@OneToMany
-	private List<PatientCaseStatus> patientCaseStatusList;
 
 	public int getStatusId() {
 		return statusId;
@@ -43,14 +37,6 @@ public class Status {
 
 	public void setRisk(String risk) {
 		this.risk = risk;
-	}
-
-	public List<PatientCaseStatus> getPatientCaseStatusList() {
-		return patientCaseStatusList;
-	}
-
-	public void setPatientCaseStatusList(List<PatientCaseStatus> patientCaseStatusList) {
-		this.patientCaseStatusList = patientCaseStatusList;
 	}
 
 }
