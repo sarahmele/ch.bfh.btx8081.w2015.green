@@ -6,6 +6,7 @@ import java.util.Date;
 
 import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
 
+import com.google.gwt.user.client.ui.VerticalSplitPanel;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.navigator.View;
@@ -14,6 +15,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.TabSheet;
@@ -34,7 +36,9 @@ public class CaseView extends VerticalLayout implements View {
 		setSpacing(true);
 
 		// Have a panel to put stuff in
-		Panel panel = new Panel();
+		Panel panel = new Panel();    
+		
+		
 
 		Table caseViewTable = new Table("CaseData");
 		Table editableCaseViewTable = new Table("CaseMedicalData");
@@ -108,9 +112,15 @@ public class CaseView extends VerticalLayout implements View {
 
 		// Show exactly the currently contained rows (items)
 		treatmentTable.setPageLength(treatmentTable.size());
-
+		
+        
 		caseViewTabs.addComponent(caseViewTable);
+		caseViewTabs.addComponent(editableCaseViewTable);
 		caseViewTabs.addComponent(treatmentTable);
+		
+		panel.setContent(caseViewTabs);
+		addComponent(caseViewTabs);
+		
 
 		// Treatment Plan button
 		// Button addTreatmentPlan = addTreatmentPlan();
@@ -149,12 +159,8 @@ public class CaseView extends VerticalLayout implements View {
 				getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
 			}
 		});
-
-		addComponent(layoutHeader);
-		panel.setContent(caseViewTabs);
-		addComponent(caseViewTabs);
-		panel.setContent(editableCaseViewTable);
-		addComponent(editableCaseViewTable);
+		
+		
 
 	}
 
