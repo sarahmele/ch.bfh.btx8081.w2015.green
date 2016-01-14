@@ -223,21 +223,21 @@
 								 Generic View & HomeView: Sarah Mele
 								 SCRUM Update: Sarah Mele
 								 
-11.01.16 - Team meeting: Task12: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann
+11.01.16 - Team meeting: Task14: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann
 								 PatientView: Yannis Portmann
 								 StatePattern: Sarah Mele
 								 CaseView weiterarbeit: Vladi Shpend
 								 TreatmentView-Tab für CaseView: Luca Ramos
 								 SCRUM Update: Sarah Mele	
 								 
-13.01.16 - Team meeting: Task12: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
+13.01.16 - Team meeting: Task14: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
 								 PatientView: Yannis Portmann
 								 StatePattern: Yannis Portmann
 								 CaseView weiterarbeit: Vladi Shpend
 								 TreatmentView-Tab für CaseView: Luca Ramos
 								 SCRUM Update: Sarah Mele
 								 
-14.01.16 - Team meeting: Task12: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
+14.01.16 - Team meeting: Task14: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
 								 Persistence Unit: Sarah Mele
 								 StatePattern: Yannis Portmann
 								 CaseView weiterarbeit: Vladi Shpend
