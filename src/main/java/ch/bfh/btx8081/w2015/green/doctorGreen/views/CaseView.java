@@ -39,19 +39,12 @@ public class CaseView extends VerticalLayout implements View {
 		Panel panel = new Panel();    
 		
 		
-
-		Table caseViewTable = new Table("CaseData");
-		Table editableCaseViewTable = new Table("CaseMedicalData");
+		Table CaseViewTable = new Table("CaseData");
 
 		// Define two columns for the built-in container
-		caseViewTable.addContainerProperty("Name", String.class, null);
-		caseViewTable.addContainerProperty("Max Muster", String.class, null);
 
-		editableCaseViewTable.addContainerProperty("Name", String.class, null);
-		editableCaseViewTable.addContainerProperty("Max Muster",
-				TextArea.class, null);
-		editableCaseViewTable.addContainerProperty("Max Muster", Button.class,
-				null);
+		CaseViewTable.addContainerProperty("Name", String.class, null);
+		CaseViewTable.addContainerProperty("Max Muster",TextArea.class, null);
 
 		TextArea diagnosisField = new TextArea();
 		diagnosisField.setRows(3);
@@ -61,27 +54,31 @@ public class CaseView extends VerticalLayout implements View {
 		anamnesisField.setRows(3);
 		anamnesisField.setValue("Schmerzen im unteren Abdomen");
 		anamnesisField.setReadOnly(true);
+		
+		TextArea patientCaseId = new TextArea();
+		diagnosisField.setRows(3);
+		diagnosisField.setValue("Blinddarmentzündung");
+		
+		
+		
 
 		// Button changeDiagnosis_Button = changeDiagnosis_Button();
 
 		// Add a few other rows using shorthand addItem()
-		caseViewTable.addItem(new Object[] { "PatientCaseId", "777" }, 1);
-		caseViewTable.addItem(new Object[] { "FromDate", getCurrentDate() }, 2);
-		caseViewTable.addItem(new Object[] { "ToDate", getCurrentDate() }, 3);
-		editableCaseViewTable.addItem(new Object[] { "Diagnosis",
+		CaseViewTable.addItem(new Object[] { "PatientCaseId", patientCaseId }, 1);
+	//	CaseViewTable.addItem(new Object[] { "FromDate", getCurrentDate() }, 2);
+	//	CaseViewTable.addItem(new Object[] { "ToDate", getCurrentDate() }, 3);
+		CaseViewTable.addItem(new Object[] { "Diagnosis",
 				diagnosisField }, 4);
-		editableCaseViewTable.addItem(new Object[] { "Anamnesis",
+		CaseViewTable.addItem(new Object[] { "Anamnesis",
 				anamnesisField }, 5);
 
-		// Show exactly the currently contained rows (items)
-		editableCaseViewTable.setPageLength(caseViewTable.size());
-		caseViewTable.setPageLength(caseViewTable.size());
 
 		TabSheet caseViewTabs = new TabSheet();
 		final VerticalLayout layout = new VerticalLayout();
 		layout.setMargin(true);
 
-		caseViewTabs.addComponents(caseViewTable);
+		caseViewTabs.addComponents(CaseViewTable);
 
 		GenericView header = new GenericView();
 		HorizontalLayout layoutHeader = header.getHeader();
@@ -114,8 +111,7 @@ public class CaseView extends VerticalLayout implements View {
 		treatmentTable.setPageLength(treatmentTable.size());
 		
         
-		caseViewTabs.addComponent(caseViewTable);
-		caseViewTabs.addComponent(editableCaseViewTable);
+		caseViewTabs.addComponent(CaseViewTable);
 		caseViewTabs.addComponent(treatmentTable);
 		
 		panel.setContent(caseViewTabs);
