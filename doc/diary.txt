@@ -228,7 +228,9 @@
 								 StatePattern: Sarah Mele
 								 CaseView weiterarbeit: Vladi Shpend
 								 TreatmentView-Tab für CaseView: Luca Ramos
-								 SCRUM Update: Sarah Mele	
+								 SCRUM Update: Sarah Mele
+								 JUnit/CodeInspections Tests: Alle
+								 	
 								 
 13.01.16 - Team meeting: Task14: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
 								 PatientView: Yannis Portmann
