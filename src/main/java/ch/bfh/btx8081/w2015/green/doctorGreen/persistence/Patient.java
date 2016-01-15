@@ -15,9 +15,9 @@ public class Patient extends Person {
 
 	@Column
 	private String insuranceNb;
-	
-	@OneToOne
-	private Status status;
+
+//	@OneToOne
+//	private State status;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "DOCTOR_PATIENT", joinColumns = @JoinColumn(name = "DOCTOR_ID", referencedColumnName = "pid") , inverseJoinColumns = @JoinColumn(name = "PATIENT_ID", referencedColumnName = "pid") )
