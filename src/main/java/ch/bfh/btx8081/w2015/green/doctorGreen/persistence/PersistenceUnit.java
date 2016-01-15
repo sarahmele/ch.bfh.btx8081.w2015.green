@@ -7,6 +7,15 @@ import javax.persistence.Persistence;
 public class PersistenceUnit {
 	private final String DOCTOR_GREEN = "doctorgreen";
 
+	private static PersistenceUnit instance = null;
+
+	public static PersistenceUnit getInstance() {
+		if (instance == null) {
+			instance = new PersistenceUnit();
+		}
+		return instance;
+	}
+
 	EntityManagerFactory factory = Persistence.createEntityManagerFactory(DOCTOR_GREEN);
 	EntityManager em = factory.createEntityManager();
 
