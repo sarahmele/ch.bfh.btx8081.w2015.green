@@ -14,11 +14,9 @@ public abstract class PatientState {
 	
 	/**
 	 * Function which is called on enter the state.
-	 * @return css: The name of the custom css for the bg-color
+	 * --DO: NOTHING
 	 */
-	public String doEnter(){
-		return css;
-	}
+	public void doEnter(){}
 	
 	/**
 	 * Function which is executed while in state
@@ -34,14 +32,6 @@ public abstract class PatientState {
 	
 	// State Setter
 	//--------------------------------------------------------------------------------
-	
-	/**
-	 * The function to set the css string
-	 * @param c: String for the bg-color (css property)
-	 */
-	protected void setColor(String c){
-		css = c;
-	}
 	
 	/**
 	 * The function to set the id (int)

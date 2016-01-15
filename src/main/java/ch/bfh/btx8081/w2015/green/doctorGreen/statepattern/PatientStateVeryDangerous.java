@@ -5,7 +5,6 @@ public class PatientStateVeryDangerous extends PatientState{
 	  // PatientStateDangerous Variables
 		//--------------------------------------------------------------------------------
 		
-		private final String CSS = "patientStateVeryDangerous";
 		private final int STATE_ID = 3;
 		private final String NAME = "VeryDangerous";
 
@@ -14,10 +13,9 @@ public class PatientStateVeryDangerous extends PatientState{
 		
 		/**
 		 * The constructor for the state "dangerous"
-		 * Sets the css, the id and the state name to abstract parent class.
+		 * Sets the id and the state name to abstract parent class.
 		 */
 		public PatientStateVeryDangerous() {
-			super.setColor(CSS);
 			super.setPatientStateId(STATE_ID);
 			super.setPatientStateName(NAME);
 		}
