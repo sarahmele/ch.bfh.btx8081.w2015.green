@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2015.green.doctorGreen.persistence;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class State {
@@ -10,6 +11,9 @@ public class State {
 
 	private String name;
 
+	@ManyToOne
+	private Patient patient;
+	
 	public int getId() {
 		return id;
 	}
