@@ -3,15 +3,15 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
-	<persistence-unit name="family" transaction-type="RESOURCE_LOCAL">
-		<class>ch.bfh.btx8081.w2015.green.src.main.java.ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Address</class>
-		<class>ch.bfh.btx8081.w2015.green.src.main.java.ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Doctor</class>
-		<class>ch.bfh.btx8081.w2015.green.src.main.java.ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Message</class>
-		<class>ch.bfh.btx8081.w2015.green.src.main.java.ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient</class>
-		<class>ch.bfh.btx8081.w2015.green.src.main.java.ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PatientCase</class>
-		<class>ch.bfh.btx8081.w2015.green.src.main.java.ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Person</class>
-		<class>ch.bfh.btx8081.w2015.green.src.main.java.ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Status</class>
-		<class>ch.bfh.btx8081.w2015.green.src.main.java.ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Treatment</class>
+	<persistence-unit name="doctorgreen" transaction-type="RESOURCE_LOCAL">
+		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Address</class>
+		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Doctor</class>
+		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Message</class>
+		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient</class>
+		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PatientCase</class>
+		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Person</class>
+		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Status</class>
+		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Treatment</class>
 		<properties>
 
 			<!-- MS SQL SERVER -->
