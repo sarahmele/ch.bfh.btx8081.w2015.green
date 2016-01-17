@@ -68,36 +68,55 @@ public class LogAuthorDB {
 			// aber
 			// noch mit anpassen bis Datenbank fix ist
 
-					("SELECT PatientNb, Username, Passwort " + " FROM "
-							+ DATABASE + ".dbo.TESTPATIENT "
+					//("SELECT PatientNb, Username, Passwort " + " FROM "
+					//		+ DATABASE + ".dbo.TESTPATIENT "
+							("SELECT PASSWORD, USERNAME " + " FROM "
+							+ DATABASE + ".dbo.PERSON "
 							// +
 							//valid Logindata: "where Username ='Jan' and 
 							//Passwort ='wert12'");
-							+ "where Username =" + MyLog + "and Passwort ="
-							+ MyPassw);
+						//	+ "where Username =" + MyLog + "and Passwort ="
+						//	+ MyPassw);
+			+ "where PASSWORD =" + MyPassw + "and USERNAME ="
+			+ MyLog);
 
-			MyLog = MyLog.replace("'", "");
 			MyPassw = MyPassw.replace("'", "");
+			MyLog = MyLog.replace("'", "");
+			
 
-			System.out.println("PatientNb\tUsername, Passwort");
-			System.out.println("---------\t---------------");
+			//System.out.println("PatientNb\tUsername, Passwort");
+			//System.out.println("\tUsername\tPasswort");
+			System.out.println("\tPASSWORD, \tUSERNAME,");
+			System.out.println("\t---------\t---------------");
 			int i = 0;
 
 			// displaying the result set, one tuple per line
 			while (rs.next())
 				if (i < 1) {
-					System.out.println(String.format("%d\t%d\t%s, %s", i++,
-							rs.getInt(1), rs.getString(2), rs.getString(3)));
+					//System.out.println(String.format("%d\t%d\t%s, %s", i++,
+					//		rs.getInt(1), rs.getString(2), rs.getString(3)));
+					//System.out.println(String.format("%s\t\t%s, \t%s", i++,
+					//		rs.getString(2), rs.getString(3)));
+							
+					System.out.println(String.format("%s\t%s, %s", i++,
+							 rs.getString(6), rs.getString(8)));
+					
 
-					username = rs.getString("Username"); // Konzeptioneller
+					//username = rs.getString("Username"); // Konzeptioneller
 															// Entscheid->alles
 					// im String belassen, selber Code kann somit bei der
 					// Suchfunktion verwendet
 					// werden, int Datentyp wäre hier besser zu verwenden
+					//System.out.println(username);
+					passwort = rs.getString("PASSWORD");
+					System.out.println(passwort);
+					
+					username = rs.getString("USERNAME");
 					System.out.println(username);
 
-					passwort = rs.getString("Passwort");
-					System.out.println(passwort);
+					//passwort = rs.getString("Passwort");
+					//System.out.println(passwort);
+					
 				}
 			// Check whether the Input hash of the User is valid or different from the db hash
 			if (((username.compareTo(MyLog) == 0) && (passwort
