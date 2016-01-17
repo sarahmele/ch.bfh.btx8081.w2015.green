@@ -10,6 +10,7 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.Button.ClickEvent;
 
 import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
@@ -22,19 +23,39 @@ import com.vaadin.ui.components.calendar.CalendarComponentEvents.EventClick;
 import com.vaadin.ui.components.calendar.event.BasicEvent;
 
 /**
- *
+ * This class describes the Guy for HomeView in the Doctor Green Application <br>
+ * <br>
+ * 
+ * @author Sarah Mele<br>
+ * <br>
+ * 
+ *         instance variables:<br>
+ *         - none<br>
+ * <br>
+ * 
+ *         Methods:<br>
+ *         - enter(ViewChangeEvent event) no return value<br>
  */
+
 @SuppressWarnings("serial")
 @Theme("mytheme")
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
 public class HomeView extends VerticalLayout implements View {
 	
+	/**
+	 * HomeView constructor<br>
+	 * Creates the Guy for this view - for details see comments in the code 
+	 * <br>
+	 *
+	 * @param none
+	 */
+	
 	public HomeView() {
 		
-		// layout for footer
+		// Layout for footer
 		HorizontalLayout layoutFooter = new HorizontalLayout();
 
-		// Make a new Calendar - Date Today - Hours of the Day seen 7.00am - 5.00pm
+		// Make a new Calendar - Date "Today" - Hours of the Day seen 7.00am - 5.00pm
 		Calendar cal = new Calendar();
 		cal.setStartDate(new Date());
 		cal.setEndDate(new Date());
@@ -50,7 +71,7 @@ public class HomeView extends VerticalLayout implements View {
 		});
 		
 		
-		// Add two events for today
+		// Add two events for Presentation Day
 		GregorianCalendar start = new GregorianCalendar();
 		GregorianCalendar end   = new GregorianCalendar();
 		start.set(2016, 01, 21, 9, 00);
@@ -111,9 +132,17 @@ public class HomeView extends VerticalLayout implements View {
 		addComponent(layoutFooter);
 	}
 
+	/**
+	 * enter Method<br>
+	 * Overriding the enter Method from Superclass <br>
+	 * 
+	 * @return -
+	 */
 	@Override
 	public void enter(ViewChangeEvent event) {
-		//Notification.show("Welcome! This is Home.");
+		
+		// Welcome the Doctor
+		Notification.show("Welcome Doctor Green!!!");
 	}
 	
 
