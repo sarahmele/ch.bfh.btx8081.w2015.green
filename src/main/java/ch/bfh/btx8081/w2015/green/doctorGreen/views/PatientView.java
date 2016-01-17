@@ -4,15 +4,19 @@ import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Button.ClickEvent;
 
+import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
 import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientController;
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
+import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PersistenceUnit;
 
 @SuppressWarnings("serial")
 @Theme("mytheme")
@@ -54,6 +58,17 @@ public class PatientView extends VerticalLayout implements View {
 		addComponent(box);
 
 		box.getId();
+
+		Button store = new Button();
+		PersistenceUnit unit = PersistenceUnit.getInstance();
+		
+		// Back Button is Logout Button in this View
+		store.addClickListener(new Button.ClickListener() {
+			@Override
+			public void buttonClick(ClickEvent event) {
+				unit.setPatient();
+			}
+		});
 
 	}
 

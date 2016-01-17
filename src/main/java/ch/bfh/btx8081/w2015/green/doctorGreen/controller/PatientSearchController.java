@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
+import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PersistenceUnit;
 
 public class PatientSearchController {
+	PersistenceUnit unit = PersistenceUnit.getInstance();
 
 	public Patient getPatient(String insuranceNb, String firstname, String lastname) {
 		// TODO Search Patient
@@ -21,4 +23,5 @@ public class PatientSearchController {
 		return patientList;
 
 	}
+
 }

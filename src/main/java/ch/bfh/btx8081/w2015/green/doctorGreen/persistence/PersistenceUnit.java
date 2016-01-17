@@ -19,6 +19,14 @@ public class PersistenceUnit {
 	EntityManagerFactory factory = Persistence.createEntityManagerFactory(DOCTOR_GREEN);
 	EntityManager em = factory.createEntityManager();
 
+	Patient patient = new Patient();
+
+	public void setPatient() {
+		patient.setFirstName("Hans");
+		patient.setLastName("Muster");
+		persistObject(patient);
+	}
+
 	public void persistObject(Object object) {
 		em.persist(object);
 		em.close();

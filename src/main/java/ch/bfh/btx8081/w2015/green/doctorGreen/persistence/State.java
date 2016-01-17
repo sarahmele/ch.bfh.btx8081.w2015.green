@@ -1,18 +1,21 @@
 package ch.bfh.btx8081.w2015.green.doctorGreen.persistence;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class State {
+	
 	@Id
 	private int id;
 
 	private String name;
-
-	@ManyToOne
-	private Patient patient;
+	
+	@OneToMany(mappedBy = "state")
+	private List<Patient> patientList;
 	
 	public int getId() {
 		return id;

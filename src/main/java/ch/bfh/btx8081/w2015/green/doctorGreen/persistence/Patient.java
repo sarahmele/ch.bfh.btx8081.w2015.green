@@ -8,7 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Patient extends Person {
@@ -16,7 +16,7 @@ public class Patient extends Person {
 	@Column
 	private String insuranceNb;
 
-	@OneToMany(mappedBy="Patient")
+	@ManyToOne
 	private State state;
 
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -49,6 +49,14 @@ public class Patient extends Person {
 
 	public void setPatientCaseList(List<PatientCase> patientCaseList) {
 		this.patientCaseList = patientCaseList;
+	}
+
+	public State getState() {
+		return state;
+	}
+
+	public void setState(State state) {
+		this.state = state;
 	}
 
 }

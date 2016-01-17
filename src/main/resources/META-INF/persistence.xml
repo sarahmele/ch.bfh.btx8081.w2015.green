@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
-	<persistence-unit name="family" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="doctorgreen" transaction-type="RESOURCE_LOCAL">
 		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Address</class>
 		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Doctor</class>
 		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Message</class>
@@ -12,12 +12,13 @@
 		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Person</class>
 		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Medication</class>
 		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Treatment</class>
+		<class>ch.bfh.btx8081.w2015.green.doctorGreen.persistence.State</class>
 		<properties>
 		
 			<!-- MS SQL SERVER -->
-			<property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="javax.persistence.jdbc.driver" value="net.sourceforge.jtds.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:sqlserver://corpus.bfh.ch:55783;DatabaseName=SWE_2015_1" />
+				value="jdbc:jtds:sqlserver://corpus.bfh.ch:55783;DatabaseName=SWE_2015_1" />
 			<property name="javax.persistence.jdbc.user" value="SWE_2015_1" />
 			<property name="javax.persistence.jdbc.password" value="swe2015" />
 
