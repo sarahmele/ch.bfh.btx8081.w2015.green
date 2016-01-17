@@ -21,8 +21,10 @@
 				value="jdbc:jtds:sqlserver://corpus.bfh.ch:55783;DatabaseName=SWE_2015_1" />
 			<property name="javax.persistence.jdbc.user" value="SWE_2015_1" />
 			<property name="javax.persistence.jdbc.password" value="swe2015" />
-
-			<property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+			
+			<!--Voricht, alle Daten in Tables werden momentan gelöscht, wenn aktiv-->
+			<!-- <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />-->
+			
 			<property name="eclipselink.ddl-generation.output-mode"
 				value="both" />
 		</properties>
