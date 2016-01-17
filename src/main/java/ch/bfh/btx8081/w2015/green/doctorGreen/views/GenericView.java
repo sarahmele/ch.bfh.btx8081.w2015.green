@@ -16,18 +16,45 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
 import com.vaadin.ui.HorizontalLayout;
 
 /**
- *
+ * This class describes the Guy for GenerivView for all further Views in the Doctor Green Application <br>
+ * <br>
+ * 
+ * @author Sarah Mele<br>
+ * <br>
+ * 
+ *        instance variables:<br>
+ *         	- HorizontalLayout layoutHeader<br>
+			- HorizontalLayout layoutFooter<br>
+			- Button backButton<br>
+			- Button homeButton<br>
+ * <br>
+ * 
+ *         Methods:<br>
+ *         - getButton(String button) returns Button<br>
+ *         - getHeader() returns Button HorizontalLayout<br>
  */
+
 @SuppressWarnings("serial")
 @Theme("mytheme")
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
 public class GenericView extends MyUI{
+	
+	
+	// GenericView Variables
+	//--------------------------------------------------------------------------------
 	
 	HorizontalLayout layoutHeader;
 	HorizontalLayout layoutFooter;
 	Button backButton;
 	Button homeButton;
 	
+	/**
+	 * GenericView constructor<br>
+	 * Creates the Guy for this view - for details see comments in the code 
+	 * <br>
+	 *
+	 * @param none
+	 */
 	public GenericView() {
 		
 		// layout for header and footer
@@ -61,8 +88,18 @@ public class GenericView extends MyUI{
 
 	}
 	
-	// gets the Button
+	/**
+	 * getButton Method<br>
+	 * get your prefered Button (back and home)<br>
+	 * <br>
+	 * 
+	 * @param button - String<F>
+	 * @return Button - as prefered (default: back)
+	 *           
+	 */
 	public Button getButton(String button){
+		
+		// choose back or homeButton
 		if (button.equals("back")){
 			return backButton;
 		}
@@ -70,12 +107,21 @@ public class GenericView extends MyUI{
 			return homeButton;
 		}
 		else{
+			// default
 			return backButton;
 		}
 		
 	}
 	
-	// gets the header
+	/**
+	 * getHeader Method<br>
+	 * gets the Generic Header as a layout<br>
+	 * <br>
+	 * 
+	 * @param none 
+	 * @return HorizontalLayout - layoutHeader
+	 *           
+	 */
 	public HorizontalLayout getHeader(){
 		return layoutHeader;
 	}
