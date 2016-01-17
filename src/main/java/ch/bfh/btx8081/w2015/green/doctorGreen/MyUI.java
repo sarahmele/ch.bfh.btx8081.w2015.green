@@ -14,15 +14,34 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2015.green.doctorGreen.views.*;
 
-
 /**
- *
+ * This class is a Wrapper Class for all GUIS in the Doctor Green Application <br>
+ * <br>
+ * 
+ * @author Sarah Mele<br>
+ * <br>
+ * 
+ *         instance variables:<br>
+ *         - String CASEVIEW<br>
+ *         - String HOMEVIEW<br>
+ *         - String LOGINVIEW<br>
+ *         - String MESSAGEVIEW<br>
+  *        - String PATIENTSEARCHVIEW<br>
+ *         - String PATIENTVIEW<br>
+ *         - Navigator navigator<br>
+ * <br>
+ * 
+ *         Methods:<br>
+ *         - init(VaadinRequest) no return value<br>
  */
+
 @SuppressWarnings("serial")
 @Theme("mytheme")
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
 public class MyUI extends UI {
-
+	
+	// MyUI Variables
+	//--------------------------------------------------------------------------------
 	public Navigator navigator;
 
 	// Defining all views
@@ -33,9 +52,18 @@ public class MyUI extends UI {
 	public static final String PATIENTVIEW = "patient";
 	public static final String MESSAGEVIEW = "message";
 
+	/**
+	 * init Method<br>
+	 * Initializes Vaadin GUI <br>
+	 * <br>
+	 * 
+	 * @param request - VaadinRequest
+	 *           
+	 */
 	@Override
 	// Init Vaadin
 	protected void init(VaadinRequest request) {
+		
 	// Set the main layout
 	final VerticalLayout layout = new VerticalLayout();
 	layout.setWidth("320");
@@ -55,6 +83,11 @@ public class MyUI extends UI {
 
     }
 
+	/**
+	 * MyUIServlet class<br>
+	 * Starts the VaadinServlet <br>
+	 *           
+	 */
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
     public static class MyUIServlet extends VaadinServlet {

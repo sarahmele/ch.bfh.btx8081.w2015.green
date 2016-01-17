@@ -93,7 +93,7 @@ public class GenericView extends MyUI{
 	 * get your prefered Button (back and home)<br>
 	 * <br>
 	 * 
-	 * @param button - String<F>
+	 * @param button - String
 	 * @return Button - as prefered (default: back)
 	 *           
 	 */

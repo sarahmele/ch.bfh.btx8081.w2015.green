@@ -134,7 +134,7 @@ public class LoginView extends VerticalLayout implements View {
 	 * enter Method<br>
 	 * Overriding the enter Method from Superclass <br>
 	 * 
-	 * @return -
+	 * @param event - ViewChangeEvent
 	 */
 	@Override
 	public void enter(ViewChangeEvent event) {
