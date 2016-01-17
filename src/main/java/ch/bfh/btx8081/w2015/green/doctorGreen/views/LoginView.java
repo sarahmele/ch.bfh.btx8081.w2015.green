@@ -22,17 +22,42 @@ import com.vaadin.ui.VerticalLayout;
 import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
 import ch.bfh.btx8081.w2015.green.doctorGreen.controller.LogAuthorDB;
 
+/**
+ * This class describes the Guy for Login in the Doctor Green Application <br>
+ * <br>
+ * 
+ * @author Sarah Mele<br>
+ * <br>
+ * 
+ *         instance variables:<br>
+ *         - TextField username<br>
+ *         - PasswordField password<br>
+ *         - String MyResult<br>
+ * <br>
+ * 
+ *         Methods:<br>
+ *         - loginButton() returns Button<br>
+ *         - enter(ViewChangeEvent event) no return value<br>
+ */
 
 @SuppressWarnings("serial")
 @Theme("mytheme")
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
 public class LoginView extends VerticalLayout implements View {
 	
+	// Login Variables
+	//--------------------------------------------------------------------------------
 	private TextField username;
 	private PasswordField password;
 	private String MyResult = null;
 
-	
+	/**
+	 * LoginView constructor<br>
+	 * Creates the Guy for this view - for details see comments in the code 
+	 * <br>
+	 *
+	 * @param none
+	 */
 	public LoginView() {
 		setSizeFull();
 		setSpacing(true);
@@ -44,14 +69,14 @@ public class LoginView extends VerticalLayout implements View {
         // Show the image in the application
         Image image = new Image("",resource);
         
-        // Username and Password
+        // Username and Password - Fields
         username = new TextField("Username");
 		password = new PasswordField("Password");
-		// Put some initial content in it
-		// password.setValue("Doctor Green");
 		
+		// Create the Login Button with its functionality
 		Button loginButton = loginButton();
 		
+		// add all components to the Layout
 		addComponent(image);
 		setComponentAlignment(image,Alignment.TOP_CENTER);
 		addComponent(new Label("&nbsp;", ContentMode.HTML));
@@ -65,35 +90,57 @@ public class LoginView extends VerticalLayout implements View {
 		setComponentAlignment(loginButton,Alignment.BOTTOM_CENTER);
 	}
 	
-	
+	/**
+	 * loginButton Method<br>
+	 * Creates the Login Button and adds its functionality<br>
+	 * <br>
+	 * 
+	 * @param none
+	 * @return Button - loginButton
+	 *           
+	 */
 	private Button loginButton() {
+		
+		// Create a new Button
 		Button button = new Button("Log In", new Button.ClickListener() {
 			@Override
+			
+			// Click functionality
 			public void buttonClick(ClickEvent event) {
-				System.out.println("value:"+username.getValue());
 				
+				// get the Values from the User
 				final String MyLog = username.getValue();
 				final String MyPass = password.getValue();
+				
+				// check the Acces for the given Doctor
 				LogAuthorDB logAuthor = new LogAuthorDB();
 				logAuthor.CheckAcces(MyLog, MyPass);
 
 				MyResult = logAuthor.getResult();
 
 				if (MyResult == "true"){ 
-				
-				
 				getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
 				}
 				else { Notification.show("Login is not correct.");
 				System.out.println(MyResult);
 			}
 		}});
+		
+		// return the loginButton
 		return button;
 	}	
 
+	/**
+	 * enter Method<br>
+	 * Overriding the enter Method from Superclass <br>
+	 * 
+	 * @return -
+	 */
 	@Override
 	public void enter(ViewChangeEvent event) {
-		Notification.show("Welcome! Please log in.");
+		
+		// Welcome the Doctor
+		Notification.show("Welcome Doctor! Please log in.");
 	}
 	
 }

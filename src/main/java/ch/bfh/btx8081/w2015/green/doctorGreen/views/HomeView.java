@@ -49,7 +49,6 @@ public class HomeView extends VerticalLayout implements View {
 	 *
 	 * @param none
 	 */
-	
 	public HomeView() {
 		
 		// Layout for footer
