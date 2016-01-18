@@ -132,9 +132,12 @@ public class CaseView extends VerticalLayout implements View {
 		// caseViewTabs
 		TabSheet caseViewTabs = new TabSheet();
 
+		//////////////////////////////////////////////
 		/* Start of Treatment View Tab code segment */
+		//////////////////////////////////////////////
 
 		Table treatmentTable = new Table("Treatment");
+		
 
 		// Define two columns for the built-in container
 		treatmentTable.addContainerProperty("Date", DateField.class, null);
@@ -149,6 +152,12 @@ public class CaseView extends VerticalLayout implements View {
 		TextArea medicationField = new TextArea();
 		medicationField.setRows(3);
 
+		/**
+		 * Style change variables
+		 */
+		medicationDate.addStyleName("dateField");
+		medicationField.addStyleName("medicationField");
+		
 		// The Table item identifier for the row.
 		Integer itemId = new Integer(1);
 
