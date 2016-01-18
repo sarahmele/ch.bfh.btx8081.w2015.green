@@ -57,12 +57,7 @@ import com.vaadin.ui.VerticalLayout;
 public class CaseView extends VerticalLayout implements View {
 
 	public CaseView() {
-		setSizeFull(); 
-		setSpacing(true);
-		
-		// Find the application directory
-		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
-
+	
 		// set TextFields
 		TextField textField_PatientCaseId = new TextField("Case Id: ");
 		textField_PatientCaseId.setWidth("95%");
@@ -99,26 +94,20 @@ public class CaseView extends VerticalLayout implements View {
 		
 		//textFieldBox
 		HorizontalLayout textFieldBox = new HorizontalLayout();
-		textFieldBox.setEnabled(false);
 		textFieldBox.setWidth("320");
-		
 		textFieldBox.addComponent(textField_PatientCaseId);
 		textFieldBox.addComponent(textField_Name);
 		
 		
 		// dateFieldbox
 		HorizontalLayout dateFieldBox = new HorizontalLayout();
-		dateFieldBox.setEnabled(false);
 		dateFieldBox.setWidth("320px");
-		
 		dateFieldBox.addComponent(dateField_FromDate);
 		dateFieldBox.addComponent(dateField_ToDate);
 		
 		// textAreaBox
-		VerticalLayout textAreaBox = new VerticalLayout();
-		textAreaBox.setEnabled(false);
+		VerticalLayout textAreaBox = new VerticalLayout();;
 		textAreaBox.setWidth("320");
-		
 		textAreaBox.addComponent(textArea_Anamnesis);
 		textAreaBox.addComponent(textArea_Diagnosis);
 		
@@ -150,7 +139,6 @@ public class CaseView extends VerticalLayout implements View {
 		DateField medicationDate = new DateField();
 		medicationDate.setWidth("50%");
 		medicationDate.setValue(new Date());
-
 		TextArea medicationField = new TextArea();
 		medicationField.setWidth("100%");
 		medicationField.setRows(3);
