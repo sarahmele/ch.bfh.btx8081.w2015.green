@@ -73,14 +73,14 @@ public class HomeView extends VerticalLayout implements View {
 		// Add two events for Presentation Day
 		GregorianCalendar start = new GregorianCalendar();
 		GregorianCalendar end   = new GregorianCalendar();
-		start.set(2016, 01, 21, 9, 00);
-		end.set(2016, 01, 21, 11, 00);
+		start.set(2016,0,21,9,00);
+		end.set(2016,0,21,11,00);
 		cal.addEvent(new BasicEvent("John Teller",
 				       "Watch the Case of John Teller",
 				        start.getTime(), end.getTime()));
 		
-		start.set(2016, 01, 21, 13, 00);
-		end.set(2016, 01, 21, 15, 00);
+		start.set(2016,0,21,13,00);
+		end.set(2016,0,21,15,00);
 		cal.addEvent(new BasicEvent("Marlis Müller",
 				       "Watch the Case of Marlis Müller",
 				        start.getTime(), end.getTime()));
