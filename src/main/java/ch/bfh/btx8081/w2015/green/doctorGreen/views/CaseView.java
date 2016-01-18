@@ -137,6 +137,7 @@ public class CaseView extends VerticalLayout implements View {
 		//////////////////////////////////////////////
 
 		Table treatmentTable = new Table("Treatment");
+		treatmentTable.setWidth("320");
 		
 
 		// Define two columns for the built-in container
@@ -147,9 +148,11 @@ public class CaseView extends VerticalLayout implements View {
 
 		// Create the fields for the current table row
 		DateField medicationDate = new DateField();
+		medicationDate.setWidth("50%");
 		medicationDate.setValue(new Date());
 
 		TextArea medicationField = new TextArea();
+		medicationField.setWidth("100%");
 		medicationField.setRows(3);
 
 		/**
