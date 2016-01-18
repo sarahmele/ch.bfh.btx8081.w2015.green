@@ -13,6 +13,7 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
+import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
 import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientController;
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PersistenceUnit;
@@ -34,6 +35,12 @@ public class PatientView extends VerticalLayout implements View {
 
 		// Back Button is Logout Button in this View
 		header.getButton("home").setCaption("Home");
+		header.getButton("home").addClickListener(new Button.ClickListener() {
+			@Override
+		    public void buttonClick(ClickEvent event) {
+		        getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
+		    }
+		});
 		header.getButton("back").setVisible(false);
 		addComponent(layoutHeader);
 
@@ -61,7 +68,7 @@ public class PatientView extends VerticalLayout implements View {
 		Button store = new Button();
 		PersistenceUnit unit = PersistenceUnit.getInstance();
 
-		// Back Button is Logout Button in this View
+		// Store Button
 		store.addClickListener(new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
