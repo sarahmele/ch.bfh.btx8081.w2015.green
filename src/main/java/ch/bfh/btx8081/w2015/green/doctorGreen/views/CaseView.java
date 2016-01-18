@@ -1,33 +1,17 @@
 package ch.bfh.btx8081.w2015.green.doctorGreen.views;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+//import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
-import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
-import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PatientCase;
-import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Person;
-
-import com.google.gwt.user.client.ui.VerticalSplitPanel;
-import com.sun.javafx.scene.traversal.ParentTraversalEngine;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
-import com.vaadin.server.Sizeable;
-import com.vaadin.server.VaadinService;
-import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.HorizontalSplitPanel;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.Layout;
 import com.vaadin.ui.Notification;
-import com.vaadin.ui.Panel;
-import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.TextArea;
@@ -77,7 +61,7 @@ public class CaseView extends VerticalLayout implements View {
 		textArea_Diagnosis.setValue("Patient Muster hat eine leichte psychische Depression");
 		
 		// Set DateFields
-		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+		//SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 		
 		DateField dateField_FromDate = new DateField("Etry Date");
 		dateField_FromDate.setWidth("95%");
