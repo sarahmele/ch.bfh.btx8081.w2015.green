@@ -5,26 +5,51 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
+import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
+import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PatientCase;
+import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Person;
 
 import com.google.gwt.user.client.ui.VerticalSplitPanel;
+import com.sun.javafx.scene.traversal.ParentTraversalEngine;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.server.Sizeable;
+import com.vaadin.server.VaadinService;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.HorizontalSplitPanel;
+import com.vaadin.ui.Label;
+import com.vaadin.ui.Layout;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
+import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.TextArea;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 /**
- *
+ * This class describes the Guy for the Case in the Doctor Green Application <br>
+ * <br>
+ * 
+ * @author Shpend Vladi<br>
+ * <br>
+ * 
+ *         instance variables:<br>
+ *         - TextField username<br>
+ *         - PasswordField password<br>
+ *         - String MyResult<br>
+ * <br>
+ * 
+ *         Methods:<br>
+ *         - loginButton() returns Button<br>
+ *         - enter(ViewChangeEvent event) no return value<br>
  */
 @SuppressWarnings("serial")
 @Theme("mytheme")
@@ -32,56 +57,80 @@ import com.vaadin.ui.VerticalLayout;
 public class CaseView extends VerticalLayout implements View {
 
 	public CaseView() {
-		setSizeFull();
+		setSizeFull(); 
 		setSpacing(true);
+		
+		// Find the application directory
+		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 
-		// Have a panel to put stuff in
-		Panel panel = new Panel();    
+		// set TextFields
+		TextField textField_PatientCaseId = new TextField("Case Id: ");
+		textField_PatientCaseId.setWidth("95%");
+		textField_PatientCaseId.setValue("1111");
+		
+		TextField textField_Name = new TextField("Name: ");
+		textField_Name.setWidth("95%");
+		textField_Name.setValue("Patient Muster");
+		
+		// set TextAreas
+		TextArea textArea_Anamnesis = new TextArea("Anamnesis: ");
+		textArea_Anamnesis.setWidth("100%");
+		textArea_Anamnesis.setValue("Patient Muster leidet seit Wochen an Schlafmangel");
+		
+		TextArea textArea_Diagnosis = new TextArea("Diagnosis: ");
+		textArea_Diagnosis.setWidth("100%");
+		textArea_Diagnosis.setValue("Patient Muster hat eine leichte psychische Depression");
+		
+		// Set DateFields
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+		
+		DateField dateField_FromDate = new DateField("Etry Date");
+		dateField_FromDate.setWidth("95%");
+		dateField_FromDate.setValue(new Date());
+		
+		DateField dateField_ToDate = new DateField("Leaving Date");
+		dateField_ToDate.setWidth("95%");
+		dateField_ToDate.setValue(new Date());
+		
+		// Save Button
+		Button save_Button = new Button("Save Changes");
+		save_Button.setWidth("100%");
 		
 		
-		Table CaseViewTable = new Table("CaseData");
-
-		// Define two columns for the built-in container
-
-		CaseViewTable.addContainerProperty("Name", String.class, null);
-		CaseViewTable.addContainerProperty("Max Muster",TextArea.class, null);
-
-		TextArea diagnosisField = new TextArea();
-		diagnosisField.setRows(3);
-		diagnosisField.setValue("Blinddarmentzündung");
-
-		TextArea anamnesisField = new TextArea();
-		anamnesisField.setRows(3);
-		anamnesisField.setValue("Schmerzen im unteren Abdomen");
-		anamnesisField.setReadOnly(true);
+		//textFieldBox
+		HorizontalLayout textFieldBox = new HorizontalLayout();
+		textFieldBox.setEnabled(false);
+		textFieldBox.setWidth("320");
 		
-		TextArea patientCaseId = new TextArea();
-		diagnosisField.setRows(3);
-		diagnosisField.setValue("Blinddarmentzündung");
+		textFieldBox.addComponent(textField_PatientCaseId);
+		textFieldBox.addComponent(textField_Name);
 		
 		
+		// dateFieldbox
+		HorizontalLayout dateFieldBox = new HorizontalLayout();
+		dateFieldBox.setEnabled(false);
+		dateFieldBox.setWidth("320px");
 		
+		dateFieldBox.addComponent(dateField_FromDate);
+		dateFieldBox.addComponent(dateField_ToDate);
+		
+		// textAreaBox
+		VerticalLayout textAreaBox = new VerticalLayout();
+		textAreaBox.setEnabled(false);
+		textAreaBox.setWidth("320");
+		
+		textAreaBox.addComponent(textArea_Anamnesis);
+		textAreaBox.addComponent(textArea_Diagnosis);
+		
+		// caseTab
+		VerticalLayout caseTab = new VerticalLayout();
+		caseTab.addComponent(textFieldBox);
+		caseTab.addComponent(dateFieldBox);
+		caseTab.addComponent(textAreaBox);
+		caseTab.addComponent(save_Button);
 
-		// Button changeDiagnosis_Button = changeDiagnosis_Button();
-
-		// Add a few other rows using shorthand addItem()
-		CaseViewTable.addItem(new Object[] { "PatientCaseId", patientCaseId }, 1);
-	//	CaseViewTable.addItem(new Object[] { "FromDate", getCurrentDate() }, 2);
-	//	CaseViewTable.addItem(new Object[] { "ToDate", getCurrentDate() }, 3);
-		CaseViewTable.addItem(new Object[] { "Diagnosis",
-				diagnosisField }, 4);
-		CaseViewTable.addItem(new Object[] { "Anamnesis",
-				anamnesisField }, 5);
-
-
+		// caseViewTabs
 		TabSheet caseViewTabs = new TabSheet();
-		final VerticalLayout layout = new VerticalLayout();
-		layout.setMargin(true);
-
-		caseViewTabs.addComponents(CaseViewTable);
-
-		GenericView header = new GenericView();
-		HorizontalLayout layoutHeader = header.getHeader();
 
 		/* Start of Treatment View Tab code segment */
 
@@ -111,11 +160,16 @@ public class CaseView extends VerticalLayout implements View {
 		treatmentTable.setPageLength(treatmentTable.size());
 		
         
-		caseViewTabs.addComponent(CaseViewTable);
+		caseViewTabs.addTab(caseTab).setCaption("Case");
 		caseViewTabs.addComponent(treatmentTable);
 		
-		panel.setContent(caseViewTabs);
+		
+		GenericView header = new GenericView();
+		HorizontalLayout layoutHeader = header.getHeader();
+		
+		addComponent(layoutHeader);
 		addComponent(caseViewTabs);
+		
 		
 
 		// Treatment Plan button
@@ -160,26 +214,6 @@ public class CaseView extends VerticalLayout implements View {
 
 	}
 
-	public String getCurrentDate() {
-		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		// get current date time with Date()
-		Date date = new Date();
-		return dateFormat.format(date);
-	}
-
-	public String getAnamnesis() {
-		return null;
-	}
-
-	// private Button changeDiagnosis_Button() {
-	// Button button = new Button("HomeView", new Button.ClickListener() {
-	// @Override
-	// public void buttonClick(ClickEvent event) {
-	// getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
-	// }
-	// });
-	// return button;
-	// }
 
 	@Override
 	public void enter(ViewChangeEvent event) {
