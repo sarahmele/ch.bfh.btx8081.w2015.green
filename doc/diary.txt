@@ -239,6 +239,7 @@
 								 CaseView weiterarbeit: Vladi Shpend
 								 TreatmentView-Tab für CaseView: Luca Ramos
 								 SCRUM Update: Sarah Mele
+								 JUnit/CodeInspections Tests: Alle
 								 
 14.01.16 - Team meeting: Task14: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
 								 Persistence Unit: Sarah Mele
@@ -247,6 +248,7 @@
 								 TreatmentView-Tab für CaseView: Luca Ramos
 								 SCRUM Update: Sarah Mele
 								 Präsentation-Vorbereiten: Luca Ramos
+								 JUnit/CodeInspections Tests: Alle
 								 
 18.01.16 - Team meeting: Task14: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
 								 Persistence Unit: Sarah Mele
@@ -254,5 +256,6 @@
 								 CaseView weiterarbeit: Vladi Shpend
 								 TreatmentView-Tab für CaseView: Luca Ramos
 								 SCRUM Update: Sarah Mele
-								 Präsentation-Vorbereiten: Luca Ramos							 									 							 
+								 Präsentation-Vorbereiten: Luca Ramos
+								 JUnit/CodeInspections Tests: Alle							 									 							 
 								 						 						 								 						 
