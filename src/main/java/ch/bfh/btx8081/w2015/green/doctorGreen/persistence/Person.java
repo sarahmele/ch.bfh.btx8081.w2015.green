@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 public class Person {
 	@Id
 	@GeneratedValue
-	private String pid;
+	private int pid;
 
 	@Column
 	private String firstName;
@@ -36,13 +36,6 @@ public class Person {
 	@Column
 	private String password;
 
-	public String getPid() {
-		return pid;
-	}
-
-	public void setPid(String pid) {
-		this.pid = pid;
-	}
 
 	public String getFirstName() {
 		return firstName;
