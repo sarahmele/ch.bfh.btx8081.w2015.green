@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 
 public class DB_MetaData {
+	
 	static Connection connection = null;
 	static DatabaseMetaData metadata = null;
 
@@ -89,53 +90,6 @@ public class DB_MetaData {
 		        }
 		    }
 	
-	public static void changeCelciusToFahrenheid()
-	{
-		try {
-			Connection con = DB_Connection.getConnection();
-			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT Temperature FROM BODYTEMPERATURE");
-			
-			while (rs.next()) {
-				  String temperature = rs.getString("temperature");
-				  System.out.println(temperature + "\n");
-				}
-		}
-		catch (SQLException err)
-		{
-			System.out.println(err.getMessage());
-		}
-	}
-	
-	public static void SearchingNameWenk()
-	{
-		try {
-			Connection con = DB_Connection.getConnection();
-			Statement stmt_Name = con.createStatement();
-			Statement stmt_Firstname = con.createStatement();
-			Statement stmt_PatientNb = con.createStatement();
-			ResultSet rs_name = stmt_Name.executeQuery("SELECT Name FROM PATIENT");
-			ResultSet rs_Firstname = stmt_Firstname.executeQuery("SELECT Firstname FROM PATIENT");
-			ResultSet rs_PatientNb = stmt_PatientNb.executeQuery("SELECT PatientNb FROM PATIENT");
-			
-			while (rs_name.next()) {
-				  String name = rs_name.getString("name");
-				  System.out.println(name + "\n");
-				}
-			while (rs_Firstname.next()) {
-				  String Firstname = rs_Firstname.getString("Firstname");
-				  System.out.println(Firstname + "\n");
-				}
-			while (rs_PatientNb.next()) {
-				  String PatientNb = rs_PatientNb.getString("PatientNb");
-				  System.out.println(PatientNb + "\n");
-				}
-		}
-		catch (SQLException err)
-		{
-			System.out.println(err.getMessage());
-		}
-	}
 	
 	
 	 public static void main(String[] args) {
@@ -144,7 +98,6 @@ public class DB_MetaData {
 		 	            // Print all the tables of the database scheme, with their names and
 		 	            // structure
 		 	            getColumnsMetadata(getTablesMetadata());
-		 	            SearchingNameWenk();
 		 	        } catch (SQLException e) {
 		 	            System.err
 		 	                    .println("There was an error retrieving the metadata properties: "
