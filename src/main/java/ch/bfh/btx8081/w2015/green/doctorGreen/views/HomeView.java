@@ -86,7 +86,7 @@ public class HomeView extends VerticalLayout implements View {
 				        start.getTime(), end.getTime()));
 		
 		//Button to enter SearchView
-		Button patientSearchButton = new Button("Search", new Button.ClickListener() {
+		Button patientSearchButton = new Button("Search Patient", new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				getUI().getNavigator().navigateTo(MyUI.PATIENTSEARCHVIEW);

@@ -3,8 +3,11 @@ package ch.bfh.btx8081.w2015.green.doctorGreen.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
-import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PersistenceUnit;
 
 /**
  * 
@@ -12,7 +15,10 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PersistenceUnit;
  *
  */
 public class PatientSearchController {
-	PersistenceUnit unit = PersistenceUnit.getInstance();
+
+	private final String DOCTOR_GREEN = "doctorgreen";
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory(DOCTOR_GREEN);
+	EntityManager em = factory.createEntityManager();
 
 	private static PatientSearchController instance = null;
 
@@ -23,33 +29,29 @@ public class PatientSearchController {
 		return instance;
 	}
 
-	/**
-	 * 
-	 * @param insuranceNb
-	 * @param firstname
-	 * @param lastname
-	 * @return
-	 */
-	public Patient getPatient(String insuranceNb, String firstname, String lastname) {
-		// TODO Search Patient
+	public List<Patient> getPatientList() {
+		// em.getTransaction().begin();
+		// Query q = em.createQuery("SELECT e FROM Patient e");
+		// List<Patient> patientList = q.getResultList();
+		//
+		// em.close();
+		// factory.close();
 
-		return new Patient();
-	}
-
-	/**
-	 * 
-	 * @param insuranceNb
-	 * @param firstname
-	 * @param lastname
-	 * @return
-	 */
-	public List<Patient> getPatientList(String insuranceNb, String firstname, String lastname) {
 		List<Patient> patientList = new ArrayList<Patient>();
+		Patient patient1 = new Patient();
+		patient1.setFirstName("test");
+		patient1.setLastName("lastname");
+		patient1.setInsuranceNb("1245");
 
-		// TODO searchPatients
+		Patient patient2 = new Patient();
+		patient2.setFirstName("tes2t");
+		patient2.setLastName("lastname2");
+		patient2.setInsuranceNb("1245");
+
+		patientList.add(patient1);
+		patientList.add(patient2);
 
 		return patientList;
-
 	}
 
 }
