@@ -98,8 +98,12 @@ public class LogAuthorDB {
 					//System.out.println(String.format("%s\t\t%s, \t%s", i++,
 					//		rs.getString(2), rs.getString(3)));
 							
-					//System.out.println(String.format("\t%s, %s", i++,
-					//		 rs.getString(6), rs.getString(8)));
+					
+					System.out.println(String.format("%d\t%s, \t%s", i++,
+							 rs.getString(1), rs.getString(2)));
+					
+				
+					
 					
 
 					//username = rs.getString("Username"); // Konzeptioneller
