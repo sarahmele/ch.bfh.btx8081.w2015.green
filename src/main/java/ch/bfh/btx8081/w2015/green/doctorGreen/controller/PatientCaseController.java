@@ -1,5 +1,11 @@
 package ch.bfh.btx8081.w2015.green.doctorGreen.controller;
 
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -13,33 +19,52 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
 
 public class PatientCaseController {
 	
-	private final String DOCTOR_GREEN = "doctorgreen";
-	private static PatientCaseController instance = null;
-	
-	public PatientCaseController() {	
-	    em = Persistence.createEntityManagerFactory(DOCTOR_GREEN).createEntityManager();
-	  }
+	static Connection connection = null;
+	static DatabaseMetaData metadata = null;
 
-	public static PatientCaseController getInstance() {
-		if (instance == null) {
-			instance = new PatientCaseController();
+	// Static block for initialization
+	public PatientCaseController(){
+	
+
+		try {
+			connection = DB_Connection.getConnection();
+		} catch (SQLException e) {
+			System.err.println("There was an error getting the connection: "
+					+ e.getMessage());
 		}
-		return instance;
+		try {
+			metadata = connection.getMetaData();
+		} catch (SQLException e) {
+			System.err.println("There was an error getting the metadata: "
+					+ e.getMessage());
+		}
+
+	
 	}
 	
-	EntityManagerFactory factory = Persistence.createEntityManagerFactory(DOCTOR_GREEN);
-	EntityManager em = factory.createEntityManager();
+	public static String getPersonFirstname(int pid)
+		    throws SQLException {
+		
+		    Statement stmt = null;
+		    String query = "select FIRSTNAME from PERSON where PID=1";
+		    try {
+		    	
+		        stmt = connection.createStatement();
+		        ResultSet rs = stmt.executeQuery(query);
+		        while (rs.next()) {
+		            String firstname = rs.getString("FIRSTNAME");
+		            System.out.println(firstname);
+		            return firstname;
+		        }
+		    } catch (SQLException err ) {
+		    	System.out.println(err.getMessage());
+		    } finally {
+		        if (stmt != null) { stmt.close(); }
+		    }
+			return null;
+			
+		}
 	
-	public List<String> getPatientFirstname(String pid) {
-	    Query query= em.createQuery("select FIRSTNAME from PERSON where PID ="+pid);
-	    List<String> results = query.getResultList();
-	    
-		return results;
-	}
-	
-	
-	public static void main(String[] args) {
-		PatientCaseController pC = new PatientCaseController();	    
-	  }
+
 
 }
