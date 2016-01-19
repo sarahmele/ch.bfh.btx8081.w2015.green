@@ -248,5 +248,11 @@
 								 SCRUM Update: Sarah Mele
 								 Präsentation-Vorbereiten: Luca Ramos
 								 
-								 									 							 
+18.01.16 - Team meeting: Task14: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
+								 Persistence Unit: Sarah Mele
+								 PatientView: Yannis Portmann
+								 CaseView weiterarbeit: Vladi Shpend
+								 TreatmentView-Tab für CaseView: Luca Ramos
+								 SCRUM Update: Sarah Mele
+								 Präsentation-Vorbereiten: Luca Ramos							 									 							 
 								 						 						 								 						 
