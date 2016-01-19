@@ -10,19 +10,19 @@ import javax.persistence.OneToMany;
 public class State {
 	
 	@Id
-	private int id;
+	private int stateId;
 
 	private String name;
 	
 	@OneToMany(mappedBy = "state")
 	private List<Patient> patientList;
 	
-	public int getId() {
-		return id;
+	public int getstateId() {
+		return stateId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setstateId(int stateId) {
+		this.stateId = stateId;
 	}
 
 	public String getName() {
