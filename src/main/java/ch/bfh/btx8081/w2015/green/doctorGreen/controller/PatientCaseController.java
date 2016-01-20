@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
+import java.sql.Date;
 
 public class PatientCaseController {
 	
@@ -210,36 +210,12 @@ public class PatientCaseController {
 		    }
 		    } 
 	
-	public void insertNewCaseId(int pid, int caseID) {
-	    
-		Statement stmt = null;
-		String query = "INSERT INTO PATIENT_CASE VALUES ("+pid+"," +caseID+")";
-	    try {
-	    	stmt = connection.createStatement();
-	    	stmt.executeUpdate(query);
-	        System.out.println("Update CaseID was succesful");
-	        }
-	    	catch (SQLException err ) {
-	    	System.out.println(err.getMessage());
-	    } finally {
-	        if (stmt != null) { try {
-				stmt.close();
-			} catch (SQLException err) {
-				System.out.println("inserting new case Id didnt work");
-				System.out.println(err.getMessage());
-			} }
-	    }
-	    }
-		
-
-		    
-	
-	public void upDateFromDate(String fromDate, int caseID) {
+	public void upDateFromDate(Date FromDate, int caseID) {
 		PreparedStatement ps = null;
 		    try {
 		    	ps = connection.prepareStatement("UPDATE PATIENTCASE SET FROMDATE = ? WHERE PATIENTCASEID=?");
 		    	// set the preparedstatement parameters
-		        ps.setString(1,fromDate);
+		        ps.setDate(1,FromDate);
 		        ps.setInt(2,caseID);
 		        // call executeUpdate to execute our sql update statement
 		        ps.executeUpdate();
@@ -253,12 +229,12 @@ public class PatientCaseController {
 		    }
 		    } 
 	
-	public void upDateToDate(String toDate, int caseID) {
+	public void upDateToDate(Date ToDate, int caseID) {
 		PreparedStatement ps = null;
 		    try {
 		    	ps = connection.prepareStatement("UPDATE PATIENTCASE SET TODATE = ? WHERE PATIENTCASEID=?");
 		    	// set the preparedstatement parameters
-		        ps.setString(1,toDate);
+		        ps.setDate(1,ToDate);
 		        ps.setInt(2,caseID);
 		        // call executeUpdate to execute our sql update statement
 		        ps.executeUpdate();
@@ -310,23 +286,5 @@ public class PatientCaseController {
 		    }
 		    } 
 	
-	public static void main(String[] args) {
-			String fromdate = "1999-07-07";
-			String todate = "2016-07-07";
-			PatientCaseController pController = PatientCaseController.getInstance();
-			pController.upDateFromDate(fromdate, 1);
-			pController.upDateToDate(todate, 1);
-			pController.upDateName("Shpend", "Vladi", 1);
-			pController.insertNewCaseId(12, 13);
-			pController.upDateAnamnesis("Albinas leg hurts" , 1);
-			pController.upDateDiagnosis("Albinas leg is broken", 1);
-	        System.out.println("Name is: " + pController.getPersonName(1));
-	        System.out.println("CaseID is: "+ pController.getCaseID(1));
-	        System.out.println("Entry Date is: "+ pController.getFromDate(1));
-	        System.out.println("Leaving Date is: "+ pController.getToDate(1));
-	        System.out.println("Anamnesis is: "+ pController.getAnamnesis(1));
-	        System.out.println("Diagnosis is: "+ pController.getDiagnosis(1));
-	        
-	    }
 
 }
