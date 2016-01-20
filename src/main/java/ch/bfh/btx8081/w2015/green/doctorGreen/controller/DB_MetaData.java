@@ -4,12 +4,12 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 
 public class DB_MetaData {
 	
+	static DB_Connection dc = DB_Connection.getInstance();
 	static Connection connection = null;
 	static DatabaseMetaData metadata = null;
 
@@ -18,7 +18,7 @@ public class DB_MetaData {
 	static {
 
 		try {
-			connection = DB_Connection.getConnection();
+			connection = dc.getConnection();
 		} catch (SQLException e) {
 			System.err.println("There was an error getting the connection: "
 					+ e.getMessage());
