@@ -114,7 +114,7 @@ public class CaseView extends VerticalLayout implements View {
 		Button save_Button = new Button("Save Changes");
 		save_Button.setWidth("100%");
 		
-		Button edit_Button = new Button("edit");
+		Button edit_Button = new Button("edit Fields");
 		save_Button.setWidth("100%");
 		
 		
@@ -138,7 +138,7 @@ public class CaseView extends VerticalLayout implements View {
 		
 		// textAreaBox
 		VerticalLayout textAreaBox = new VerticalLayout();;
-		textAreaBox.setWidth("320");
+		textAreaBox.setWidth("320px");
 		textAreaBox.addComponent(textArea_Anamnesis);
 		textAreaBox.addComponent(textArea_Diagnosis);
 		
@@ -287,11 +287,23 @@ public class CaseView extends VerticalLayout implements View {
 		    	
 		        java.sql.Date sqlToDate = new java.sql.Date(changedToDate.getTime());
 		        java.sql.Date sqlFromDate = new java.sql.Date(changedFromDate.getTime());
-		        
-		    	pc.upDateAnamnesis(changedAnamnesis, Integer.parseInt(caseId) );
-		    	pc.upDateDiagnosis(changedDiagnosis, Integer.parseInt(caseId));
+		    
 		    	pc.upDateFromDate(sqlFromDate, Integer.parseInt(caseId));
 		    	pc.upDateToDate(sqlToDate, Integer.parseInt(caseId));
+		    	
+		    	if (changedAnamnesis ==null)
+		    	{
+		    		pc.upDateAnamnesis(anamnesis, Integer.parseInt(caseId) );
+		    	}else{
+		    		pc.upDateAnamnesis(changedAnamnesis, Integer.parseInt(caseId) );
+		    	}
+		    	
+		    	if (changedDiagnosis ==null)
+		    	{
+		    		pc.upDateDiagnosis(diagnosis, Integer.parseInt(caseId));
+		    	}else{
+		    		pc.upDateDiagnosis(changedDiagnosis, Integer.parseInt(caseId));
+		    	}
 		    	
 		    	textArea_Anamnesis.setEnabled(false);
 		    	textArea_Diagnosis.setEnabled(false);
