@@ -49,6 +49,11 @@ import com.vaadin.ui.VerticalLayout;
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
 public class CaseView extends VerticalLayout implements View {
 	
+	String changedAnamnesis;
+	String changedDiagnosis;
+	String changedFromDate;
+	String changedToDate;
+	
 	PatientCaseController pc = PatientCaseController.getInstance();
 	
 	@SuppressWarnings("deprecation")
@@ -215,28 +220,74 @@ public class CaseView extends VerticalLayout implements View {
 		});
 		
 		
-		textField_PatientCaseId.addListener(new Property.ValueChangeListener()
+		textArea_Anamnesis.addListener(new Property.ValueChangeListener()
 	    {
 	        private static final long serialVersionUID =
 	        1L;
 	        
 			@Override
 			public void valueChange(com.vaadin.data.Property.ValueChangeEvent event) {
-				String caseIdChanged = (String)event.getProperty().getValue();
+				changedAnamnesis = (String)event.getProperty().getValue();
+			}
+	   });
+		
+		textArea_Diagnosis.addListener(new Property.ValueChangeListener()
+	    {
+	        private static final long serialVersionUID =
+	        1L;
+	        
+			@Override
+			public void valueChange(com.vaadin.data.Property.ValueChangeEvent event) {
+				changedDiagnosis = (String)event.getProperty().getValue();
+			}
+	   });
+		
+		dateField_FromDate.addListener(new Property.ValueChangeListener()
+	    {
+	        private static final long serialVersionUID =
+	        1L;
+	        
+			@Override
+			public void valueChange(com.vaadin.data.Property.ValueChangeEvent event) {
+				changedFromDate = (String)event.getProperty().getValue();
+			}
+	   });
+		
+		dateField_ToDate.addListener(new Property.ValueChangeListener()
+	    {
+	        private static final long serialVersionUID =
+	        1L;
+	        
+			@Override
+			public void valueChange(com.vaadin.data.Property.ValueChangeEvent event) {
+				changedToDate = (String)event.getProperty().getValue();
 			}
 	   });
 		
 		save_Button.addClickListener(new Button.ClickListener() {
 		    public void buttonClick(ClickEvent event) {
+		    	pc.upDateAnamnesis(changedAnamnesis, Integer.parseInt(pc.getCaseID(1)));
+		    	pc.upDateDiagnosis(changedDiagnosis, Integer.parseInt(pc.getCaseID(1)));
+		    	pc.upDateFromDate(changedFromDate, Integer.parseInt(pc.getCaseID(1)));
+		    	pc.upDateToDate(changedToDate, Integer.parseInt(pc.getCaseID(1)));
+		    	
+		    	textArea_Anamnesis.setEnabled(false);
+		    	textArea_Diagnosis.setEnabled(false);
+		    	dateField_FromDate.setEnabled(false);
+		    	dateField_ToDate.setEnabled(false);
+		    	
 		    	save_Button.setCaption("saved!");
 		    }
 		});
 		
 		edit_Button.addClickListener(new Button.ClickListener() {
 		    public void buttonClick(ClickEvent event) {
-		    	save_Button.setCaption("saved!");
-		    	textFieldBox.setEnabled(true);
+		    	
+		    	save_Button.setCaption("");
 		    	dateField_FromDate.setEnabled(true);
+		    	textArea_Anamnesis.setEnabled(true);
+		    	textArea_Diagnosis.setEnabled(true);
+		    	dateField_ToDate.setEnabled(true);
 		    }
 		});
 		
