@@ -1,8 +1,5 @@
 package ch.bfh.btx8081.w2015.green.doctorGreen.views;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-//import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
@@ -17,7 +14,6 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientCaseController;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.data.Property;
-import com.vaadin.data.util.converter.DateToSqlDateConverter;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
@@ -67,12 +63,17 @@ public class CaseView extends VerticalLayout implements View {
 	
 	String changedAnamnesis;
 	String changedDiagnosis;
-	String changedFromDate;
-	String changedToDate;
+	Date changedFromDate = new Date();
+	Date changedToDate = new Date();
+	
+	
 	
 	
 	@SuppressWarnings("deprecation")
 	public CaseView()  {
+		
+		changedFromDate = pc.getFromDate(Integer.parseInt(caseId));
+		changedToDate = pc.getToDate(Integer.parseInt(caseId));
 		
 		// set TextFields
 		TextField textField_PatientCaseId = new TextField("Case Id: ");
@@ -102,12 +103,12 @@ public class CaseView extends VerticalLayout implements View {
 		dateField_FromDate.setWidth("95%");
 		dateField_FromDate.setValue(fromdate);
 		dateField_FromDate.setEnabled(false);
-		dateField_FromDate.setDateFormat("dd-mm-yyyy");
+//		dateField_FromDate.setDateFormat("dd-mm-yyyy");
 		
 		DateField dateField_ToDate = new DateField("Leaving Date");
 		dateField_ToDate.setWidth("95%");
 		dateField_ToDate.setValue(todate);
-		dateField_ToDate.setDateFormat("dd-mm-yyyy");
+//		dateField_ToDate.setDateFormat("dd-mm-yyyy");
 		
 		// Buttons
 		Button save_Button = new Button("Save Changes");
@@ -266,7 +267,7 @@ public class CaseView extends VerticalLayout implements View {
 	        
 			@Override
 			public void valueChange(com.vaadin.data.Property.ValueChangeEvent event) {
-				changedFromDate = (String)event.getProperty().getValue();
+				changedFromDate = (Date)event.getProperty().getValue();
 			}
 	   });
 		
@@ -277,31 +278,16 @@ public class CaseView extends VerticalLayout implements View {
 	        
 			@Override
 			public void valueChange(com.vaadin.data.Property.ValueChangeEvent event) {
-				changedToDate = (String)event.getProperty().getValue();
+				changedToDate = (Date)event.getProperty().getValue();
 			}
 	   });
 		
 		save_Button.addClickListener(new Button.ClickListener() {
 		    public void buttonClick(ClickEvent event) {
 		    	
-		    	SimpleDateFormat sdf1 = new SimpleDateFormat("dd-mm-yyyy");
-		    	java.util.Date dateFrom = null;
-				try {
-					dateFrom = sdf1.parse(changedFromDate);
-				} catch (ParseException e1) {
-					System.out.println("Failed to Convert the FromDate String to a JavaSqlDate");
-					e1.printStackTrace();
-				}
-		    	java.util.Date dateTo = null;
-				try {
-					dateTo = sdf1.parse(changedToDate);
-				} catch (ParseException e) {
-					System.out.println("Failed to Convert the Todate String to a JavaSqlDate");
-					e.printStackTrace();
-				}
-		    	java.sql.Date sqlFromDate = new java.sql.Date(dateFrom.getTime());
-		    	java.sql.Date sqlToDate = new java.sql.Date(dateTo.getTime());
-		    	
+		        java.sql.Date sqlToDate = new java.sql.Date(changedToDate.getTime());
+		        java.sql.Date sqlFromDate = new java.sql.Date(changedFromDate.getTime());
+		        
 		    	pc.upDateAnamnesis(changedAnamnesis, Integer.parseInt(caseId) );
 		    	pc.upDateDiagnosis(changedDiagnosis, Integer.parseInt(caseId));
 		    	pc.upDateFromDate(sqlFromDate, Integer.parseInt(caseId));
