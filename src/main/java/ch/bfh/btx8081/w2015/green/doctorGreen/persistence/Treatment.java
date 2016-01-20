@@ -47,4 +47,8 @@ public class Treatment {
 	@JoinTable(name = "TREATMENT_MEDICATION", joinColumns = @JoinColumn(name = "TREATMENT_ID", referencedColumnName = "treatmentId") , inverseJoinColumns = @JoinColumn(name = "MEDICATION_ID", referencedColumnName = "medicationId") )
 	private List<Medication> medicationList;
 
+	public int getTreatmentId() {
+		return treatmentId;
+	}
+
 }
