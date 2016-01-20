@@ -251,11 +251,19 @@
 								 JUnit/CodeInspections Tests: Alle
 								 
 18.01.16 - Team meeting: Task14: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
-								 Persistence Unit: Sarah Mele
 								 PatientView: Yannis Portmann
 								 CaseView weiterarbeit: Vladi Shpend
 								 TreatmentView-Tab für CaseView: Luca Ramos
 								 SCRUM Update: Sarah Mele
 								 Präsentation-Vorbereiten: Luca Ramos
-								 JUnit/CodeInspections Tests: Alle							 									 							 
-								 						 						 								 						 
+								 JUnit/CodeInspections Tests: Alle
+								 
+20.01.16 - Team meeting: Task14: Anwesend im Daily SCRUM: Luca Ramos, Shpend Vladi, Sarah Mele
+								 CaseView zu Datenbank Controller: Shpend Vladi
+								 TreatmentTab zu Datenbank Controller: Luca Ramos
+								 HomeView zu Datenbank: Sarah Mele
+								 SCRUM Update: Sarah Mele
+								 Präsentation: Sarah Mele, Luca Ramos
+								 JPA Einbindung: Yannis Portmann
+								 State Pattern Einbindung: Yannis Portmann
+								 JUnit/CodeInspections Tests: Alle				 						 								 						 
