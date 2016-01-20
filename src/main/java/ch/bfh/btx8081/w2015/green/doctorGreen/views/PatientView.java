@@ -10,7 +10,6 @@ import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
-import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
@@ -19,8 +18,9 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.State;
 
 /**
+ * This class describes the GUI for PatientView in the Doctor Green Application
  * 
- * @author Yannis
+ * @author Yannis Portmann
  *
  */
 @SuppressWarnings("serial")
@@ -34,7 +34,6 @@ public class PatientView extends VerticalLayout implements View {
 	String dangerousness = "ungefährlich";
 
 	Button save = new Button("Save", this::save);
-	Button cancel = new Button("Cancel", this::cancel);
 	TextField firstname = new TextField("First name");
 	TextField lastname = new TextField("Last name");
 	TextField insuranceNb = new TextField("Insurance Number");
@@ -48,31 +47,35 @@ public class PatientView extends VerticalLayout implements View {
 	private State stateObj;
 
 	/**
-	 * 
+	 * Constructor to add all Items
 	 */
 	public PatientView() {
-
 		gender.addItem("m");
 		gender.addItem("f");
 		state.addItem("Harmless");
 		state.addItem("Dangerous");
 		state.addItem("Very Dangerous");
-		HorizontalLayout actions = new HorizontalLayout(save, cancel);
+		HorizontalLayout actions = new HorizontalLayout(save);
 		actions.setSpacing(true);
 		addComponents(firstname, lastname, insuranceNb, birthDate, gender, state, actions);
 	}
 
+	/**
+	 * Additional Notifications could be defined here.
+	 */
 	@Override
 	public void enter(ViewChangeEvent event) {
 		Notification.show("");
 	}
 
 	/**
+	 * Method to save the Patient object
 	 * 
 	 * @param event
 	 */
 	public void save(Button.ClickEvent event) {
 		try {
+			System.out.println(state.getValue().toString());
 			formFieldBindings.commit();
 			controller.savePatient(patient);
 		} catch (Exception e) {
@@ -82,13 +85,7 @@ public class PatientView extends VerticalLayout implements View {
 
 	/**
 	 * 
-	 * @param event
-	 */
-	public void cancel(Button.ClickEvent event) {
-		Notification.show("Cancelled", Type.TRAY_NOTIFICATION);
-	}
-
-	/**
+	 * Method which is called to edit the selected Patient from the list
 	 * 
 	 * @param patient
 	 */

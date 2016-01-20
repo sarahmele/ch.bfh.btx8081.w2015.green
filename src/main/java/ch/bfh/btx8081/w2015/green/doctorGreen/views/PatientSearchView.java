@@ -18,8 +18,9 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientSearchController
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
 
 /**
+ * This class describes the GUI for HomeView in the Doctor Green Application
  * 
- * @author Yannis
+ * @author Yannis Portmann
  *
  */
 @SuppressWarnings("serial")
@@ -35,7 +36,7 @@ public class PatientSearchView extends VerticalLayout implements View {
 	PatientCaseView patientCaseView = new PatientCaseView();
 
 	/**
-	 * 
+	 * Constructor to add all Items
 	 */
 	public PatientSearchView() {
 
@@ -82,7 +83,7 @@ public class PatientSearchView extends VerticalLayout implements View {
 	}
 
 	/**
-	 * 
+	 * Describes the List Entrys
 	 */
 	private void configureComponents() {
 		filter.setInputPrompt("Filter patients...");
@@ -105,13 +106,14 @@ public class PatientSearchView extends VerticalLayout implements View {
 	}
 
 	/**
-	 * 
+	 * Method to refresh the table
 	 */
 	void refreshPatients() {
 		refreshPatients(filter.getValue());
 	}
 
 	/**
+	 * Apply the current filter entries
 	 * 
 	 * @param stringFilter
 	 */
@@ -119,6 +121,9 @@ public class PatientSearchView extends VerticalLayout implements View {
 		patientListGrid.setContainerDataSource(new BeanItemContainer<>(Patient.class, controller.getPatientList()));
 	}
 
+	/**
+	 * Needs to be implemented
+	 */
 	@Override
 	public void enter(ViewChangeEvent event) {
 	}

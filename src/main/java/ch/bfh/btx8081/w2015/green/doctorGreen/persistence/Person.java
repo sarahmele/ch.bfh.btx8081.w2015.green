@@ -36,6 +36,13 @@ public class Person {
 	@Column
 	private String password;
 
+	public int getPid() {
+		return pid;
+	}
+
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
 
 	public String getFirstName() {
 		return firstName;
