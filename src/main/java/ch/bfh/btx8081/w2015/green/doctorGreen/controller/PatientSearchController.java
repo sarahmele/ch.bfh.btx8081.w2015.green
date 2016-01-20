@@ -71,13 +71,7 @@ public class PatientSearchController {
 			dbPatient.setLastName(patient.getLastName());
 			dbPatient.setInsuranceNb(patient.getInsuranceNb());
 			dbPatient.setBirthDate(patient.getBirthDate());
-			
-			
-//			firstname = new TextField("First name");
-//			TextField lastname = new TextField("Last name");
-//			TextField insuranceNb = new TextField("Insurance Number");
-//			DateField birthDate = new DateField("Birth date");
-//			ComboBox gender
+			//dbPatient.setState(patient.getState());
 			
 			em.getTransaction().commit();
 			em.close();

@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class PatientCase {
@@ -27,6 +28,9 @@ public class PatientCase {
 	@Column
 	private String diagnosis;
 
+	@ManyToOne
+	private Patient patient;
+	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "PATIENTCASE_TREATMENT", joinColumns = @JoinColumn(name = "PATIENTCASEID", referencedColumnName = "patientCaseId") , inverseJoinColumns = @JoinColumn(name = "TREATMENTID", referencedColumnName = "treatmentId") )
 	private List<Treatment> treatmentList;
