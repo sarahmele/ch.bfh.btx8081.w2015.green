@@ -65,7 +65,7 @@ public class HomeView extends VerticalLayout implements View {
 		cal.setHandler(new CalendarComponentEvents.EventClickHandler() {
 			@Override
 		    public void eventClick(EventClick event) {
-		        getUI().getNavigator().navigateTo(MyUI.PATIENTVIEW);
+		        getUI().getNavigator().navigateTo(MyUI.PATIENTSEARCHVIEW);
 		    }
 		});
 		
