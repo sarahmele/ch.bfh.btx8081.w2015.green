@@ -26,6 +26,22 @@ public class Treatment {
 	private String description;
 	@Column
 	private Date date;
+	
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "TREATMENT_MEDICATION", joinColumns = @JoinColumn(name = "TREATMENT_ID", referencedColumnName = "treatmentId") , inverseJoinColumns = @JoinColumn(name = "MEDICATION_ID", referencedColumnName = "medicationId") )
