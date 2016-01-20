@@ -19,7 +19,6 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.DateField;
-import com.vaadin.ui.Field.ValueChangeEvent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.TabSheet;
@@ -49,12 +48,20 @@ import com.vaadin.ui.VerticalLayout;
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
 public class CaseView extends VerticalLayout implements View {
 	
+	PatientCaseController pc = PatientCaseController.getInstance();
+	
+	String patientname = pc.getPersonName(1);
+	String patientCaseId = pc.getCaseID(1);
+	String anamnesis = pc.getAnamnesis(1);
+	String diagnosis = pc.getDiagnosis(1);
+	Date fromdate = pc.getFromDate(1);
+	Date todate = pc.getToDate(1);
+	
 	String changedAnamnesis;
 	String changedDiagnosis;
 	String changedFromDate;
 	String changedToDate;
 	
-	PatientCaseController pc = PatientCaseController.getInstance();
 	
 	@SuppressWarnings("deprecation")
 	public CaseView()  {
@@ -62,41 +69,43 @@ public class CaseView extends VerticalLayout implements View {
 		// set TextFields
 		TextField textField_PatientCaseId = new TextField("Case Id: ");
 		textField_PatientCaseId.setWidth("95%");
-		textField_PatientCaseId.setValue(pc.getCaseID(1));
+		textField_PatientCaseId.setValue(patientCaseId);
 		textField_PatientCaseId.setEnabled(false);
 		
 		TextField textField_Name = new TextField("Name: ");
 		textField_Name.setWidth("95%");
-		textField_Name.setValue(pc.getPersonName(1));
+		textField_Name.setValue(patientname);
 		textField_Name.setEnabled(false);
 		
 		
 		// set TextAreas
 		TextArea textArea_Anamnesis = new TextArea("Anamnesis: ");
 		textArea_Anamnesis.setWidth("100%");
-		textArea_Anamnesis.setValue(pc.getAnamnesis(1));
+		textArea_Anamnesis.setValue(anamnesis);
 		
 		TextArea textArea_Diagnosis = new TextArea("Diagnosis: ");
 		textArea_Diagnosis.setWidth("100%");
-		textArea_Diagnosis.setValue(pc.getDiagnosis(1));
+		textArea_Diagnosis.setValue(diagnosis);
 		
 		// Set DateFields
 		//SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
 		
 		DateField dateField_FromDate = new DateField("Etry Date");
 		dateField_FromDate.setWidth("95%");
-		dateField_FromDate.setValue(pc.getFromDate(1));
+		dateField_FromDate.setValue(fromdate);
 		dateField_FromDate.setEnabled(false);
+		dateField_FromDate.setDateFormat("yyyy-MM-dd");
 		
 		DateField dateField_ToDate = new DateField("Leaving Date");
 		dateField_ToDate.setWidth("95%");
-		dateField_ToDate.setValue(pc.getToDate(1));
+		dateField_ToDate.setValue(todate);
+		dateField_ToDate.setDateFormat("yyyy-MM-dd");
 		
 		// Buttons
 		Button save_Button = new Button("Save Changes");
 		save_Button.setWidth("100%");
 		
-		Button edit_Button = new Button("edit all fields");
+		Button edit_Button = new Button("edit");
 		save_Button.setWidth("100%");
 		
 		
@@ -266,6 +275,7 @@ public class CaseView extends VerticalLayout implements View {
 		
 		save_Button.addClickListener(new Button.ClickListener() {
 		    public void buttonClick(ClickEvent event) {
+		    	
 		    	pc.upDateAnamnesis(changedAnamnesis, Integer.parseInt(pc.getCaseID(1)));
 		    	pc.upDateDiagnosis(changedDiagnosis, Integer.parseInt(pc.getCaseID(1)));
 		    	pc.upDateFromDate(changedFromDate, Integer.parseInt(pc.getCaseID(1)));
@@ -276,14 +286,12 @@ public class CaseView extends VerticalLayout implements View {
 		    	dateField_FromDate.setEnabled(false);
 		    	dateField_ToDate.setEnabled(false);
 		    	
-		    	save_Button.setCaption("saved!");
 		    }
 		});
 		
 		edit_Button.addClickListener(new Button.ClickListener() {
 		    public void buttonClick(ClickEvent event) {
 		    	
-		    	save_Button.setCaption("");
 		    	dateField_FromDate.setEnabled(true);
 		    	textArea_Anamnesis.setEnabled(true);
 		    	textArea_Diagnosis.setEnabled(true);
