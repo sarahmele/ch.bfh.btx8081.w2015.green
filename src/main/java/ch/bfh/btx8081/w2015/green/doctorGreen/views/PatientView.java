@@ -16,7 +16,13 @@ import com.vaadin.ui.VerticalLayout;
 
 import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientController;
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
+import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.State;
 
+/**
+ * 
+ * @author Yannis
+ *
+ */
 @SuppressWarnings("serial")
 @Theme("mytheme")
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
@@ -32,18 +38,26 @@ public class PatientView extends VerticalLayout implements View {
 	TextField insuranceNb = new TextField("Insurance Number");
 	DateField birthDate = new DateField("Birth date");
 	ComboBox gender = new ComboBox("Gender");
+	ComboBox state = new ComboBox("State");
 
 	Patient patient;
 
 	BeanFieldGroup<Patient> formFieldBindings;
+	private State stateObj;
 
+	/**
+	 * 
+	 */
 	public PatientView() {
 
 		gender.addItem("m");
 		gender.addItem("f");
+		state.addItem("Harmless");
+		state.addItem("Dangerous");
+		state.addItem("Very Dangerous");
 		HorizontalLayout actions = new HorizontalLayout(save, cancel);
 		actions.setSpacing(true);
-		addComponents(firstname, lastname, insuranceNb, birthDate, gender, actions);
+		addComponents(firstname, lastname, insuranceNb, birthDate, gender, state, actions);
 	}
 
 	@Override
@@ -51,6 +65,10 @@ public class PatientView extends VerticalLayout implements View {
 		Notification.show("");
 	}
 
+	/**
+	 * 
+	 * @param event
+	 */
 	public void save(Button.ClickEvent event) {
 		try {
 			formFieldBindings.commit();
@@ -62,14 +80,22 @@ public class PatientView extends VerticalLayout implements View {
 		}
 	}
 
+	/**
+	 * 
+	 * @param event
+	 */
 	public void cancel(Button.ClickEvent event) {
 		Notification.show("Cancelled", Type.TRAY_NOTIFICATION);
 	}
 
+	/**
+	 * 
+	 * @param patient
+	 */
 	void edit(Patient patient) {
 		this.patient = patient;
 		if (patient != null) {
-			// Patient speichern
+			formFieldBindings = BeanFieldGroup.bindFieldsBuffered(patient, this);
 			firstname.focus();
 		}
 		setVisible(patient != null);

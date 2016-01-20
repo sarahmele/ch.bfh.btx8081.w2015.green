@@ -17,6 +17,11 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
 import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientSearchController;
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
 
+/**
+ * 
+ * @author Yannis
+ *
+ */
 @SuppressWarnings("serial")
 @Theme("mytheme")
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
@@ -29,6 +34,9 @@ public class PatientSearchView extends VerticalLayout implements View {
 	PatientView patientView = new PatientView();
 	PatientCaseView patientCaseView = new PatientCaseView();
 
+	/**
+	 * 
+	 */
 	public PatientSearchView() {
 
 		// get the Header
@@ -52,20 +60,19 @@ public class PatientSearchView extends VerticalLayout implements View {
 
 		layout.addComponents(filter, patientListGrid);
 
-		// HorizontalLayout layoutPatient = new HorizontalLayout(patientView);
-		// addComponent(layoutPatient);
 		configureComponents();
+
+		// Tab Sheet to put in the Tabs
+		TabSheet viewTabs = new TabSheet();
 
 		VerticalLayout patientSearchTab = new VerticalLayout();
 		patientSearchTab.addComponent(layout);
-
-		TabSheet viewTabs = new TabSheet();
 
 		VerticalLayout patientTab = new VerticalLayout();
 		patientTab.addComponents(patientView);
 
 		VerticalLayout patientCaseTab = new VerticalLayout();
-		patientTab.addComponents(patientCaseView);
+		patientCaseTab.addComponents(patientCaseView);
 
 		viewTabs.addTab(patientSearchTab).setCaption("Suchen");
 		viewTabs.addTab(patientTab).setCaption("Patient");
@@ -75,6 +82,9 @@ public class PatientSearchView extends VerticalLayout implements View {
 
 	}
 
+	/**
+	 * 
+	 */
 	private void configureComponents() {
 		filter.setInputPrompt("Filter patients...");
 		filter.addTextChangeListener(e -> refreshPatients(e.getText()));
@@ -91,13 +101,22 @@ public class PatientSearchView extends VerticalLayout implements View {
 
 		patientListGrid.setSelectionMode(Grid.SelectionMode.SINGLE);
 		patientListGrid.addSelectionListener(e -> patientView.edit((Patient) patientListGrid.getSelectedRow()));
+		//TODO Weiterleitung auf PatientView
+		
 		refreshPatients();
 	}
 
+	/**
+	 * 
+	 */
 	void refreshPatients() {
 		refreshPatients(filter.getValue());
 	}
 
+	/**
+	 * 
+	 * @param stringFilter
+	 */
 	private void refreshPatients(String stringFilter) {
 		patientListGrid.setContainerDataSource(new BeanItemContainer<>(Patient.class, controller.getPatientList()));
 	}

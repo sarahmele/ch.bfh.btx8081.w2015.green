@@ -2,44 +2,49 @@ package ch.bfh.btx8081.w2015.green.doctorGreen.views;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
+import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
-import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
-import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Button.ClickEvent;
 
-import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
+import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PatientCase;
 
+
+/**
+ * 
+ * @author Yannis
+ *
+ */
 @SuppressWarnings("serial")
 @Theme("mytheme")
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
 public class PatientCaseView extends VerticalLayout implements View {
 	Grid patientCaseGrid = new Grid();
+	PatientCase patientCase;
 
+	/**
+	 * 
+	 */
 	public PatientCaseView() {
-		// get the Header
-		GenericView header = new GenericView();
-		HorizontalLayout layoutHeader = header.getHeader();
-		// Back Button is Logout Button in this View
-		header.getButton("home").setCaption("Home");
-		header.getButton("home").addClickListener(new Button.ClickListener() {
-			@Override
-			public void buttonClick(ClickEvent event) {
-				getUI().getNavigator().navigateTo(MyUI.HOMEVIEW);
-			}
-		});
-		header.getButton("back").setVisible(false);
-		addComponent(layoutHeader);
-		setSizeFull();
-		setSpacing(true);
+		patientCaseGrid.setContainerDataSource(new BeanItemContainer<>(PatientCase.class));
+		patientCaseGrid.setColumnOrder("patientCaseId", "fromDate", "toDate");
+
+		patientCaseGrid.removeColumn("anamnesis");
+		patientCaseGrid.removeColumn("diagnosis");
+		patientCaseGrid.removeColumn("treatmentList");
+
+		patientCaseGrid.setSelectionMode(Grid.SelectionMode.SINGLE);
+		// patientCaseGrid.addSelectionListener(e -> patientView.edit((Patient)
+		// patientListGrid.getSelectedRow()));
+		// Todo Weiterleitung an CaseView
+
+		addComponent(patientCaseGrid);
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
 		Notification.show("");
 	}
-
 }

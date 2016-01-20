@@ -36,6 +36,8 @@ public class PatientSearchController {
 		//
 		// em.close();
 		// factory.close();
+		
+		
 
 		List<Patient> patientList = new ArrayList<Patient>();
 		Patient patient1 = new Patient();
