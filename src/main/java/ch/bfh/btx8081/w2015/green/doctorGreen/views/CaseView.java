@@ -1,5 +1,7 @@
 package ch.bfh.btx8081.w2015.green.doctorGreen.views;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 //import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -7,7 +9,7 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
 //<<<<<<< .mine
 import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientCaseController;
 
-import com.google.gwt.text.client.IntegerParser;
+
 
 //=======
 
@@ -15,6 +17,7 @@ import com.google.gwt.text.client.IntegerParser;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.data.Property;
+import com.vaadin.data.util.converter.DateToSqlDateConverter;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
@@ -59,8 +62,8 @@ public class CaseView extends VerticalLayout implements View {
 	String patientCaseId = pc.getCaseID(Integer.parseInt(caseId));
 	String anamnesis = pc.getAnamnesis(Integer.parseInt(caseId));
 	String diagnosis = pc.getDiagnosis(Integer.parseInt(caseId));
-	Date fromdate = pc.getFromDate(Integer.parseInt(caseId));
-	Date todate = pc.getToDate(Integer.parseInt(caseId));
+	java.sql.Date fromdate = pc.getFromDate(Integer.parseInt(caseId));
+	java.sql.Date todate = pc.getToDate(Integer.parseInt(caseId));
 	
 	String changedAnamnesis;
 	String changedDiagnosis;
@@ -99,12 +102,12 @@ public class CaseView extends VerticalLayout implements View {
 		dateField_FromDate.setWidth("95%");
 		dateField_FromDate.setValue(fromdate);
 		dateField_FromDate.setEnabled(false);
-		dateField_FromDate.setDateFormat("yyyy-MM-dd");
+		dateField_FromDate.setDateFormat("dd-mm-yyyy");
 		
 		DateField dateField_ToDate = new DateField("Leaving Date");
 		dateField_ToDate.setWidth("95%");
 		dateField_ToDate.setValue(todate);
-		dateField_ToDate.setDateFormat("yyyy-MM-dd");
+		dateField_ToDate.setDateFormat("dd-mm-yyyy");
 		
 		// Buttons
 		Button save_Button = new Button("Save Changes");
@@ -281,10 +284,28 @@ public class CaseView extends VerticalLayout implements View {
 		save_Button.addClickListener(new Button.ClickListener() {
 		    public void buttonClick(ClickEvent event) {
 		    	
+		    	SimpleDateFormat sdf1 = new SimpleDateFormat("dd-mm-yyyy");
+		    	java.util.Date dateFrom = null;
+				try {
+					dateFrom = sdf1.parse(changedFromDate);
+				} catch (ParseException e1) {
+					System.out.println("Failed to Convert the FromDate String to a JavaSqlDate");
+					e1.printStackTrace();
+				}
+		    	java.util.Date dateTo = null;
+				try {
+					dateTo = sdf1.parse(changedToDate);
+				} catch (ParseException e) {
+					System.out.println("Failed to Convert the Todate String to a JavaSqlDate");
+					e.printStackTrace();
+				}
+		    	java.sql.Date sqlFromDate = new java.sql.Date(dateFrom.getTime());
+		    	java.sql.Date sqlToDate = new java.sql.Date(dateTo.getTime());
+		    	
 		    	pc.upDateAnamnesis(changedAnamnesis, Integer.parseInt(caseId) );
 		    	pc.upDateDiagnosis(changedDiagnosis, Integer.parseInt(caseId));
-		    	pc.upDateFromDate(changedFromDate, Integer.parseInt(caseId));
-		    	pc.upDateToDate(changedToDate, Integer.parseInt(caseId));
+		    	pc.upDateFromDate(sqlFromDate, Integer.parseInt(caseId));
+		    	pc.upDateToDate(sqlToDate, Integer.parseInt(caseId));
 		    	
 		    	textArea_Anamnesis.setEnabled(false);
 		    	textArea_Diagnosis.setEnabled(false);
