@@ -30,7 +30,7 @@ public class PatientCase {
 
 	@ManyToOne
 	private Patient patient;
-	
+
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "PATIENTCASE_TREATMENT", joinColumns = @JoinColumn(name = "PATIENTCASEID", referencedColumnName = "patientCaseId") , inverseJoinColumns = @JoinColumn(name = "TREATMENTID", referencedColumnName = "treatmentId") )
 	private List<Treatment> treatmentList;
@@ -75,6 +75,14 @@ public class PatientCase {
 		this.diagnosis = diagnosis;
 	}
 
+	public Patient getPatient() {
+		return patient;
+	}
+
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
+
 	public List<Treatment> getTreatmentList() {
 		return treatmentList;
 	}
@@ -82,4 +90,5 @@ public class PatientCase {
 	public void setTreatmentList(List<Treatment> treatmentList) {
 		this.treatmentList = treatmentList;
 	}
+
 }

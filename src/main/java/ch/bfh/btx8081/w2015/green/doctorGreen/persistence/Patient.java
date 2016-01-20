@@ -35,6 +35,14 @@ public class Patient extends Person {
 		this.insuranceNb = insuranceNb;
 	}
 
+	public State getState() {
+		return state;
+	}
+
+	public void setState(State state) {
+		this.state = state;
+	}
+
 	public List<Doctor> getDoctorList() {
 		return doctorList;
 	}
@@ -49,14 +57,6 @@ public class Patient extends Person {
 
 	public void setPatientCaseList(List<PatientCase> patientCaseList) {
 		this.patientCaseList = patientCaseList;
-	}
-
-	public State getState() {
-		return state;
-	}
-
-	public void setState(State state) {
-		this.state = state;
 	}
 
 }
