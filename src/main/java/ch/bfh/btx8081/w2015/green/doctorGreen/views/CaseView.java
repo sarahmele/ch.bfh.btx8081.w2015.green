@@ -7,6 +7,8 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.MyUI;
 //<<<<<<< .mine
 import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientCaseController;
 
+import com.google.gwt.text.client.IntegerParser;
+
 //=======
 
 //>>>>>>> .r286
@@ -50,12 +52,15 @@ public class CaseView extends VerticalLayout implements View {
 	
 	PatientCaseController pc = PatientCaseController.getInstance();
 	
-	String patientname = pc.getPersonName(1);
-	String patientCaseId = pc.getCaseID(1);
-	String anamnesis = pc.getAnamnesis(1);
-	String diagnosis = pc.getDiagnosis(1);
-	Date fromdate = pc.getFromDate(1);
-	Date todate = pc.getToDate(1);
+	int pid = 1;
+	
+	String caseId = pc.getCaseID(pid);
+	String patientname = pc.getPersonName(pid);
+	String patientCaseId = pc.getCaseID(Integer.parseInt(caseId));
+	String anamnesis = pc.getAnamnesis(Integer.parseInt(caseId));
+	String diagnosis = pc.getDiagnosis(Integer.parseInt(caseId));
+	Date fromdate = pc.getFromDate(Integer.parseInt(caseId));
+	Date todate = pc.getToDate(Integer.parseInt(caseId));
 	
 	String changedAnamnesis;
 	String changedDiagnosis;
@@ -276,10 +281,10 @@ public class CaseView extends VerticalLayout implements View {
 		save_Button.addClickListener(new Button.ClickListener() {
 		    public void buttonClick(ClickEvent event) {
 		    	
-		    	pc.upDateAnamnesis(changedAnamnesis, Integer.parseInt(pc.getCaseID(1)));
-		    	pc.upDateDiagnosis(changedDiagnosis, Integer.parseInt(pc.getCaseID(1)));
-		    	pc.upDateFromDate(changedFromDate, Integer.parseInt(pc.getCaseID(1)));
-		    	pc.upDateToDate(changedToDate, Integer.parseInt(pc.getCaseID(1)));
+		    	pc.upDateAnamnesis(changedAnamnesis, Integer.parseInt(caseId) );
+		    	pc.upDateDiagnosis(changedDiagnosis, Integer.parseInt(caseId));
+		    	pc.upDateFromDate(changedFromDate, Integer.parseInt(caseId));
+		    	pc.upDateToDate(changedToDate, Integer.parseInt(caseId));
 		    	
 		    	textArea_Anamnesis.setEnabled(false);
 		    	textArea_Diagnosis.setEnabled(false);
