@@ -14,7 +14,7 @@ import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientController;
+import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientSearchController;
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.State;
 
@@ -27,7 +27,9 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.State;
 @Theme("mytheme")
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
 public class PatientView extends VerticalLayout implements View {
-	PatientController patientController = new PatientController();
+
+	PatientSearchController controller = PatientSearchController.getInstance();
+
 	// Status status = new Status();
 	String dangerousness = "ungefährlich";
 
@@ -72,9 +74,7 @@ public class PatientView extends VerticalLayout implements View {
 	public void save(Button.ClickEvent event) {
 		try {
 			formFieldBindings.commit();
-
-			// getUI().service.save(contact);
-
+			controller.savePatient(patient);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

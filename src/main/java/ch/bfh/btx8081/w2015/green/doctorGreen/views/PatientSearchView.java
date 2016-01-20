@@ -79,7 +79,6 @@ public class PatientSearchView extends VerticalLayout implements View {
 		viewTabs.addTab(patientCaseTab).setCaption("Patient Cases");
 
 		addComponent(viewTabs);
-
 	}
 
 	/**
@@ -101,8 +100,7 @@ public class PatientSearchView extends VerticalLayout implements View {
 
 		patientListGrid.setSelectionMode(Grid.SelectionMode.SINGLE);
 		patientListGrid.addSelectionListener(e -> patientView.edit((Patient) patientListGrid.getSelectedRow()));
-		//TODO Weiterleitung auf PatientView
-		
+
 		refreshPatients();
 	}
 
