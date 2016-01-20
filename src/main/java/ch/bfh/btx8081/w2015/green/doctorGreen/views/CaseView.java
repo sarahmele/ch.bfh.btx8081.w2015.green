@@ -28,16 +28,24 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 /**
- * This class describes the Guy for the Case in the Doctor Green Application <br>
+ * This class describes the GUI for the Case in the Doctor Green Application <br>
  * <br>
  * 
  * @author Shpend Vladi<br>
  * <br>
  * 
  *         instance variables:<br>
- *         - TextField username<br>
- *         - PasswordField password<br>
- *         - String MyResult<br>
+ *         - int pid<br>
+ *         - String caseId <br>
+ *         - String patientname<br>
+ *         - String anamnesis<br>
+ *         - String diagnosis<br>
+ *         - java.sql.Date fromdate<br>
+ *         - java.sql.Date todate<br>
+ *         - private String changedAnamnesis;<br>
+ *         - private String changedDiagnosis;<br>
+ *         - private String changedFromDate;<br>
+ *         - private String changedToDate;<br>
  * <br>
  * 
  *         Methods:<br>
@@ -51,20 +59,19 @@ public class CaseView extends VerticalLayout implements View {
 	
 	PatientCaseController pc = PatientCaseController.getInstance();
 	
-	int pid = 1;
+	private int pid = 1;
 	
-	String caseId = pc.getCaseID(pid);
-	String patientname = pc.getPersonName(pid);
-	String patientCaseId = pc.getCaseID(Integer.parseInt(caseId));
-	String anamnesis = pc.getAnamnesis(Integer.parseInt(caseId));
-	String diagnosis = pc.getDiagnosis(Integer.parseInt(caseId));
-	java.sql.Date fromdate = pc.getFromDate(Integer.parseInt(caseId));
-	java.sql.Date todate = pc.getToDate(Integer.parseInt(caseId));
+	private String caseId = pc.getCaseID(pid);
+	private String patientname = pc.getPersonName(pid);
+	private String anamnesis = pc.getAnamnesis(Integer.parseInt(caseId));
+	private String diagnosis = pc.getDiagnosis(Integer.parseInt(caseId));
+	private java.sql.Date fromdate = pc.getFromDate(Integer.parseInt(caseId));
+	private java.sql.Date todate = pc.getToDate(Integer.parseInt(caseId));
 	
-	String changedAnamnesis;
-	String changedDiagnosis;
-	Date changedFromDate = new Date();
-	Date changedToDate = new Date();
+	private String changedAnamnesis;
+	private String changedDiagnosis;
+	private Date changedFromDate = new Date();
+	private Date changedToDate = new Date();
 	
 	
 	
@@ -78,7 +85,7 @@ public class CaseView extends VerticalLayout implements View {
 		// set TextFields
 		TextField textField_PatientCaseId = new TextField("Case Id: ");
 		textField_PatientCaseId.setWidth("95%");
-		textField_PatientCaseId.setValue(patientCaseId);
+		textField_PatientCaseId.setValue(caseId);
 		textField_PatientCaseId.setEnabled(false);
 		
 		TextField textField_Name = new TextField("Name: ");
@@ -226,7 +233,7 @@ public class CaseView extends VerticalLayout implements View {
 		header.getButton("back").addClickListener(new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
-				getUI().getNavigator().navigateTo(MyUI.PATIENTVIEW);
+				getUI().getNavigator().navigateTo(MyUI.PATIENTSEARCHVIEW);
 			}
 		});
 
