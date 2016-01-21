@@ -36,10 +36,11 @@ import com.vaadin.ui.VerticalLayout;
  * <br>
  * 
  * @author Shpend Vladi<br>
+ * @author Luca Ramos Brito<br>
  * <br>
  * 
  *         instance variables:<br>
- *         - PatientCaseController pc
+ *         - PatientCaseController pc<br>
  *         - int pid<br>
  *         - String caseId <br>
  *         - String patientname<br>
