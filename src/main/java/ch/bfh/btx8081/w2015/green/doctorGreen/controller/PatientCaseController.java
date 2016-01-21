@@ -6,14 +6,51 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Date;
-
+/**
+ * This class implements all methods which are used in the CaseView GUI to communicate with the database. There are getter methods<br>
+ * and update methods implemented in JDBC. <br>
+ * <br>
+ * 
+ * @author Shpend Vladi<br>
+ * <br>
+ * 
+ *         instance variables:<br>
+ *         - PatientCaseController pc <br>
+ *         - DB_Connection dc <br>
+ *         - Connection connection <br>
+ * <br>
+ * 
+ *         Methods:<br>
+ *         - String getPersonName (int pid)<br>
+ *         - String getCaseID (int pid)<br>
+ *         - Date getFromDate (int caseID)<br>
+ *         - Date getToDate (int caseID)<br>
+ *         - String getAnamnesis (int caseID)<br>
+ *         - String getDiagnosis (int caseID)<br>
+ *         - upDateName(String firstname, String lastname, int pid)<br>
+ *         - upDateFromDate(Date FromDate, int caseID)<br>
+ *         - upDateToDate(Date ToDate, int caseID)<br>
+ *         - upDateAnamnesis(String anamnesis, int caseID)<br>
+ *         - upDateDiagnosis(String diagnosis, int caseID)<br>
+ *         	
+ * <br>
+ */
 public class PatientCaseController {
 	
+	// Defining the objects that are needed to create the methods
 	private static PatientCaseController pc = null;
-	DB_Connection dc = DB_Connection.getInstance();
-	static Connection connection = null;
+	private static DB_Connection dc = DB_Connection.getInstance();
+	private static Connection connection = null;
 	
-
+	/**
+	 * With the getInstance method we make sure that only one object of the PatientCaseController will be used<br>
+	 * <br>
+	 *
+	 * @param none
+	 * @return pc
+	 * 
+	 * <br>
+	 */
 	public static PatientCaseController getInstance() {
 		
 		if (pc == null) {
@@ -21,7 +58,17 @@ public class PatientCaseController {
 		}
 		return pc;
 	}
-
+	
+	/**
+	 * PatientCaseController constructor<br>
+	 * gets the connection with the database which is used for the methods<br>
+	 * <br>
+	 *
+	 * @param none
+	 * @exception the SQL Exception is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
 	// Static block for initialization
 	public PatientCaseController() {
 	
@@ -36,7 +83,15 @@ public class PatientCaseController {
 	
 	}
 	
-	
+	/**
+	 * The getPersonName method gets the Firstname and Last name of the Person from the pid and puts it to one String together.<br>
+	 * <br>
+	 * @param pid - the parameter which should be given to the method to find the right Person name
+	 * @return name - name of the Person which fits with the pid in the database will be returned
+	 * @exception the SQL Excepion is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
 	public  String getPersonName (int pid)
 		   {
 		
@@ -65,7 +120,16 @@ public class PatientCaseController {
 			
 		}
 	
-	public  String getCaseID (int pid)
+	/**
+	 * The getCaseID method gets the case Identification number of the Person from the pid.<br>
+	 * <br>
+	 * @param pid - the parameter which should be given to the method to find the right caseId<br>
+	 * @return caseId - the caseId of the Person which fits with the pid in the database will be returned<br>
+	 * @exception the SQL Excepion is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
+	public  Integer getCaseID (int pid)
 	   {
 	
 	    Statement stmt = null;
@@ -74,7 +138,7 @@ public class PatientCaseController {
 	        stmt = connection.createStatement();
 	        ResultSet rs = stmt.executeQuery(query);
 	        while (rs.next()) {
-	            String caseId = rs.getString("PATIENT_CASE_ID");
+	            Integer caseId = rs.getInt("PATIENT_CASE_ID");
 	            return caseId;
 	        }
 	    } catch (SQLException err ) {
@@ -90,6 +154,15 @@ public class PatientCaseController {
 		
 	}
 	
+	/**
+	 * The getFromDate method gets the entry Date of the Person from the caseId.<br>
+	 * <br>
+	 * @param caseId - the parameter which should be given to the method to find the right date<br>
+	 * @return fromDate - the entry date of the Person which fits with the caseId in the database will be returned<br>
+	 * @exception the SQL Excepion is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
 	public  Date getFromDate (int caseID)
 	   {
 	
@@ -115,6 +188,15 @@ public class PatientCaseController {
 		
 	}
 	
+	/**
+	 * The getToDate method gets the leaving Date of the Person from the caseId.<br>
+	 * <br>
+	 * @param caseId - the parameter which should be given to the method to find the right date<br>
+	 * @return toDate - the leaving date of the Person which fits with the caseId in the database will be returned<br>
+	 * @exception the SQL Excepion is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
 	public  Date getToDate (int caseID)
 	   {
 	
@@ -140,6 +222,15 @@ public class PatientCaseController {
 		
 	}
 	
+	/**
+	 * The getAnamnesis method gets the anamnesis text of the Person from the caseId.<br>
+	 * <br>
+	 * @param caseId - the parameter which should be given to the method to find the right anamnesis text<br>
+	 * @return anamnesis - the anamnesis text of the Person which fits with the caseId in the database will be returned<br>
+	 * @exception the SQL Excepion is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
 	public  String getAnamnesis (int caseID)
 	   {
 	
@@ -165,6 +256,15 @@ public class PatientCaseController {
 		
 	}
 	
+	/**
+	 * The getDiagnosis method gets the diagnosis text of the Person from the caseId.<br>
+	 * <br>
+	 * @param caseId - the parameter which should be given to the method to find the right diagnosis text<br>
+	 * @return diagnosis - the dagnosis text of the Person which fits with the caseId in the database will be returned<br>
+	 * @exception the SQL Excepion is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
 	public  String getDiagnosis (int caseID)
 	   {
 	
@@ -190,6 +290,16 @@ public class PatientCaseController {
 		
 	}
 	
+	/**
+	 * The upDateName method updates the name of the Person from the Person with the pid.<br>
+	 * <br>
+	 * @param firstname - the String which should be given to the method to update the right Firstname<br>
+	 * @param lastname - the String which should be given to the method to update the right Lastname<br>
+	 * @param pid - the parameter which should be given to the method to find the right Person for the update<br>
+	 * @exception the SQL Excepion is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
 	public void upDateName(String firstname, String lastname, int pid) {
 		PreparedStatement ps = null;
 		    try {
@@ -210,6 +320,15 @@ public class PatientCaseController {
 		    }
 		    } 
 	
+	/**
+	 * The upDateFromDate method updates the entry date of the Person from the Person with the caseID.<br>
+	 * <br>
+	 * @param FromDate - the Date which should be given to the method to update the right entry date<br>
+	 * @param caseID - the parameter which should be given to the method to find the right Case for the update<br>
+	 * @exception the SQL Excepion is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
 	public void upDateFromDate(Date FromDate, int caseID) {
 		PreparedStatement ps = null;
 		    try {
@@ -229,6 +348,15 @@ public class PatientCaseController {
 		    }
 		    } 
 	
+	/**
+	 * The upDateToDate method updates the leaving date of the Person from the Person with the caseID.<br>
+	 * <br>
+	 * @param ToDate - the Date which should be given to the method to update the right leaving date
+	 * @param caseID - the parameter which should be given to the method to find the right Case for the update
+	 * @exception the SQL Excepion is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
 	public void upDateToDate(Date ToDate, int caseID) {
 		PreparedStatement ps = null;
 		    try {
@@ -248,6 +376,15 @@ public class PatientCaseController {
 		    }
 		    } 
 	
+	/**
+	 * The upDateAnamnesis method updates the anamnesis text Person from the Person with the caseID.<br>
+	 * <br>
+	 * @param anamnesis - the anamnesis text which should be given to the method to update the right anamnesis text
+	 * @param caseID - the parameter which should be given to the method to find the right Case for the update
+	 * @exception the SQL Excepion is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
 	public void upDateAnamnesis(String anamnesis, int caseID) {
 		PreparedStatement ps = null;
 		    try {
@@ -267,6 +404,15 @@ public class PatientCaseController {
 		    }
 		    } 
 	
+	/**
+	 * The upDateDiagnosis method updates the diagnosis text Person from the Person with the caseID.<br>
+	 * <br>
+	 * @param diagnosis - the diagnosis text which should be given to the method to update the right diagnosis text
+	 * @param caseID - the parameter which should be given to the method to find the right Case for the update
+	 * @exception the SQL Excepion is catched and shows if the connection failed
+	 * 
+	 * <br>
+	 */
 	public void upDateDiagnosis(String diagnosis, int caseID) {
 		PreparedStatement ps = null;
 		    try {
