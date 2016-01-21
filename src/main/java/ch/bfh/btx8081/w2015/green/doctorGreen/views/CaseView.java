@@ -10,6 +10,8 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientCaseController;
 
 //=======
 
+import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientTreatmentController;
+
 //>>>>>>> .r286
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Widgetset;
@@ -187,6 +189,9 @@ public class CaseView extends VerticalLayout implements View {
 		/* Start of Treatment View Tab code segment */
 		//////////////////////////////////////////////
 
+
+		PatientTreatmentController treatment = PatientTreatmentController.getInstance();
+
 		/**
 		 * Defines the datefield that marks the start of a treatment
 		 */
@@ -194,12 +199,14 @@ public class CaseView extends VerticalLayout implements View {
 		treatDate.setValue(new Date());
 		treatDate.setWidth("80%");
 
+
 		/**
 		 * Defines the textarea where the treatment plan is written down
 		 */
-		TextArea medicationPlan = new TextArea("Medication Plan");
-		medicationPlan.setWidth("100%");
-		medicationPlan.setRows(3);
+		TextArea treatmentPlan = new TextArea("Treatment Plan");
+		treatmentPlan.setWidth("100%");
+		treatmentPlan.setRows(3);
+
 
 		/**
 		 * Defines the button that saves the treatmentplan in the database
@@ -211,29 +218,46 @@ public class CaseView extends VerticalLayout implements View {
 		 */
 		Button newTreatButton = new Button("New Treatment");
 
+		/**
+		 * Creates a box that displays the datefield and the treatment textarea in one line
+		 */
 		HorizontalLayout infoBox = new HorizontalLayout();
 		infoBox.setWidth("320px");
 		infoBox.addComponent(treatDate);
-		infoBox.addComponent(medicationPlan);
+		infoBox.addComponent(treatmentPlan);
 
 		
+		/**
+		 * Creates a box that displays the "save button" and the "new treatment" button in one line
+		 */
 		HorizontalLayout buttonBox = new HorizontalLayout();
 		buttonBox.setWidth("320px");
 		buttonBox.addComponent(saveTreatButton);
 		buttonBox.addComponent(newTreatButton);
 		
 
+		/**
+		 * Displays the buttons under the date field and text area
+		 */
 		VerticalLayout treatTab = new VerticalLayout();
 		treatTab.addComponent(infoBox);
 		treatTab.addComponent(buttonBox);
-		//treatTab.addComponent(saveTreatButton);
-		//treatTab.addComponent(newTreatButton);
 
 		/**
 		 * Clicking the "New Treatment" button triggers the event to show 
 		 * another DateField and TextArea
 		 */
 		newTreatButton.addClickListener(new ClickListener() {
+			@Override
+			public void buttonClick(final ClickEvent event) {
+				
+			}
+		});
+		
+		/**
+		 * Clicking the "Save Treatment" button triggers the event to store the values in the database
+		 */
+		saveTreatButton.addClickListener(new ClickListener() {
 			@Override
 			public void buttonClick(final ClickEvent event) {
 				
