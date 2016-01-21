@@ -65,14 +65,14 @@ public class PatientSearchController {
 		createFactory();
 		try {
 			em.getTransaction().begin();
-			
+
 			Patient dbPatient = em.find(Patient.class, patient.getPid());
 			dbPatient.setFirstName(patient.getFirstName());
 			dbPatient.setLastName(patient.getLastName());
 			dbPatient.setInsuranceNb(patient.getInsuranceNb());
 			dbPatient.setBirthDate(patient.getBirthDate());
-			//dbPatient.setState(patient.getState());
-			
+			// dbPatient.setState(patient.getState());
+
 			em.getTransaction().commit();
 			em.close();
 		} catch (Exception e) {
