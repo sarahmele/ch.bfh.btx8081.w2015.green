@@ -6,6 +6,27 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * This class helps to get the connection to the database.<br>
+ * 
+ * @author Shpend Vladi<br>
+ * <br>
+ * 
+ *         instance variables:<br>
+ *         - DB_Connection dc <br>
+ *         - Connection connection <br>
+ *         - DatabaseMetaData metadata <br>
+ *         
+ * <br>
+ * 
+ *         Methods:<br>
+ *         - printGeneralMetadata()<br>
+ *         - getTablesMetadata()<br>
+ *         - getColumnsMetadata(ArrayList<String> tables)<br>
+ *         	
+ * <br>
+ */
+
 
 public class DB_MetaData {
 	
@@ -13,8 +34,15 @@ public class DB_MetaData {
 	static Connection connection = null;
 	static DatabaseMetaData metadata = null;
 
-	// Static block for initialization
 
+	/**
+	 * The static nlock for the initalization<br>
+	 * <br>
+	 *
+	 * @exception SQL exception is catched and shown if the conncetion fails<br>
+	 * 
+	 * <br>
+	 */
 	static {
 
 		try {
@@ -33,7 +61,14 @@ public class DB_MetaData {
 	}
 	
 	
-	// Printing in the console the metadata of the database
+	/**
+	 * The printGeneralMetadata() prints the general Information about the database in the console we connect into<br>
+	 * <br>
+	 *
+	 * @throws SQL exception if the connection fails<br>
+	 * 
+	 * <br>
+	 */
 	public static void printGeneralMetadata() throws SQLException {
 			        System.out.println("Database Product Name: " + metadata.getDatabaseProductName());
 		
@@ -49,6 +84,16 @@ public class DB_MetaData {
 		
 			    }
 	
+	/**
+	 * The getTablesMetadata() returns an ArrayList of the type String from the table data of the database<br>
+	 * <br>
+	 *
+	 * @throws SQL exception - if the connection fails<br>
+	 * @return tables - returns the tables of the database in an ArrayList<br>
+	 * 
+	 * <br>
+	 */
+
 	// Returnig with an Arraylist the tables names
 	public static ArrayList<String> getTablesMetadata() throws SQLException {
 		
@@ -67,6 +112,15 @@ public class DB_MetaData {
 			        return tables;
 			    }
 	
+	/**
+	 * The getColumnsMetadata(ArrayList<String> tables) gets the columns metadata of the database<br>
+	 * <br>
+	 *
+	 * @throws SQL exception - if the connection fails<br>
+	 * @param tables - the ArrayList of the Type String which should be given to the method for finding the columns of the table<br>
+	 * 
+	 * <br>
+	 */
 	public static void getColumnsMetadata(ArrayList<String> tables)
 	
 		            throws SQLException {
@@ -91,7 +145,7 @@ public class DB_MetaData {
 		    }
 	
 	
-	
+		// showing the metadata in the console in the main method
 	 public static void main(String[] args) {
 		 	        try {
 		 	            printGeneralMetadata();
