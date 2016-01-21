@@ -28,13 +28,18 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 /**
- * This class describes the GUI for the Case in the Doctor Green Application <br>
+ * This class describes the GUI for the Case in the Doctor Green Application. The CaseView automatically gets<br>
+ * the Name and Patient case Identification number. Also the anamnesis, diagnosis, entry date and leaving date<br>
+ * are taken if they exist in the database. The User can make changes in the anamnesis, diagnosis and the date fields.<br>
+ * By clicking the save Button all changes are saved and the database is update. If the user wants again to change something<br>
+ * he can click on the edit Button and go on with his work.<br>
  * <br>
  * 
  * @author Shpend Vladi<br>
  * <br>
  * 
  *         instance variables:<br>
+ *         - PatientCaseController pc
  *         - int pid<br>
  *         - String caseId <br>
  *         - String patientname<br>
@@ -49,7 +54,15 @@ import com.vaadin.ui.VerticalLayout;
  * <br>
  * 
  *         Methods:<br>
- *         - loginButton() returns Button<br>
+ *         - header.getButton("back").addClickListener(new Button.ClickListener() no return value<br>
+ *         - header.getButton("home").addClickListener(new Button.ClickListener() no return value<br>
+ *         - header.getButton("home").addClickListener(new Button.ClickListener() no return value<br>
+ *         - textArea_Anamnesis.addListener(new Property.ValueChangeListener() no return value<br>
+ *         - textArea_Diagnosis.addListener(new Property.ValueChangeListener() no return value<br>
+ *         - dateField_FromDate.addListener(new Property.ValueChangeListener() no return value<br>
+ *         - dateField_ToDate.addListener(new Property.ValueChangeListener() no return value<br>
+ *         - save_Button.addClickListener(new Button.ClickListener() no return value<br>
+ *         - save_Button.addClickListener(new Button.ClickListener() no return value<br>
  *         - enter(ViewChangeEvent event) no return value<br>
  */
 @SuppressWarnings("serial")
@@ -57,17 +70,23 @@ import com.vaadin.ui.VerticalLayout;
 @Widgetset("ch.bfh.btx8081.w2015.green.doctorGreen.MyAppWidgetset")
 public class CaseView extends VerticalLayout implements View {
 	
+	// Getting the instance of the Patiencasecontroller to use its methods
 	PatientCaseController pc = PatientCaseController.getInstance();
 	
+	// The Patient Identification number is setted 1, he should be taken from the PatientSearchView
 	private int pid = 1;
 	
-	private String caseId = pc.getCaseID(pid);
+	// Declaring the Strings and date formats which are used to fill the textfield datefields etc.
+	//--------------------------------------------------------------------------------
+	private int caseId = pc.getCaseID(pid);
 	private String patientname = pc.getPersonName(pid);
-	private String anamnesis = pc.getAnamnesis(Integer.parseInt(caseId));
-	private String diagnosis = pc.getDiagnosis(Integer.parseInt(caseId));
-	private java.sql.Date fromdate = pc.getFromDate(Integer.parseInt(caseId));
-	private java.sql.Date todate = pc.getToDate(Integer.parseInt(caseId));
+	private String anamnesis = pc.getAnamnesis(caseId);
+	private String diagnosis = pc.getDiagnosis(caseId);
+	private java.sql.Date fromdate = pc.getFromDate(caseId);
+	private java.sql.Date todate = pc.getToDate(caseId);
 	
+	// Declaring the values which will be changed by the user and saved on the database
+	//--------------------------------------------------------------------------------
 	private String changedAnamnesis;
 	private String changedDiagnosis;
 	private Date changedFromDate = new Date();
@@ -75,17 +94,24 @@ public class CaseView extends VerticalLayout implements View {
 	
 	
 	
-	
+	/**
+	 * CaseView constructor<br>
+	 * Creates the GUI for this view - for details see comments in the code<br>
+	 * <br>
+	 *
+	 * @param none
+	 */
 	@SuppressWarnings("deprecation")
 	public CaseView()  {
 		
-		changedFromDate = pc.getFromDate(Integer.parseInt(caseId));
-		changedToDate = pc.getToDate(Integer.parseInt(caseId));
+		// if the date values aren't changed from the user they should be the ones from the database, in this part we set the start values
+		changedFromDate = pc.getFromDate(caseId);
+		changedToDate = pc.getToDate(caseId);
 		
-		// set TextFields
+		// setting the TextFields for the GUI
 		TextField textField_PatientCaseId = new TextField("Case Id: ");
 		textField_PatientCaseId.setWidth("95%");
-		textField_PatientCaseId.setValue(caseId);
+		textField_PatientCaseId.setValue(Integer.toString(caseId));
 		textField_PatientCaseId.setEnabled(false);
 		
 		TextField textField_Name = new TextField("Name: ");
@@ -94,7 +120,7 @@ public class CaseView extends VerticalLayout implements View {
 		textField_Name.setEnabled(false);
 		
 		
-		// set TextAreas
+		// setting the TextAreas for the GUI 
 		TextArea textArea_Anamnesis = new TextArea("Anamnesis: ");
 		textArea_Anamnesis.setWidth("100%");
 		textArea_Anamnesis.setValue(anamnesis);
@@ -103,60 +129,57 @@ public class CaseView extends VerticalLayout implements View {
 		textArea_Diagnosis.setWidth("100%");
 		textArea_Diagnosis.setValue(diagnosis);
 		
-		// Set DateFields
-		//SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-		
+		// Setting the DateFields for the GUI	
 		DateField dateField_FromDate = new DateField("Etry Date");
 		dateField_FromDate.setWidth("95%");
 		dateField_FromDate.setValue(fromdate);
 		dateField_FromDate.setEnabled(false);
-//		dateField_FromDate.setDateFormat("dd-mm-yyyy");
-		
+
 		DateField dateField_ToDate = new DateField("Leaving Date");
 		dateField_ToDate.setWidth("95%");
 		dateField_ToDate.setValue(todate);
-//		dateField_ToDate.setDateFormat("dd-mm-yyyy");
+
 		
-		// Buttons
+		// Setting Buttons vor the GUI
 		Button save_Button = new Button("Save Changes");
 		save_Button.setWidth("100%");
 		
 		Button edit_Button = new Button("edit Fields");
 		save_Button.setWidth("100%");
 		
-		
+		// Putting the Buttons in a HorizontalLayout Box
 		HorizontalLayout caseButtonBox = new HorizontalLayout();
 		caseButtonBox.setWidth("320px");
 		caseButtonBox.addComponent(edit_Button);
 		caseButtonBox.addComponent(save_Button);
 		
-		//textFieldBox
+		// Putting the Textfields in a HorizontalLayout Box
 		HorizontalLayout textFieldBox = new HorizontalLayout();
 		textFieldBox.setWidth("320px");
 		textFieldBox.addComponent(textField_PatientCaseId);
 		textFieldBox.addComponent(textField_Name);
 		
 		
-		// dateFieldbox
+		// Putting the dateField in a HorizontalLayout Box
 		HorizontalLayout dateFieldBox = new HorizontalLayout();
 		dateFieldBox.setWidth("320px");
 		dateFieldBox.addComponent(dateField_FromDate);
 		dateFieldBox.addComponent(dateField_ToDate);
 		
-		// textAreaBox
+		// Putting the textAreas in a VerticalLayout Box
 		VerticalLayout textAreaBox = new VerticalLayout();;
 		textAreaBox.setWidth("320px");
 		textAreaBox.addComponent(textArea_Anamnesis);
 		textAreaBox.addComponent(textArea_Diagnosis);
 		
-		// caseTab
+		// putting all the boxes together in the caseTab
 		VerticalLayout caseTab = new VerticalLayout();
 		caseTab.addComponent(textFieldBox);
 		caseTab.addComponent(dateFieldBox);
 		caseTab.addComponent(textAreaBox);
 		caseTab.addComponent(caseButtonBox);
 
-		// caseViewTabs
+		// defining the caseViewTabs
 		TabSheet caseViewTabs = new TabSheet();
 
 		//////////////////////////////////////////////
@@ -229,14 +252,24 @@ public class CaseView extends VerticalLayout implements View {
 		/* End of Treatment View Tab code segment */
 		////////////////////////////////////////////
 
-		// Back Button is Logout Button in this View
+		/**
+		 * Clicking the "back" button triggers the event to<br>  
+		 * go to the View the user was before. In this case its the Patiensearchview<br>
+		 * @param event - ClickEvent
+		 */
 		header.getButton("back").addClickListener(new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
 				getUI().getNavigator().navigateTo(MyUI.PATIENTSEARCHVIEW);
 			}
 		});
-
+		
+		/**
+		 * Clicking the "home" button triggers the event to<br> 
+		 * go to the home View.<br>
+		 * @param event - ClickEvent
+		 * <br>
+		 */
 		header.getButton("home").addClickListener(new Button.ClickListener() {
 			@Override
 			public void buttonClick(ClickEvent event) {
@@ -244,7 +277,12 @@ public class CaseView extends VerticalLayout implements View {
 			}
 		});
 		
-		
+		/**
+		 * This method gets the input from the user in the anamnesis textArea and saves it<br>
+		 * in the String changedAnamnesis<br>
+		 * @param event - ValueChangeEvent
+		 * <br>
+		 */
 		textArea_Anamnesis.addListener(new Property.ValueChangeListener()
 	    {
 	        private static final long serialVersionUID =
@@ -256,6 +294,12 @@ public class CaseView extends VerticalLayout implements View {
 			}
 	   });
 		
+		/**
+		 * This method gets the input from the user in the diagnosis textArea<br>
+		 * and saves it in the String changedDiagnosis<br>
+		 * @param event - ValueChangeEvent
+		 * <br>
+		 */
 		textArea_Diagnosis.addListener(new Property.ValueChangeListener()
 	    {
 	        private static final long serialVersionUID =
@@ -267,6 +311,12 @@ public class CaseView extends VerticalLayout implements View {
 			}
 	   });
 		
+		/**
+		 * This method gets the input from the user in the entry date field  (dateField_FromDate)<br>
+		 * and saves it in the date format changedFromDate<br>
+		 * @param event - ValueChangeEvent
+		 * <br>
+		 */
 		dateField_FromDate.addListener(new Property.ValueChangeListener()
 	    {
 	        private static final long serialVersionUID =
@@ -278,6 +328,12 @@ public class CaseView extends VerticalLayout implements View {
 			}
 	   });
 		
+		/**
+		 * This method gets the input from the user in the leaving date field  (dateField_ToDate)
+		 * and saves it in the date format changedTodate<br>
+		 * * @param event - ValueChangeEvent
+		 * <br>
+		 */
 		dateField_ToDate.addListener(new Property.ValueChangeListener()
 	    {
 	        private static final long serialVersionUID =
@@ -289,27 +345,35 @@ public class CaseView extends VerticalLayout implements View {
 			}
 	   });
 		
+		/**
+		 * This save_Button listener method saves all new inputs from the user in all editable Fields to the database<br>
+		 * with the PatientController methods it is possible to update tables in the database.<br>
+		 * First the method checks if the user changed something. If not he keeps the database data.<br>
+		 * If yes he updates the changes. And at the end he makes all fields disable.<br>
+		 * @param event - ClickEvent<br>
+		 * <br>
+		 */
 		save_Button.addClickListener(new Button.ClickListener() {
 		    public void buttonClick(ClickEvent event) {
 		    	
 		        java.sql.Date sqlToDate = new java.sql.Date(changedToDate.getTime());
 		        java.sql.Date sqlFromDate = new java.sql.Date(changedFromDate.getTime());
 		    
-		    	pc.upDateFromDate(sqlFromDate, Integer.parseInt(caseId));
-		    	pc.upDateToDate(sqlToDate, Integer.parseInt(caseId));
+		    	pc.upDateFromDate(sqlFromDate, caseId);
+		    	pc.upDateToDate(sqlToDate, caseId);
 		    	
 		    	if (changedAnamnesis ==null)
 		    	{
-		    		pc.upDateAnamnesis(anamnesis, Integer.parseInt(caseId) );
+		    		pc.upDateAnamnesis(anamnesis, caseId);
 		    	}else{
-		    		pc.upDateAnamnesis(changedAnamnesis, Integer.parseInt(caseId) );
+		    		pc.upDateAnamnesis(changedAnamnesis, caseId);
 		    	}
 		    	
 		    	if (changedDiagnosis ==null)
 		    	{
-		    		pc.upDateDiagnosis(diagnosis, Integer.parseInt(caseId));
+		    		pc.upDateDiagnosis(diagnosis, caseId);
 		    	}else{
-		    		pc.upDateDiagnosis(changedDiagnosis, Integer.parseInt(caseId));
+		    		pc.upDateDiagnosis(changedDiagnosis, caseId);
 		    	}
 		    	
 		    	textArea_Anamnesis.setEnabled(false);
@@ -320,6 +384,11 @@ public class CaseView extends VerticalLayout implements View {
 		    }
 		});
 		
+		/**
+		 * This method makes all needed Fields editable again when the Button edit is clicked<br>
+		 * @param event - ClickEvent<br>
+		 * <br>
+		 */
 		edit_Button.addClickListener(new Button.ClickListener() {
 		    public void buttonClick(ClickEvent event) {
 		    	
@@ -334,7 +403,11 @@ public class CaseView extends VerticalLayout implements View {
 
 	}
 
-	
+	/**
+	 * This method shows the title of the view by entering it for a moment.<br>
+	 * @param event - ViewChangeEvent
+	 * <br>
+	 */
 	@Override
 	public void enter(ViewChangeEvent event) {
 		Notification.show("PatientCase");
