@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Patient extends Person {
@@ -23,15 +24,14 @@ public class Patient extends Person {
 	@JoinTable(name = "DOCTOR_PATIENT", joinColumns = @JoinColumn(name = "DOCTOR_ID", referencedColumnName = "pid") , inverseJoinColumns = @JoinColumn(name = "PATIENT_ID", referencedColumnName = "pid") )
 	private List<Doctor> doctorList;
 
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "PATIENT_CASE", joinColumns = @JoinColumn(name = "PATIENT_ID", referencedColumnName = "pid") , inverseJoinColumns = @JoinColumn(name = "PATIENT_CASE_ID", referencedColumnName = "patientCaseId") )
+	@OneToMany
 	private List<PatientCase> patientCaseList;
 
 	public String getInsuranceNb() {
 		return insuranceNb;
 	}
 
-	public void setInsuranceNb(String insuranceNb) { 
+	public void setInsuranceNb(String insuranceNb) {
 		this.insuranceNb = insuranceNb;
 	}
 
