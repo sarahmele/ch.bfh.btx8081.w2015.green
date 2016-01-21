@@ -78,9 +78,12 @@ public class LogAuthorDB {
 			// prepared for search function with int datatype
 			// System.out.println("PatientNb\tUsername, Passwort");
 
+			/*just for Presentation reason active:
 			System.out.println("\tPASSWORD, \tUSERNAME,");
 			System.out.println("\t---------\t---------------");
+			*/
 			int i = 0;
+			
 
 			// displaying the result set, one tuple per line
 			while (rs.next())
@@ -88,12 +91,16 @@ public class LogAuthorDB {
 				if (i < 1) { // replace 1 with higher value in search function
 								// to get more hits back
 
-					// (preparation code for search function)
-					// System.out.println(String.format("%d\t%d\t%s, %s", i++,
-					// rs.getInt(1), rs.getString(2), rs.getString(3)));
+					/* (preparation code for search function, Data can be put 
+					for example in a arrayList and be shown in a vaadin table view )
+					System.out.println(String.format("%d\t%d\t%s, %s", i++,
+					rs.getInt(1), rs.getString(2), rs.getString(3)));
+					*/
 
-					System.out.println(String.format("%d\t%s, \t%s", i++,
+					/*just for Presentation reason active:
+					//System.out.println(String.format("%d\t%s, \t%s", i++,
 							rs.getString(1), rs.getString(2)));
+					*/		
 
 					passwort = rs.getString("PASSWORD");
 					//System.out.println(passwort);
@@ -107,6 +114,7 @@ public class LogAuthorDB {
 			if (((username.compareTo(MyLog) == 0) && (passwort
 					.compareTo(MyPassw) == 0))) {
 				AuthorResult = "true";
+				/*just for Presentation reason active:
 				System.out.println("Erfolgreiches Login");
 				System.out.println("Dies wird aus der DB ausgelesen: "
 						+ username);
@@ -116,11 +124,12 @@ public class LogAuthorDB {
 						+ passwort);
 				System.out.println("Dies wird aus der Tastatur ausgelesen: "
 						+ MyPassw);
-
+				 */
 			}
 
 			else {
 				AuthorResult = "false";
+				/*just for Presentation reason active:
 				System.out.println("Login fehlgeschlagen");
 				System.out.println("Dies wird aus der DB ausgelesen: "
 						+ username);
@@ -130,6 +139,7 @@ public class LogAuthorDB {
 						+ passwort);
 				System.out.println("Dies wird aus der Tastatur ausgelesen: "
 						+ MyPassw);
+				*/
 
 			}
 			// close result set and statement
