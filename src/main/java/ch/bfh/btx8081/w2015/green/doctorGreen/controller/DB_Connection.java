@@ -4,13 +4,43 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * This class helps to get the connection to the database.<br>
+ * 
+ * @author Shpend Vladi<br>
+ * <br>
+ * 
+ *         instance variables:<br>
+ *         - String DB_URL <br>
+ *         - String DB_USER <br>
+ *         - DB_PASSWORD <br>
+ *         - DB_Connection dc <br>
+ *         
+ * <br>
+ * 
+ *         Methods:<br>
+ *         - DB_Connection getInstance()
+ *         	
+ * <br>
+ */
 public class DB_Connection {
+	
+	// defining database connection information which we need for allowing us the connection
 	private static String DB_URL = "jdbc:jtds:sqlserver://corpus.bfh.ch:55783;DatabaseName=SWE_2015_1";
 	private static String DB_USER = "SWE_2015_1";
 	private static String DB_PASSWORD = "swe2015";
 	
 	private static DB_Connection dc = null;
 	
+	/**
+	 * With the getInstance method we make sure that only one object of the DB_Connection will be used<br>
+	 * <br>
+	 *
+	 * @param none
+	 * @return dc
+	 * 
+	 * <br>
+	 */
 	public static DB_Connection getInstance() {
 		
 		if (dc == null) {
@@ -19,6 +49,16 @@ public class DB_Connection {
 		return dc;
 	}
 	
+	/**
+	 * the getConnection method helps us to get the connection with the database with the given informations<br>
+	 * <br>
+	 *
+	 * @param none
+	 * @throws SQL Exception
+	 * @return connection
+	 * 
+	 * <br>
+	 */
 	public Connection getConnection() throws SQLException {
 					Connection connection = DriverManager.getConnection(DB_URL, DB_USER,
 		                DB_PASSWORD);
