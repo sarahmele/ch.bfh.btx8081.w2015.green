@@ -266,4 +266,8 @@
 								 Präsentation: Sarah Mele, Luca Ramos
 								 JPA Einbindung: Yannis Portmann
 								 State Pattern Einbindung: Yannis Portmann
-								 JUnit/CodeInspections Tests: Alle				 						 								 						 
+								 JUnit/CodeInspections Tests: Alle
+								 
+21.01.16 - Team meeting: Task14: Anwesend zur Präsentation: Luca Ramos, Shpend Vladi, Sarah Mele, Yannis Portmann, Manuel Pfister
+								 Fertigstellung des Projektes: Alle
+								 Fertigstellung der Präsentation: Alle
