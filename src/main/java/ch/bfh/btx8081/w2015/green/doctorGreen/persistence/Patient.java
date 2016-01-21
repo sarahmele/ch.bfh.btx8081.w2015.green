@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 
 
 /**
- * This class describes the "Address" Table for the Database<br>
+ * This class describes the "Patient" Table for the Database<br>
  * <br>
  * 
  * @author Shpend Vladi, Luca Ramos<br>
