@@ -63,66 +63,47 @@ public class LogAuthorDB {
 
 			// executing the query, access to BFH-Database
 			rs = statement.executeQuery
-			// Parameter Username und Passwort werden später
-			// entsprechend angepasst, PatientNb ist hier überflüssig, warte
-			// aber
-			// noch mit anpassen bis Datenbank fix ist
+			
 
-					//("SELECT PatientNb, Username, Passwort " + " FROM "
-					//		+ DATABASE + ".dbo.TESTPATIENT "
-							("SELECT PASSWORD, USERNAME " + " FROM "
-							+ DATABASE + ".dbo.PERSON "
-							// +
-							//valid Logindata: "where Username ='Jan' and 
-							//Passwort ='wert12'");
-						//	+ "where Username =" + MyLog + "and Passwort ="
-						//	+ MyPassw);
-			+ "where PASSWORD =" + MyPassw + "and USERNAME ="
-			+ MyLog);
+					// valid Logindata: "where Username ='Jan' and
+					// Passwort ='wert12'");
+
+					("SELECT PASSWORD, USERNAME " + " FROM " + DATABASE
+							+ ".dbo.PERSON " + "where PASSWORD =" + MyPassw
+							+ "and USERNAME =" + MyLog);
 
 			MyPassw = MyPassw.replace("'", "");
 			MyLog = MyLog.replace("'", "");
-			
 
-			//System.out.println("PatientNb\tUsername, Passwort");
-			//System.out.println("\tUsername\tPasswort");
+			// prepared for search function with int datatype
+			// System.out.println("PatientNb\tUsername, Passwort");
+
 			System.out.println("\tPASSWORD, \tUSERNAME,");
 			System.out.println("\t---------\t---------------");
 			int i = 0;
 
 			// displaying the result set, one tuple per line
 			while (rs.next())
-				if (i < 1) {
-					//System.out.println(String.format("%d\t%d\t%s, %s", i++,
-					//		rs.getInt(1), rs.getString(2), rs.getString(3)));
-					//System.out.println(String.format("%s\t\t%s, \t%s", i++,
-					//		rs.getString(2), rs.getString(3)));
-							
-					
+				// (preparation for search function)
+				if (i < 1) { // replace 1 with higher value in search function
+								// to get more hits back
+
+					// (preparation code for search function)
+					// System.out.println(String.format("%d\t%d\t%s, %s", i++,
+					// rs.getInt(1), rs.getString(2), rs.getString(3)));
+
 					System.out.println(String.format("%d\t%s, \t%s", i++,
-							 rs.getString(1), rs.getString(2)));
-					
-				
-					
-					
+							rs.getString(1), rs.getString(2)));
 
-					//username = rs.getString("Username"); // Konzeptioneller
-															// Entscheid->alles
-					// im String belassen, selber Code kann somit bei der
-					// Suchfunktion verwendet
-					// werden, int Datentyp wäre hier besser zu verwenden
-					//System.out.println(username);
 					passwort = rs.getString("PASSWORD");
-					System.out.println(passwort);
-					
-					username = rs.getString("USERNAME");
-					System.out.println(username);
-
-					//passwort = rs.getString("Passwort");
 					//System.out.println(passwort);
-					
+
+					username = rs.getString("USERNAME");
+					//System.out.println(username);
+
 				}
-			// Check whether the Input hash of the User is valid or different from the db hash
+			// Check whether the Input hash of the User is valid or different
+			// from the db hash
 			if (((username.compareTo(MyLog) == 0) && (passwort
 					.compareTo(MyPassw) == 0))) {
 				AuthorResult = "true";
@@ -165,6 +146,9 @@ public class LogAuthorDB {
 				}
 		}
 	}
+
+	// gives "true" or "false" back on LoginView.java to get access to
+	// HomeView.class
 
 	public String getResult() {
 		return AuthorResult;
