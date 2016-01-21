@@ -7,10 +7,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import com.vaadin.ui.ComboBox;
-import com.vaadin.ui.DateField;
-import com.vaadin.ui.TextField;
-
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.Patient;
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PatientCase;
 
@@ -86,9 +82,12 @@ public class PatientSearchController {
 	 * 
 	 * @return
 	 */
-	public List<PatientCase> getPatientCaseList() {
+	public List<PatientCase> getPatientCaseList(PatientCase patientCase, String filter) {
 		createFactory();
+		// TODO: get PatientCase with filter options
+
 		Query q = em.createQuery("select pc from PatientCase pc");
+
 		List<PatientCase> patientCaseList = q.getResultList();
 		return patientCaseList;
 	}

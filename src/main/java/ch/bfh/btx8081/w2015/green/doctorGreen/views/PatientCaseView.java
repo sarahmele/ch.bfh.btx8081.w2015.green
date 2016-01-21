@@ -18,9 +18,24 @@ import ch.bfh.btx8081.w2015.green.doctorGreen.controller.PatientSearchController
 import ch.bfh.btx8081.w2015.green.doctorGreen.persistence.PatientCase;
 
 /**
+ * This class describes the GUI for the PatientCase in the Doctor Green
+ * Application <br>
  * 
- * @author Yannis
- *
+ * @author Yannis Portmann<br>
+ *         <br>
+ * 
+ *         instance variables:<br>
+ *         - Grid patientCaseGrid<br>
+ *         - PatientCase patientCase <br>
+ *         - CaseView caseView<br>
+ *         - BeanFieldGroup<PatientCase> formFieldBindings<br>
+ *         - TextField filter<br>
+ *         <br>
+ * 
+ *         Methods:<br>
+ *         - edit<br>
+ *         - refreshPatientCases - enter(ViewChangeEvent event) no return value
+ *         <br>
  */
 @SuppressWarnings("serial")
 @Theme("mytheme")
@@ -36,7 +51,7 @@ public class PatientCaseView extends VerticalLayout implements View {
 	PatientSearchController controller = PatientSearchController.getInstance();
 
 	/**
-	 * 
+	 * Constructor, which builds the GUI
 	 */
 	public PatientCaseView() {
 		filter.setInputPrompt("Filter patientCases...");
@@ -58,9 +73,6 @@ public class PatientCaseView extends VerticalLayout implements View {
 				getUI().getNavigator().navigateTo(MyUI.CASEVIEW);
 			}
 		});
-
-		// patientListGrid.getSelectedRow()));
-		// Todo Weiterleitung an CaseView
 
 		addComponents(filter, patientCaseGrid, openCaseButton);
 		refreshPatientCases();
@@ -90,8 +102,8 @@ public class PatientCaseView extends VerticalLayout implements View {
 	 * @param stringFilter
 	 */
 	private void refreshPatientCases(String stringFilter) {
-		patientCaseGrid
-				.setContainerDataSource(new BeanItemContainer<>(PatientCase.class, controller.getPatientCaseList()));
+		patientCaseGrid.setContainerDataSource(
+				new BeanItemContainer<>(PatientCase.class, controller.getPatientCaseList(patientCase, stringFilter)));
 	}
 
 	@Override
