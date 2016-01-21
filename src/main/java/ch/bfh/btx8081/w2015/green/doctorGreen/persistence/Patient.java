@@ -24,7 +24,7 @@ public class Patient extends Person {
 	@JoinTable(name = "DOCTOR_PATIENT", joinColumns = @JoinColumn(name = "DOCTOR_ID", referencedColumnName = "pid") , inverseJoinColumns = @JoinColumn(name = "PATIENT_ID", referencedColumnName = "pid") )
 	private List<Doctor> doctorList;
 
-	@OneToMany(mappedBy = "patient")
+	@OneToMany
 	private List<PatientCase> patientCaseList;
 
 	public String getInsuranceNb() {
