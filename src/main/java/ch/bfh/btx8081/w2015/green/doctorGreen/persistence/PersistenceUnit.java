@@ -6,11 +6,21 @@ import javax.persistence.Persistence;
 
 public class PersistenceUnit {
 	private final String DOCTOR_GREEN = "doctorgreen";
-	EntityManagerFactory factory;
-	EntityManager em;
 
-	public void persist() {
-		factory = Persistence.createEntityManagerFactory(DOCTOR_GREEN);
-		em = factory.createEntityManager();
+	private static PersistenceUnit instance = null;
+
+	public static PersistenceUnit getInstance() {
+		if (instance == null) {
+			instance = new PersistenceUnit();
+		}
+		return instance;
+	}
+
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory(DOCTOR_GREEN);
+	EntityManager em = factory.createEntityManager();
+
+	public void persistObject(Object object) {
+		em.persist(object);
+		em.close();
 	}
 }
