@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class PatientCase {
@@ -27,9 +26,6 @@ public class PatientCase {
 	private String anamnesis;
 	@Column
 	private String diagnosis;
-
-	@ManyToOne
-	private Patient patient;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "PATIENTCASE_TREATMENT", joinColumns = @JoinColumn(name = "PATIENTCASEID", referencedColumnName = "patientCaseId") , inverseJoinColumns = @JoinColumn(name = "TREATMENTID", referencedColumnName = "treatmentId") )
@@ -75,14 +71,6 @@ public class PatientCase {
 		this.diagnosis = diagnosis;
 	}
 
-	public Patient getPatient() {
-		return patient;
-	}
-
-	public void setPatient(Patient patient) {
-		this.patient = patient;
-	}
-
 	public List<Treatment> getTreatmentList() {
 		return treatmentList;
 	}
@@ -90,5 +78,4 @@ public class PatientCase {
 	public void setTreatmentList(List<Treatment> treatmentList) {
 		this.treatmentList = treatmentList;
 	}
-
 }
